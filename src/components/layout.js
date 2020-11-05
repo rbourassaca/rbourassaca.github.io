@@ -8,6 +8,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 import Header from "./header"
 import Footer from "./footer"
@@ -24,13 +25,13 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
+    <div className="container-fluid p-0">
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div>
+      <div className="container">
         <main>{children}</main>
       </div>
       <Footer/>
-    </>
+    </div>
   )
 }
 
