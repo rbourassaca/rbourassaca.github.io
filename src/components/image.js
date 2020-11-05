@@ -1,5 +1,4 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
 /*
@@ -13,12 +12,12 @@ import Img from "gatsby-image"
  * - `useStaticQuery`: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-const Image = ( {imageUrl} ) => {
-  if (!imageUrl) {
+const Image = ( {url} ) => {
+  if (!url) {
     return <div>Picture not found</div>
   }
 
-  return <Img fluid={imageUrl} />
+  return <Img fluid={url} />
 }
 
 export default Image
