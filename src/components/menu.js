@@ -1,11 +1,11 @@
 import React from "react"
 import { Link } from "gatsby"
 
-const Menu = () => (
+const Menu = ({siteTitle}) => (
   <nav>
-    <Link to="/">Menu item 1</Link>
-    <Link to="/">Menu item 2</Link>
-    <Link to="/">Menu item 3</Link>
+    <Link to="/">Link 1</Link>
+    <Link to="/">Link 2</Link>
+    <Link to="/">Link 3</Link>
   </nav>
 )
 
