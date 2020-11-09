@@ -6,7 +6,7 @@ import NavItem from "./navItem"
 
 const Menu = ({siteTitle}) => (
   <Navbar bg="light" expand="lg">
-    <NavBrand url="/">Raphael</NavBrand>
+    <NavBrand url="/" title={siteTitle} />
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="mr-auto">

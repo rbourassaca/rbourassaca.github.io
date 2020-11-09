@@ -25,7 +25,7 @@ const Layout = ({ children }) => {
 
   return (
     <div className="d-flex flex-column" Style="min-height:100vh;">
-      <Header siteTitle={data.wp.generalSettings.title || `Title`} />
+      <Header siteTitle={data.wp.generalSettings.title} />
       <main class="flex-fill">{children}</main>
       <Footer/>
     </div>

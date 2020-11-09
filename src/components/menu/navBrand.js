@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 
 function NavBrand(props){
     return(
-        <Link to={props.url} className="navbar-brand">{props.children}</Link> 
+        <Link to={props.url} className="navbar-brand">{props.title}</Link> 
     )
 }
 
