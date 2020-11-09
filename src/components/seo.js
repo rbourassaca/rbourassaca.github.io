@@ -21,9 +21,6 @@ function SEO({ description, lang, meta, title }) {
               language
             }
           }
-          wpUser {
-            name
-          }
       }
     `
   )
