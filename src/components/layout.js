@@ -15,8 +15,8 @@ import Footer from "./footer/footer"
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
-      site {
-        siteMetadata {
+      wp {
+        generalSettings {
           title
         }
       }
@@ -25,7 +25,7 @@ const Layout = ({ children }) => {
 
   return (
     <div className="d-flex flex-column" Style="min-height:100vh;">
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+      <Header siteTitle={data.wp.generalSettings.title || `Title`} />
       <main class="flex-fill">{children}</main>
       <Footer/>
     </div>
