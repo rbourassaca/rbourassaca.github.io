@@ -21,7 +21,6 @@ exports.createPages = async ({ actions, graphql }) => {
     `);
 
     const pages = result.data.allWpPage.edges
-    console.log(result.data.allWpPage.edges)
 
     pages.forEach(page => {
         actions.createPage({
