@@ -13,11 +13,20 @@ import Header from "./header/header"
 import Footer from "./footer/footer"
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
+const data = useStaticQuery(graphql`
+    query {
       wp {
         generalSettings {
           title
+        }
+      }
+      wpMenu(locations: {eq: GATSBY_HEADER_MENU}) {
+        menuItems {
+          nodes {
+            label
+            path
+            id
+          }
         }
       }
     }
@@ -25,7 +34,7 @@ const Layout = ({ children }) => {
 
   return (
     <div className="d-flex flex-column" Style="min-height:100vh;">
-      <Header siteTitle={data.wp.generalSettings.title} />
+      <Header siteTitle={data.wp.generalSettings.title} menuItems={data.wpMenu.menuItems.nodes} />
       <main class="flex-fill">{children}</main>
       <Footer/>
     </div>

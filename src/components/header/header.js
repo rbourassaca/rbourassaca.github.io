@@ -3,9 +3,9 @@ import React from "react"
 
 import Menu from "./../menu/menu"
 
-const Header = ({ siteTitle }) => (
+const Header = ({ siteTitle, menuItems }) => (
   <header>
-    <Menu siteTitle={siteTitle} />
+    <Menu siteTitle={siteTitle} menuItems={menuItems} />
   </header>
 )
 
