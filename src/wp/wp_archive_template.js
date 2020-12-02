@@ -7,19 +7,18 @@ import Layout from "../components/layout.js"
 
 export const query = graphql`
     query ($id: String) {
-        wpPage(id: {eq: $id}) {
-            title
-            content
-            isFrontPage
+        wpContentType(id: {eq: $id}) {
+            label
+            name
         }
     }
 `
 
 const wptemplate = ( {data} ) => {
-    const page = data.wpPage
+    const archive = data.wpContentType
     return (
         <Layout>
-            <SEO title={page.title} />
+            <SEO title={archive.label} />
         </Layout>
     )
 }
