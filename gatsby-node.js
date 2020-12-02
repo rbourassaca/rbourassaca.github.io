@@ -30,7 +30,7 @@ exports.createPages = async ({ actions, graphql }) => {
     `);
 
     const pages = result.data.allWpContentNode.edges;
-    const archive = result.data.allWpContentType.edges;
+    const archives = result.data.allWpContentType.edges;
 
     pages.forEach(page => {
         actions.createPage({
@@ -43,13 +43,15 @@ exports.createPages = async ({ actions, graphql }) => {
         })
     })
 
-    archive.forEach(post => {
-        actions.createPage({
-            path: post.node.id,
-            component: require.resolve('./src/wp/wp_archive_template.js'),
-            context:{
-                id: post.node.id,
-            },
-        })
+    archives.forEach(archive => {
+        if(archive.node.uri != null && archive.node.uri != "/"){
+            actions.createPage({
+                path: archive.node.uri,
+                component: require.resolve('./src/wp/wp_archive_template.js'),
+                context:{
+                    id: archive.node.id,
+                },
+            })
+        }
     })
 }
