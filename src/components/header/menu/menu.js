@@ -1,6 +1,8 @@
 import React from "react"
 import { Navbar, Nav } from "react-bootstrap"
 
+import menuStyles from "./menu.module.scss"
+
 import NavBrand from "./navBrand"
 import NavItem from "./navItem"
 
