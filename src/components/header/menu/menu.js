@@ -8,8 +8,8 @@ function Menu({siteTitle, menuItems}){
   return(
     <Navbar bg="light" expand="lg">
       <NavBrand url="/" title={siteTitle} />
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
+      <Navbar.Toggle aria-controls="links" />
+      <Navbar.Collapse id="links" className={menuStyles.centeredNav}>
         {menuItems.map((link, index) => 
           <Link link={link}/>
         )}
