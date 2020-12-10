@@ -27,6 +27,8 @@ module.exports = {
         display: `minimal-ui`,
         icon: `src/images/favicon.png`, // This path is relative to the root of the site.
       },
+    },
+    {
       resolve: `gatsby-source-wordpress-experimental`,
       options: {
         url:
