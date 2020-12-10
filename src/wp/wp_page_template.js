@@ -36,11 +36,18 @@ const wptemplate = ( {data} ) => {
     const page = data.wpContentNode
     return (
         <Layout>
-            <SEO title={page.title} />
-            {!page.isFrontPage &&
-                <Container>
-                    <h1>{page.title}</h1>
-                </Container>
+            {page.isFrontPage
+                ?
+                <>
+                    <SEO title={page.title} />
+                </>
+                : 
+                <>
+                    <SEO title={page.title} />
+                    <Container>
+                        <h1>{page.title}</h1>
+                    </Container>
+                </>
             }
             <div dangerouslySetInnerHTML={{__html: page.content}} />
         </Layout>
