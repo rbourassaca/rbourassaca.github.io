@@ -13,7 +13,7 @@ function Menu({siteTitle, menuItems}){
       <Navbar.Toggle aria-controls="links" />
       <Navbar.Collapse id="links" className={menuStyles.centeredNav}>
         {menuItems.map((link, index) => 
-          <Link link={link}/>
+          <Link link={link} key={index}/>
         )}
       </Navbar.Collapse>
     </Navbar>
