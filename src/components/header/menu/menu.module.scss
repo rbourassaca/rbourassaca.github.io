@@ -1,4 +1,6 @@
-@media (min-width: 992px) {
+@import '../../../styles/breakpoint.scss';
+
+@media (min-width: $lg) {
     .centeredNav{
         position: absolute;
         top: 50%;
