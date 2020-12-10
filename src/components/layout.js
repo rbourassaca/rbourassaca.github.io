@@ -37,7 +37,7 @@ const data = useStaticQuery(graphql`
   return (
     <div className="d-flex flex-column" Style="min-height:100vh;">
       <Header siteTitle={data.wp.generalSettings.title} menuItems={data.wpMenu.menuItems.nodes} />
-      <main class="flex-fill">{children}</main>
+      <main className="flex-fill">{children}</main>
       <Footer/>
     </div>
   )
