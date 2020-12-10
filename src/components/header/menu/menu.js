@@ -1,17 +1,17 @@
 import React from "react"
 import { Navbar, Nav } from "react-bootstrap"
 
-import menuStyles from "./menu.module.scss"
+import "./menu.scss"
 
 import NavBrand from "./navBrand"
 import NavItem from "./navItem"
 
 function Menu({siteTitle, menuItems}){
   return(
-    <Navbar bg="light" expand="lg">
+    <Navbar expand="lg">
       <NavBrand url="/" title={siteTitle} />
       <Navbar.Toggle aria-controls="links" />
-      <Navbar.Collapse id="links" className={menuStyles.centeredNav}>
+      <Navbar.Collapse id="links">
         {menuItems.map((link, index) => 
           <Link link={link} key={index}/>
         )}
