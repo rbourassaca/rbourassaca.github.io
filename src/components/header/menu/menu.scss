@@ -1,0 +1,31 @@
+@import '../../../styles/breakpoint.scss';
+@import '../../../styles/colors.scss';
+
+nav.navbar{
+    padding: 2rem 1rem;
+    background-color: rgba(0,0,0,0.3);
+    div#links{
+        div.navbar-nav{
+            li.nav-item{
+                a{
+                    font-weight: bold;
+                    font-size: 1.2em;
+                }
+                a:link, a:visited, a:active{
+                    color: $text;
+                }
+                a:hover{
+                    color: $highlight;
+                }
+            }
+        }
+    }
+    @media (min-width: $lg) {
+        div#links{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+}
