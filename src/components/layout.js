@@ -15,24 +15,24 @@ import Header from "./header/header"
 import Footer from "./footer/footer"
 
 const Layout = ({ children }) => {
-const data = useStaticQuery(graphql`
-    query {
-      wp {
-        generalSettings {
-          title
+  const data = useStaticQuery(graphql`
+      query {
+        wp {
+          generalSettings {
+            title
+          }
         }
-      }
-      wpMenu(locations: {eq: GATSBY_HEADER_MENU}) {
-        menuItems {
-          nodes {
-            label
-            path
-            id
+        wpMenu(locations: {eq: GATSBY_HEADER_MENU}) {
+          menuItems {
+            nodes {
+              label
+              path
+              id
+            }
           }
         }
       }
-    }
-  `)
+    `)
 
   return (
     <div className="d-flex flex-column" style={{minHeight: "100vh"}}>
