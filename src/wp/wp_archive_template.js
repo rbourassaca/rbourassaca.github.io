@@ -4,6 +4,7 @@ import { Container } from "react-bootstrap"
 
 import SEO from "../components/seo.js"
 import Layout from "../components/layout.js"
+import Hero from "../components/hero/hero.js"
 
 export const query = graphql`
     query ($id: String) {
@@ -19,6 +20,7 @@ const wptemplate = ( {data} ) => {
     return (
         <Layout>
             <SEO title={archive.label} />
+            <Hero title={archive.label} subtitle="Ceci est un sous-titre"/>
         </Layout>
     )
 }

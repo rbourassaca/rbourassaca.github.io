@@ -4,6 +4,7 @@ import { Container } from "react-bootstrap"
 
 import SEO from "../components/seo.js"
 import Layout from "../components/layout.js"
+import Hero from "../components/hero/hero.js"
 
 export const query = graphql`
     query ($id: String) {
@@ -29,11 +30,19 @@ export const query = graphql`
                 title
             }
         }
+        file(relativePath: {eq: "logo_big.png"}){
+            childImageSharp{
+                fluid(maxWidth: 1024, quality: 100){
+                    ...GatsbyImageSharpFluid
+                }
+            }
+        }
     }
 `
 
 const wptemplate = ( {data} ) => {
     const page = data.wpContentNode
+    const logoBig = data.file.childImageSharp.fluid
     return (
         <Layout>
             {page.isFrontPage
@@ -49,6 +58,7 @@ const wptemplate = ( {data} ) => {
                     </Container>
                 </>
             }
+            <Hero logo={logoBig} maxWidth="500"/>
             <div dangerouslySetInnerHTML={{__html: page.content}} />
         </Layout>
     )
