@@ -1,6 +1,8 @@
 import React from "react"
 import Img from "gatsby-image"
 import { Container } from "react-bootstrap"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowDown } from '@fortawesome/free-solid-svg-icons'
 
 import "./hero.scss"
 
@@ -10,7 +12,6 @@ const Hero = (props) =>{
     if(typeof(props.background) === "object"){
         background = props.background[Math.floor((Math.random() * props.background.length))].node.childImageSharp.fluid
     }
-    console.log(background);
     return(
         <section className="hero">
             <Img fluid={background} className="background"/>
@@ -25,6 +26,7 @@ const Hero = (props) =>{
                     <h2 className="page-subtitle">{props.subtitle}</h2>
                 }
             </Container>
+            <FontAwesomeIcon icon={faArrowDown} />
         </section>
     )
 }

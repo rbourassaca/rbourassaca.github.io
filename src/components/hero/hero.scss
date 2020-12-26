@@ -2,6 +2,8 @@ section.hero{
     height: 100vh;
     display: flex;
     align-items: center;
+    flex-direction: column;
+    justify-content: center;
     div.background{
         z-index: -1;
         position: absolute !important;
@@ -23,5 +25,25 @@ section.hero{
         margin-left: auto;
         margin-right: auto;
         max-width:1024px;
+    }
+    svg.fa-arrow-down{
+        position: absolute;
+        bottom: 100px;
+        height: 40px;
+        width: auto;
+        color: white;
+        animation: position 1.5s ease-in-out infinite;
+    }
+}
+
+@keyframes position{
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(-20px);
+    }
+    100%{
+        transform: translateY(0px);
     }
 }
