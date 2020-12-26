@@ -32,7 +32,7 @@ const wptemplate = ( {data} ) => {
     return (
         <Layout>
             <SEO title={archive.label} />
-            <Hero title={archive.label} subtitle="Ceci est un sous-titre" background={heroImages}/>
+            <Hero title={archive.label} background={heroImages}/>
         </Layout>
     )
 }
