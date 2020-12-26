@@ -2,6 +2,14 @@ section.hero{
     height: 100vh;
     display: flex;
     align-items: center;
+    div.background{
+        z-index: -1;
+        position: absolute !important;
+        left: 0;
+        right: 0;
+        height: 100%;
+        filter: brightness(40%);
+    }
     div.container{
         margin-top: 0;
         h1.page-title{
@@ -11,7 +19,7 @@ section.hero{
             font-size: 2em;
         }
     }
-    div.gatsby-image-wrapper{
+    div.gatsby-image-wrapper .logo{
         margin-left: auto;
         margin-right: auto;
         max-width:1024px;

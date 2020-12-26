@@ -37,12 +37,24 @@ export const query = graphql`
                 }
             }
         }
+        allFile(filter: {relativeDirectory: {regex: "/(hero)/"}}){
+            edges{
+                node{
+                    childImageSharp{
+                        fluid(maxWidth: 3840, quality: 100){
+                            ...GatsbyImageSharpFluid
+                        }
+                    }
+                }
+            }
+        }
     }
 `
 
 const wptemplate = ( {data} ) => {
     const page = data.wpContentNode
     const logoBig = data.file.childImageSharp.fluid
+    const heroImages = data.allFile.edges
     return (
         <Layout>
             {page.isFrontPage
@@ -58,7 +70,7 @@ const wptemplate = ( {data} ) => {
                     </Container>
                 </>
             }
-            <Hero logo={logoBig} maxWidth="500"/>
+            <Hero logo={logoBig} maxWidth="500" background={heroImages}/>
             <div dangerouslySetInnerHTML={{__html: page.content}} />
         </Layout>
     )
