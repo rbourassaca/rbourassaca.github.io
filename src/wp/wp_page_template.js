@@ -70,7 +70,7 @@ const wptemplate = ( {data} ) => {
                     </Container>
                 </>
             }
-            <Hero logo={logoBig} maxWidth="500" background={heroImages}/>
+            <Hero logo={logoBig} background={heroImages}/>
             <div dangerouslySetInnerHTML={{__html: page.content}} />
         </Layout>
     )
