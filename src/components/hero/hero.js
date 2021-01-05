@@ -1,20 +1,70 @@
 import React from "react"
 import Img from "gatsby-image"
+import { graphql, useStaticQuery } from "gatsby"
 import { Container } from "react-bootstrap"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowDown } from '@fortawesome/free-solid-svg-icons'
+import { faFacebookF, faInstagram, faLinkedin, faYoutube, faGithub } from '@fortawesome/free-brands-svg-icons'
 
 import "./hero.scss"
 
 var background;
+var social = [];
+
 
 const Hero = (props) =>{
+    const query = useStaticQuery(graphql `
+        query MyQuery {
+            wp{
+                heroSettings{
+                    reseauxSociaux{
+                        liens{
+                            reseau
+                            lien
+                        }
+                    }
+                }
+            }
+        }
+    `)
+    query.wp.heroSettings.reseauxSociaux.liens.map((item, index) => {
+        switch(item.reseau){
+            case "Facebook":
+                social.push({"link" : item.lien, "icon" : faFacebookF});
+                break;
+            case "Instagram":
+                social.push({"link" : item.lien, "icon" : faInstagram});
+                break;
+            case "LinkedIn":
+                social.push({"link" : item.lien, "icon" : faLinkedin});
+                break;
+            case "Youtube":
+                social.push({"link" : item.lien, "icon" : faYoutube});
+                break;
+            case "GitHub":
+                social.push({"link" : item.lien, "icon" : faGithub});
+                break;
+        }
+    })
+
     if(typeof(props.background) === "object"){
         background = props.background[Math.floor((Math.random() * props.background.length))].node.childImageSharp.fluid
     }
+
     return(
         <section className="hero">
             <Img fluid={background} className="background"/>
+            <aside>
+                <ul>
+                    {social.map((item, index) =>
+                    <li>
+                        <a href={item.link} key={index}>
+                            <FontAwesomeIcon icon={item.icon}/>
+                        </a>
+                    </li>
+                    )}
+                </ul>
+            </aside>
             <Container>
                 {props.logo &&
                     <Img fluid={props.logo} alt="Logo du site web" className="logo"/>

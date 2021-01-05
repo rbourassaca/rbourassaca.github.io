@@ -12,6 +12,36 @@ section.hero{
         height: 100%;
         filter: brightness(40%);
     }
+    aside{
+        position: absolute;
+        left: 0;
+        height: 100%;
+        width: 125px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        border-right: solid 1px rgba(255, 255, 255, 0.1);
+        ul{
+            list-style-type: none;
+            padding: 0;
+            li:last-child{
+                margin-bottom: 40px;
+            }
+            li:not(:last-child){
+                margin-bottom: 20px;
+            }
+            li{
+                a{
+                    display: flex;
+                    justify-content: center;
+                    svg.svg-inline--fa{
+                        width: auto;
+                        height: 25px;
+                    }
+                }
+            }
+        }
+    }
     div.container{
         margin-top: 0;
         h1.page-title{
