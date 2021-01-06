@@ -29,6 +29,7 @@ export const query = graphql`
 const wptemplate = ( {data} ) => {
     const archive = data.wpContentType
     const heroImages = data.allFile.edges
+
     return (
         <Layout>
             <SEO title={archive.label} />

@@ -8,11 +8,11 @@ import { faFacebookF, faInstagram, faLinkedin, faYoutube, faGithub } from '@fort
 
 import "./hero.scss"
 
-var background;
-var social = [];
 
 
 const Hero = (props) =>{
+    var social = [];
+
     const query = useStaticQuery(graphql `
         query MyQuery {
             wp{
@@ -27,6 +27,7 @@ const Hero = (props) =>{
             }
         }
     `)
+
     query.wp.heroSettings.reseauxSociaux.liens.map((item, index) => {
         switch(item.reseau){
             case "Facebook":
@@ -47,18 +48,14 @@ const Hero = (props) =>{
         }
     })
 
-    if(typeof(props.background) === "object"){
-        background = props.background[Math.floor((Math.random() * props.background.length))].node.childImageSharp.fluid
-    }
-
     return(
         <section className="hero">
-            <Img fluid={background} className="background"/>
+            <Img fluid={props.background} className="background"/>
             <aside>
                 <ul>
                     {social.map((item, index) =>
-                    <li>
-                        <a href={item.link} key={index}>
+                    <li key={index}>
+                        <a href={item.link}>
                             <FontAwesomeIcon icon={item.icon}/>
                         </a>
                     </li>

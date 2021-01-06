@@ -55,6 +55,11 @@ const wptemplate = ( {data} ) => {
     const page = data.wpContentNode
     const logoBig = data.file.childImageSharp.fluid
     const heroImages = data.allFile.edges
+
+    if(typeof(heroImages) === "object"){
+        var background = heroImages[Math.floor((Math.random() * heroImages.length))].node.childImageSharp.fluid
+    }
+
     return (
         <Layout>
             {page.isFrontPage
@@ -70,7 +75,7 @@ const wptemplate = ( {data} ) => {
                     </Container>
                 </>
             }
-            <Hero logo={logoBig} background={heroImages}/>
+            <Hero logo={logoBig} background={background}/>
             <div dangerouslySetInnerHTML={{__html: page.content}} />
         </Layout>
     )
