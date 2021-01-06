@@ -30,10 +30,16 @@ const wptemplate = ( {data} ) => {
     const archive = data.wpContentType
     const heroImages = data.allFile.edges
 
+    if(typeof(heroImages) === "object" && heroImages.length > 1){
+        var background = heroImages[Math.floor((Math.random() * heroImages.length))].node.childImageSharp.fluid
+    }else{
+        var background = heroImages[0].node.childImageSharp.fluid
+    }
+
     return (
         <Layout>
             <SEO title={archive.label} />
-            <Hero title={archive.label} background={heroImages}/>
+            <Hero title={archive.label} background={background}/>
         </Layout>
     )
 }
