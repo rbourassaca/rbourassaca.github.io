@@ -1,3 +1,5 @@
+@import '../../styles/breakpoint.scss';
+
 section.hero{
     height: 100vh;
     display: flex;
@@ -42,6 +44,11 @@ section.hero{
             }
         }
     }
+    @media (max-width: $lg){
+        aside{
+            border-right: initial;
+        }
+    }
     div.container{
         margin-top: 0;
         h1.page-title{
@@ -51,6 +58,7 @@ section.hero{
             font-size: 2em;
         }
     }
+    
     div.gatsby-image-wrapper.logo{
         margin-left: auto;
         margin-right: auto;

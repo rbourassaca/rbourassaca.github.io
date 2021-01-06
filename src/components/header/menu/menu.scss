@@ -1,12 +1,27 @@
 @import '../../../styles/breakpoint.scss';
 @import '../../../styles/colors.scss';
 
+$menuPaddingHeight: 1rem;
+$menuPaddingSides: 5rem;
+$asideWidth: 125px;
+
 nav.navbar{
     position: fixed;
     width: 100vw;
-    padding: 1rem 5rem;
+    padding: $menuPaddingHeight $menuPaddingSides;
     background-color: rgba(0,0,0,0.3);
     z-index: 100;
+    div.nav-brand{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: $asideWidth;
+        position: relative;
+        left: -$menuPaddingSides;
+        a.navbar-brand{
+            margin-right: 0;
+        }
+    }
     div#links{
         div.navbar-nav{
             li.nav-item{
@@ -34,6 +49,15 @@ nav.navbar{
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+        }
+    }
+
+    @media (max-width: $lg){
+        div.nav-brand{
+            display: initial;
+            position: initial;
+            width: auto;
+
         }
     }
 }
