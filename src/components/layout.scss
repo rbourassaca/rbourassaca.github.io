@@ -11,4 +11,10 @@ body{
             margin-top: 20px;
         }
     }
+    a:link, a:visited, a:active{
+        color: $text;
+    }
+    a:hover{
+        color: $highlight;
+    }
 }
