@@ -66,13 +66,17 @@ const Hero = (props) =>{
                 {props.logo &&
                     <Img fluid={props.logo} alt="Logo du site web" className="logo"/>
                 }
-                {props.title &&
-                    <h1 className="page-title">{props.title}</h1>
-                }
-                {props.subtitle &&
-                    <h2 className="page-subtitle">{props.subtitle}</h2>
-                }
             </Container>
+            <div className="inner">
+                <Container>
+                    {props.title &&
+                        <h1 className="page-title">{props.title}</h1>
+                    }
+                    {props.subtitle &&
+                        <h2 className="page-subtitle">{props.subtitle}</h2>
+                    }
+                </Container>
+            </div>
             <FontAwesomeIcon icon={faArrowDown} />
         </section>
     )

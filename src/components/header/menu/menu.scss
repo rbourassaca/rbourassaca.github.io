@@ -1,27 +1,18 @@
 @import '../../../styles/breakpoint.scss';
 @import '../../../styles/colors.scss';
 
-$menuPaddingHeight: 1rem;
-$menuPaddingSides: 5rem;
+$navBrandWidth: 55px;
 $asideWidth: 125px;
+$menuPaddingHeight: 1rem;
+$menuPaddingSides: 45.5px;
 
 nav.navbar{
+    padding: $menuPaddingHeight $menuPaddingSides;
     position: fixed;
     width: 100vw;
     padding: $menuPaddingHeight $menuPaddingSides;
     background-color: rgba(0,0,0,0.3);
     z-index: 100;
-    div.nav-brand{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: $asideWidth;
-        position: relative;
-        left: -$menuPaddingSides;
-        a.navbar-brand{
-            margin-right: 0;
-        }
-    }
     div#links{
         div.navbar-nav{
             li.nav-item{
@@ -39,6 +30,7 @@ nav.navbar{
         }
     }
     button.navbar-toggler{
+        padding: 0;
         span{
             background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
         }
@@ -49,15 +41,6 @@ nav.navbar{
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-        }
-    }
-
-    @media (max-width: $lg){
-        div.nav-brand{
-            display: initial;
-            position: initial;
-            width: auto;
-
         }
     }
 }
