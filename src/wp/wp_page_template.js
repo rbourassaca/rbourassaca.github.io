@@ -37,12 +37,16 @@ export const query = graphql`
                 }
             }
         }
-        allFile(filter: {relativeDirectory: {regex: "/(hero)/"}}){
-            edges{
-                node{
-                    childImageSharp{
-                        fluid(maxWidth: 3840, quality: 100){
-                            ...GatsbyImageSharpFluid
+        wp{
+            heroSettings{
+                images{
+                    accueil{
+                        localFile{
+                            childImageSharp{
+                                fluid(maxWidth: 3840, quality: 100){
+                                    ...GatsbyImageSharpFluid
+                                }
+                            }
                         }
                     }
                 }
@@ -54,11 +58,14 @@ export const query = graphql`
 const wptemplate = ( {data} ) => {
     const page = data.wpContentNode
     const logoBig = data.file.childImageSharp.fluid
-    const heroImages = data.allFile.edges
+    const heroImages = data.wp.heroSettings.images.accueil
+    var background
 
-    if(typeof(heroImages) === "object"){
-        var background = heroImages[Math.floor((Math.random() * heroImages.length))].node.childImageSharp.fluid
-    }
+    if(typeof(heroImages) === "object" && heroImages.length > 1){
+        background = heroImages[Math.floor((Math.random() * heroImages.length))].localFile.childImageSharp.fluid
+    }else{
+        background = heroImages[0].localFile.childImageSharp.fluid
+    } 
 
     return (
         <Layout>

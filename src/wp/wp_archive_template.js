@@ -7,17 +7,48 @@ import Layout from "../components/layout.js"
 import Hero from "../components/hero/hero.js"
 
 export const query = graphql`
-    query ($id: String, $regex: String) {
+    query ($id: String, $maxWidth: Int=3840, $quality: Int=100) {
         wpContentType(id: {eq: $id}) {
             label
             name
         }
-        allFile(filter: {relativeDirectory: {regex: $regex}}){
-            edges{
-                node{
-                    childImageSharp{
-                        fluid(maxWidth: 3840, quality: 100){
-                            ...GatsbyImageSharpFluid
+        wp{
+            heroSettings{
+                images{
+                    audio{
+                        localFile{
+                            childImageSharp{
+                                fluid(maxWidth: $maxWidth, quality: $quality){
+                                    ...GatsbyImageSharpFluid
+                                }
+                            }
+                        }
+                    }
+                    video{
+                        localFile{
+                            childImageSharp{
+                                fluid(maxWidth: $maxWidth, quality: $quality){
+                                    ...GatsbyImageSharpFluid
+                                }
+                            }
+                        }
+                    }
+                    web{
+                        localFile{
+                            childImageSharp{
+                                fluid(maxWidth: $maxWidth, quality: $quality){
+                                    ...GatsbyImageSharpFluid
+                                }
+                            }
+                        }
+                    }
+                    web{
+                        localFile{
+                            childImageSharp{
+                                fluid(maxWidth: $maxWidth, quality: $quality){
+                                    ...GatsbyImageSharpFluid
+                                }
+                            }
                         }
                     }
                 }
@@ -28,14 +59,16 @@ export const query = graphql`
 
 const wptemplate = ( {data} ) => {
     const archive = data.wpContentType
-    const heroImages = data.allFile.edges
+    const heroImages = data.wp.heroSettings.images[archive.name]
     var background;
 
+    console.log(heroImages);
+
     if(typeof(heroImages) === "object" && heroImages.length > 1){
-        background = heroImages[Math.floor((Math.random() * heroImages.length))].node.childImageSharp.fluid
+        background = heroImages[Math.floor((Math.random() * heroImages.length))].localFile.childImageSharp.fluid
     }else{
-        background = heroImages[0].node.childImageSharp.fluid
-    }
+        background = heroImages[0].localFile.childImageSharp.fluid
+    } 
 
     return (
         <Layout>
