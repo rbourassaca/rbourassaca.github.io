@@ -42,7 +42,7 @@ export const query = graphql`
                             }
                         }
                     }
-                    web{
+                    client{
                         localFile{
                             childImageSharp{
                                 fluid(maxWidth: $maxWidth, quality: $quality){
