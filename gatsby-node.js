@@ -9,15 +9,7 @@
 exports.createPages = async ({ actions, graphql }) => {
     const result = await graphql(`
         {
-            allWpContentNode {
-                edges {
-                    node {
-                        id
-                        uri
-                        nodeType
-                    }
-                }
-            }
+
             allWpContentType {
                 edges {
                     node {
@@ -30,19 +22,10 @@ exports.createPages = async ({ actions, graphql }) => {
         }
     `);
 
-    const pages = result.data.allWpContentNode.edges;
+
     const archives = result.data.allWpContentType.edges;
 
-    pages.forEach(page => {
-        actions.createPage({
-            path: page.node.uri,
-            component: require.resolve('./src/wp/wp_page_template.js'),
-            context:{
-                id: page.node.id,
-                nodeType: page.node.nodeType,
-            },
-        })
-    })
+
 
     archives.forEach(archive => {
         if(archive.node.uri != null && archive.node.uri != "/"){

@@ -7,29 +7,7 @@ import Layout from "../components/layout.js"
 import Hero from "../components/hero/hero.js"
 
 export const query = graphql`
-    query ($id: String) {
-        wpContentNode(id: {eq: $id}) {
-            ... on WpPage {
-              title
-              content
-              isFrontPage
-            }
-            ... on WpAudio {
-                title
-            }
-            ... on WpClient {
-                title
-            }
-            ... on WpVideo {
-                title
-            }
-            ... on WpWeb {
-                title
-            }
-            ... on WpMediaItem {
-                title
-            }
-        }
+    query {
         file(relativePath: {eq: "logo_big.png"}){
             childImageSharp{
                 fluid(maxWidth: 800, quality: 100){
@@ -38,6 +16,11 @@ export const query = graphql`
             }
         }
         wp{
+            homeSettings{
+                home{
+                    nomDeLaPage
+                }
+            }
             heroSettings{
                 images{
                     accueil{
@@ -55,8 +38,8 @@ export const query = graphql`
     }
 `
 
-const wptemplate = ( {data} ) => {
-    const page = data.wpContentNode
+const index = ({data}) => {
+    const title = data.wp.homeSettings.home.nomDeLaPage
     const logoBig = data.file.childImageSharp.fluid
     const heroImages = data.wp.heroSettings.images.accueil
     var background
@@ -69,23 +52,10 @@ const wptemplate = ( {data} ) => {
 
     return (
         <Layout>
-            {page.isFrontPage
-                ?
-                <>
-                    <SEO title={page.title} />
-                </>
-                : 
-                <>
-                    <SEO title={page.title} />
-                    <Container>
-                        <h1>{page.title}</h1>
-                    </Container>
-                </>
-            }
+            <SEO title={title} />
             <Hero logo={logoBig} background={background}/>
-            <div dangerouslySetInnerHTML={{__html: page.content}} />
         </Layout>
     )
 }
 
-export default wptemplate
+export default index
