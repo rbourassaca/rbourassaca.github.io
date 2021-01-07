@@ -50,8 +50,7 @@ exports.createPages = async ({ actions, graphql }) => {
                 path: archive.node.uri,
                 component: require.resolve('./src/wp/wp_archive_template.js'),
                 context:{
-                    id: archive.node.id,
-                    regex: '/(hero/'+ archive.node.name +')/'
+                    id: archive.node.id
                 },
             })
         }
