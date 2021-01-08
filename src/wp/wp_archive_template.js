@@ -154,16 +154,19 @@ const wptemplate = ( {data} ) => {
     switch(archive.name){
         case "audio":
             projects = data.allWpAudio.edges
-            break;
+            break
         case "video":
             projects = data.allWpVideo.edges
-            break;
+            break
         case "web":
             projects = data.allWpWeb.edges
-            break;
+            break
         case "client":
             projects = data.allWpClient.edges
-            break;
+            break
+        default:
+            projects = null
+            break
     }
 
     console.log(projects);
