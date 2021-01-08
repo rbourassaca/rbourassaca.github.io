@@ -54,15 +54,119 @@ export const query = graphql`
                 }
             }
         }
+        allWpAudio {
+            edges {
+                node {
+                    id
+                    title
+                    acf_audio {
+                        description
+                    }
+                    featuredImage {
+                        node {
+                            localFile {
+                                childImageSharp{
+                                    fluid(maxWidth: 300){
+                                        ...GatsbyImageSharpFluid
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        allWpVideo {
+            edges {
+                node {
+                    id
+                    title
+                    acf_video {
+                        description
+                    }
+                    featuredImage {
+                        node {
+                            localFile {
+                                childImageSharp{
+                                    fluid(maxWidth: 300){
+                                        ...GatsbyImageSharpFluid
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        allWpWeb {
+            edges {
+                node {
+                    id
+                    title
+                    acf_web {
+                        description
+                    }
+                    featuredImage {
+                        node {
+                            localFile {
+                                childImageSharp{
+                                    fluid(maxWidth: 300){
+                                        ...GatsbyImageSharpFluid
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        allWpClient {
+            edges {
+                node {
+                    id
+                    title
+                    acf_client {
+                        description
+                    }
+                    featuredImage {
+                        node {
+                            localFile {
+                                childImageSharp{
+                                    fluid(maxWidth: 300){
+                                        ...GatsbyImageSharpFluid
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 `
 
 const wptemplate = ( {data} ) => {
     const archive = data.wpContentType
     const heroImages = data.wp.heroSettings.images[archive.name]
+    var projects = [];
     var background;
 
-    console.log(heroImages);
+    switch(archive.name){
+        case "audio":
+            projects = data.allWpAudio.edges
+            break;
+        case "video":
+            projects = data.allWpVideo.edges
+            break;
+        case "web":
+            projects = data.allWpWeb.edges
+            break;
+        case "client":
+            projects = data.allWpClient.edges
+            break;
+    }
+
+    console.log(projects);
 
     if(typeof(heroImages) === "object" && heroImages.length > 1){
         background = heroImages[Math.floor((Math.random() * heroImages.length))].localFile.childImageSharp.fluid
