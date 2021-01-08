@@ -55,7 +55,7 @@ const Hero = (props) =>{
                 <ul>
                     {social.map((item, index) =>
                     <li key={index}>
-                        <a href={item.link} target="_blank">
+                        <a href={item.link} target="_blank" rel="noreferrer">
                             <FontAwesomeIcon icon={item.icon}/>
                         </a>
                     </li>
