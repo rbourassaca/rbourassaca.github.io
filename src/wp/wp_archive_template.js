@@ -7,10 +7,104 @@ import Layout from "../components/layout.js"
 import Hero from "../components/hero/hero.js"
 
 export const query = graphql`
-    query ($id: String, $maxWidth: Int=3840, $quality: Int=100) {
+    query ($id: String, $maxWidth: Int=3840, $thumb: Int=300) {
         wpContentType(id: {eq: $id}) {
             label
             name
+            contentNodes{
+                nodes{
+                    ... on WpAudio{
+                        id
+                        title
+                        acf_audio{
+                            description
+                        }
+                        featuredImage {
+                            node {
+                                localFile {
+                                    childImageSharp{
+                                        fluid(maxWidth: $thumb){
+                                            ...GatsbyImageSharpFluid
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    ... on WpVideo{
+                        id
+                        title
+                        acf_video{
+                            description
+                        }
+                        featuredImage {
+                            node {
+                                localFile {
+                                    childImageSharp{
+                                        fluid(maxWidth: $thumb){
+                                            ...GatsbyImageSharpFluid
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    ... on WpWeb{
+                        id
+                        title
+                        acf_web{
+                            description
+                        }
+                        featuredImage {
+                            node {
+                                localFile {
+                                    childImageSharp{
+                                        fluid(maxWidth: $thumb){
+                                            ...GatsbyImageSharpFluid
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    ... on WpWeb{
+                        id
+                        title
+                        acf_web{
+                            description
+                        }
+                        featuredImage {
+                            node {
+                                localFile {
+                                    childImageSharp{
+                                        fluid(maxWidth: $thumb){
+                                            ...GatsbyImageSharpFluid
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    ... on WpClient{
+                        id
+                        title
+                        acf_client{
+                            description
+                        }
+                        featuredImage {
+                            node {
+                                localFile {
+                                    childImageSharp{
+                                        fluid(maxWidth: $thumb){
+                                            ...GatsbyImageSharpFluid
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
         wp{
             heroSettings{
@@ -18,7 +112,7 @@ export const query = graphql`
                     audio{
                         localFile{
                             childImageSharp{
-                                fluid(maxWidth: $maxWidth, quality: $quality){
+                                fluid(maxWidth: $maxWidth){
                                     ...GatsbyImageSharpFluid
                                 }
                             }
@@ -27,7 +121,7 @@ export const query = graphql`
                     video{
                         localFile{
                             childImageSharp{
-                                fluid(maxWidth: $maxWidth, quality: $quality){
+                                fluid(maxWidth: $maxWidth){
                                     ...GatsbyImageSharpFluid
                                 }
                             }
@@ -36,7 +130,7 @@ export const query = graphql`
                     web{
                         localFile{
                             childImageSharp{
-                                fluid(maxWidth: $maxWidth, quality: $quality){
+                                fluid(maxWidth: $maxWidth){
                                     ...GatsbyImageSharpFluid
                                 }
                             }
@@ -45,96 +139,8 @@ export const query = graphql`
                     client{
                         localFile{
                             childImageSharp{
-                                fluid(maxWidth: $maxWidth, quality: $quality){
+                                fluid(maxWidth: $maxWidth){
                                     ...GatsbyImageSharpFluid
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        allWpAudio {
-            edges {
-                node {
-                    id
-                    title
-                    acf_audio {
-                        description
-                    }
-                    featuredImage {
-                        node {
-                            localFile {
-                                childImageSharp{
-                                    fluid(maxWidth: 300){
-                                        ...GatsbyImageSharpFluid
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        allWpVideo {
-            edges {
-                node {
-                    id
-                    title
-                    acf_video {
-                        description
-                    }
-                    featuredImage {
-                        node {
-                            localFile {
-                                childImageSharp{
-                                    fluid(maxWidth: 300){
-                                        ...GatsbyImageSharpFluid
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        allWpWeb {
-            edges {
-                node {
-                    id
-                    title
-                    acf_web {
-                        description
-                    }
-                    featuredImage {
-                        node {
-                            localFile {
-                                childImageSharp{
-                                    fluid(maxWidth: 300){
-                                        ...GatsbyImageSharpFluid
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        allWpClient {
-            edges {
-                node {
-                    id
-                    title
-                    acf_client {
-                        description
-                    }
-                    featuredImage {
-                        node {
-                            localFile {
-                                childImageSharp{
-                                    fluid(maxWidth: 300){
-                                        ...GatsbyImageSharpFluid
-                                    }
                                 }
                             }
                         }
@@ -148,26 +154,9 @@ export const query = graphql`
 const wptemplate = ( {data} ) => {
     const archive = data.wpContentType
     const heroImages = data.wp.heroSettings.images[archive.name]
-    var projects = [];
+    var projects = archive.contentNodes.nodes;
     var background;
 
-    switch(archive.name){
-        case "audio":
-            projects = data.allWpAudio.edges
-            break
-        case "video":
-            projects = data.allWpVideo.edges
-            break
-        case "web":
-            projects = data.allWpWeb.edges
-            break
-        case "client":
-            projects = data.allWpClient.edges
-            break
-        default:
-            projects = null
-            break
-    }
 
     console.log(projects);
 
