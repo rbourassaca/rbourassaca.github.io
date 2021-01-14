@@ -16,6 +16,7 @@ export const query = graphql`
                     ... on WpAudio{
                         id
                         title
+                        uri
                         acf_audio{
                             description
                         }
@@ -34,6 +35,7 @@ export const query = graphql`
                     ... on WpVideo{
                         id
                         title
+                        uri
                         acf_video{
                             description
                         }
@@ -52,6 +54,7 @@ export const query = graphql`
                     ... on WpWeb{
                         id
                         title
+                        uri
                         acf_web{
                             description
                         }
@@ -70,6 +73,7 @@ export const query = graphql`
                     ... on WpClient{
                         id
                         title
+                        uri
                         acf_client{
                             description
                         }

@@ -9,7 +9,6 @@
 exports.createPages = async ({ actions, graphql }) => {
     const result = await graphql(`
         {
-
             allWpContentType {
                 edges {
                     node {
@@ -19,11 +18,21 @@ exports.createPages = async ({ actions, graphql }) => {
                     }
                 }
             }
+            allWpContentNode{
+                edges{
+                    node{
+                        id
+                        uri
+                        nodeType  
+                    }
+                }
+            }
         }
     `);
 
 
-    const archives = result.data.allWpContentType.edges;
+    const archives = result.data.allWpContentType.edges
+    const projects = result.data.allWpContentNode.edges
 
 
 
@@ -34,6 +43,18 @@ exports.createPages = async ({ actions, graphql }) => {
                 component: require.resolve('./src/wp/wp_archive_template.js'),
                 context:{
                     id: archive.node.id
+                },
+            })
+        }
+    })
+
+    projects.forEach(project => {
+        if(project.node.nodeType != "MediaItem"){
+            actions.createPage({
+                path: project.node.uri,
+                component: require.resolve('./src/wp/wp_project_template.js'),
+                context:{
+                    id: project.node.id
                 },
             })
         }
