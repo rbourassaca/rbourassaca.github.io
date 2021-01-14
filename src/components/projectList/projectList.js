@@ -4,7 +4,7 @@ import Project from "./project/project.js"
 
 const ProjectList = ({projects, archive, defaultThumbnail}) => {
     return (
-        <section class="list">
+        <section className="list">
             <Container>
                 {projects.map((project, index) =>
                     <Project project={project} key={index} archive={archive} defaultThumbnail={defaultThumbnail}/>
