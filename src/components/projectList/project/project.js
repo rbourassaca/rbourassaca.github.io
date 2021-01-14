@@ -4,7 +4,7 @@ import { Row, Col } from "react-bootstrap"
 
 import "./project.scss"
 
-const Project = ({ project, index, archive }) => {
+const Project = ({ project, index, archive, defaultThumbnail }) => {
     return(
         <div className="project" key={index}>
             <Row>
@@ -16,7 +16,8 @@ const Project = ({ project, index, archive }) => {
                 </Col>
                 <Col>
                     {project.featuredImage !== null
-                        && <Img fluid={project.featuredImage.node.localFile.childImageSharp.fluid}/>
+                        ? <Img fluid={project.featuredImage.node.localFile.childImageSharp.fluid}/>
+                        : <Img fluid={defaultThumbnail.childImageSharp.fluid}/>
                     }
                 </Col>
             </Row>

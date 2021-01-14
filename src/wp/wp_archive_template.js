@@ -89,6 +89,19 @@ export const query = graphql`
             }
         }
         wp{
+            themeSettings{
+                general{
+                    thumbnailParDefaut{
+                        localFile{
+                            childImageSharp{
+                                fluid(maxWidth: $thumb){
+                                    ...GatsbyImageSharpFluid
+                                }
+                            }
+                        }
+                    }
+                }
+            }
             heroSettings{
                 images{
                     audio{
@@ -136,6 +149,7 @@ export const query = graphql`
 const wptemplate = ( {data} ) => {
     const archive = data.wpContentType
     const heroImages = data.wp.heroSettings.images[archive.name]
+    const defaultThumbnail = data.wp.themeSettings.general.thumbnailParDefaut.localFile
     var projects = archive.contentNodes.nodes;
     var background;
 
@@ -149,7 +163,7 @@ const wptemplate = ( {data} ) => {
         <Layout>
             <SEO title={archive.label} />
             <Hero title={archive.label} background={background}/>
-            <ProjectList projects={projects} archive={archive.name}/>
+            <ProjectList projects={projects} archive={archive.name} defaultThumbnail={defaultThumbnail}/>
         </Layout>
     )
 }

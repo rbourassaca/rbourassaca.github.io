@@ -2,13 +2,13 @@ import React from "react"
 import { Container } from "react-bootstrap"
 import Project from "./project/project.js"
 
-const ProjectList = ({projects, archive}) => {
+const ProjectList = ({projects, archive, defaultThumbnail}) => {
     return (
         <section class="list">
             <Container>
                 {projects.map((project, index) =>
-                    <Project project={project} key={index} archive={archive}/>
-                    )}
+                    <Project project={project} key={index} archive={archive} defaultThumbnail={defaultThumbnail}/>
+                )}
             </Container>    
         </section>
     )
