@@ -11,7 +11,7 @@ const Project = ({ project, index, archive, defaultThumbnail }) => {
                 <Col lg={8} className="info">
                     <div>
                         <h2>{project.title}</h2>
-                        <p>{project["acf_"+archive].description.replace(/<\/?[^>]+(>|$)/g, "").slice(0, 150)+"..."}</p>
+                        <p>{project["acf_"+archive].description.replace(/<\/?[^>]+(>|$)/g, "").slice(0, 400)+"..."}</p>
                     </div>
                 </Col>
                 <Col>
