@@ -1,0 +1,16 @@
+div.project{
+    div.row{
+        display: flex;
+        flex-direction: row;
+        div.info{
+            display: flex;
+            align-items: center;
+        }
+    }
+}
+
+div.project:nth-child(even){
+    div.row{
+        flex-direction: row-reverse;
+    }
+}

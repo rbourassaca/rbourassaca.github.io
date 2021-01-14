@@ -1,15 +1,11 @@
 @import '../styles/colors.scss';
+$defaultMargin: 80px;
 
 body{
     font-family: 'Roboto';
     background-color: $background;
     h1, h2, h3, h4, h5, h6, p, a{
-        color: white;
-    }
-    main{
-        div.container{
-            margin-top: 20px;
-        }
+        color: $text;
     }
     a:link, a:visited, a:active{
         color: $text;
@@ -19,7 +15,14 @@ body{
     }
 
     section:not(.hero){
-        margin-top: 80px;
-        margin-bottom: 80px;
+        margin: $defaultMargin 0;
+    }
+
+    main{
+        section.list{
+            div.project:not(:last-child){
+                margin-bottom: $defaultMargin;
+            }
+        }
     }
 }

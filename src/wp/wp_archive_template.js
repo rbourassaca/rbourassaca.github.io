@@ -1,13 +1,13 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { Container } from "react-bootstrap"
 
 import SEO from "../components/seo.js"
 import Layout from "../components/layout.js"
 import Hero from "../components/hero/hero.js"
+import ProjectList from "../components/projectList/projectList.js"
 
 export const query = graphql`
-    query ($id: String, $maxWidth: Int=3840, $thumb: Int=300) {
+    query ($id: String, $maxWidth: Int=3840, $thumb: Int=500) {
         wpContentType(id: {eq: $id}) {
             label
             name
@@ -35,24 +35,6 @@ export const query = graphql`
                         id
                         title
                         acf_video{
-                            description
-                        }
-                        featuredImage {
-                            node {
-                                localFile {
-                                    childImageSharp{
-                                        fluid(maxWidth: $thumb){
-                                            ...GatsbyImageSharpFluid
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    ... on WpWeb{
-                        id
-                        title
-                        acf_web{
                             description
                         }
                         featuredImage {
@@ -157,9 +139,6 @@ const wptemplate = ( {data} ) => {
     var projects = archive.contentNodes.nodes;
     var background;
 
-
-    console.log(projects);
-
     if(typeof(heroImages) === "object" && heroImages.length > 1){
         background = heroImages[Math.floor((Math.random() * heroImages.length))].localFile.childImageSharp.fluid
     }else{
@@ -170,6 +149,7 @@ const wptemplate = ( {data} ) => {
         <Layout>
             <SEO title={archive.label} />
             <Hero title={archive.label} background={background}/>
+            <ProjectList projects={projects} archive={archive.name}/>
         </Layout>
     )
 }
