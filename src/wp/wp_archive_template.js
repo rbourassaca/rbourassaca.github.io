@@ -7,7 +7,7 @@ import Hero from "../components/hero/hero.js"
 import ProjectList from "../components/projectList/projectList.js"
 
 export const query = graphql`
-    query ($id: String, $maxWidth: Int=3840, $thumb: Int=500) {
+    query ($id: String, $maxWidth: Int=3840, $thumb: Int=350) {
         wpContentType(id: {eq: $id}) {
             label
             name
