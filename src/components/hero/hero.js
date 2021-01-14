@@ -3,7 +3,7 @@ import Img from "gatsby-image"
 import { graphql, useStaticQuery } from "gatsby"
 import { Container } from "react-bootstrap"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowDown } from '@fortawesome/free-solid-svg-icons'
+import { faArrowDown, faGlobe } from '@fortawesome/free-solid-svg-icons'
 import { faFacebookF, faInstagram, faLinkedin, faYoutube, faGithub } from '@fortawesome/free-brands-svg-icons'
 
 import "./hero.scss"
@@ -45,7 +45,11 @@ const Hero = (props) =>{
             case "GitHub":
                 social.push({"link" : item.lien, "icon" : faGithub});
                 break;
+            default:
+                social.push({"link" : item.lien, "icon" : faGlobe});
+                break;
         }
+        return null;
     })
 
     return(
