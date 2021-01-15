@@ -3,7 +3,6 @@ import { Col } from "react-bootstrap"
 import Img from "gatsby-image"
 
 const ProjectImages = ({image}) => {
-    console.log(image)
     return(
         <Col lg="3">
             <Img fluid={image.localFile.childImageSharp.fluid}/>
