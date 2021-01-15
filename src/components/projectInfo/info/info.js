@@ -12,9 +12,9 @@ const Info = ({info}) => {
                         <td>
                             {typeof(info[key]) === "object" 
                                 ? 
-                                info[key].join(", ")
+                                <div dangerouslySetInnerHTML={{__html: info[key].join("<br>")}}/>
                                 : 
-                                info[key]
+                                <div dangerouslySetInnerHTML={{__html: info[key]}}/>
                             }
                         </td>
                     </tr>
