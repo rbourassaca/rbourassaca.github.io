@@ -36,6 +36,11 @@ export const data = graphql `
                         }
                     }
                 }
+                contentType{
+                    node{
+                        name
+                    }
+                }
             }
             ... on WpVideo{
                 title
@@ -50,20 +55,72 @@ export const data = graphql `
                         }
                     }
                 }
+                contentType{
+                    node{
+                        name
+                    }
+                }
             }
             ... on WpWeb{
-               title
-               featuredImage {
-                node {
-                    localFile {
-                        childImageSharp{
-                            fluid(maxWidth: $maxWidth){
-                                ...GatsbyImageSharpFluid
+                title
+                featuredImage {
+                    node {
+                        localFile {
+                            childImageSharp{
+                                fluid(maxWidth: $maxWidth){
+                                    ...GatsbyImageSharpFluid
+                                }
                             }
                         }
                     }
                 }
+                contentType{
+                    node{
+                        name
+                    }
+                }
             }
+        }
+        wp {
+            heroSettings {
+                images {
+                    audio {
+                        localFile {
+                            childImageSharp {
+                                fluid(maxWidth: $maxWidth) {
+                                    ...GatsbyImageSharpFluid
+                                }
+                            }
+                        }
+                    }
+                    video {
+                        localFile {
+                            childImageSharp {
+                                fluid(maxWidth: $maxWidth) {
+                                    ...GatsbyImageSharpFluid
+                                }
+                            }
+                        }
+                    }
+                    web {
+                        localFile {
+                            childImageSharp {
+                                fluid(maxWidth: $maxWidth) {
+                                    ...GatsbyImageSharpFluid
+                                }
+                            }
+                        }
+                    }
+                    client {
+                        localFile {
+                            childImageSharp {
+                                fluid(maxWidth: $maxWidth) {
+                                    ...GatsbyImageSharpFluid
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     }
@@ -71,10 +128,16 @@ export const data = graphql `
 
 const WpProjectTemplate = ({data}) => {
     const title = data.wpContentNode.title
+    const contentType = data.wpContentNode.contentType.node.name
+    const contentTypeBackground = data.wp.heroSettings.images[contentType]
     var background
 
     if(data.wpContentNode.featuredImage != null){
-        background = data.wpContentNode.featuredImage.node.localFile.childImageSharp.fluid;
+        background = data.wpContentNode.featuredImage.node.localFile.childImageSharp.fluid
+    }else if(contentTypeBackground.length > 1){
+        background = contentTypeBackground[Math.floor((Math.random() * contentTypeBackground.length))].localFile.childImageSharp.fluid
+    }else{
+        background = contentTypeBackground[0].localFile.childImageSharp.fluid
     }
 
     return(
