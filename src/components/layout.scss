@@ -24,7 +24,7 @@ body{
                 margin-bottom: $defaultMargin;
             }
         }
-        div.embed:not(:last-child){
+        div.embed{
             margin-bottom: $defaultMargin;
         }
     }
