@@ -24,12 +24,13 @@ const ProjectInfo = ({project}) => {
             info["Crédits"] = projectAcf.credits
             break
         case "web":
-            info["Lien vers le site web"] = projectAcf.lienVersLeSiteWeb
+            info["Lien vers le site web"] = projectAcf.lienVersLeSite
             info["Lien vers le code source"] = projectAcf.lienVersLeCode
             break
         default:
             break
     }
+
 
     return(
         <Container>
