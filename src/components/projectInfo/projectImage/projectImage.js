@@ -1,8 +1,13 @@
 import React from "react"
+import { Col } from "react-bootstrap"
+import Img from "gatsby-image"
 
-const ProjectImages = ({images}) => {
+const ProjectImages = ({image}) => {
+    console.log(image)
     return(
-        <p>Images</p>
+        <Col lg="3">
+            <Img fluid={image.localFile.childImageSharp.fluid}/>
+        </Col>
     )
 }
 

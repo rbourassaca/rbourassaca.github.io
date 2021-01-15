@@ -8,8 +8,8 @@ const ProjectInfo = ({project}) => {
     const projectAcf = project["acf_"+project.contentType.node.name]
     var embed = null
     var info = {}
-    var description = null
-    var images = null
+    var description = {__html: projectAcf.description}
+    var images = projectAcf.photos
 
     switch(project.contentType.node.name){
         case "audio":
@@ -17,20 +17,19 @@ const ProjectInfo = ({project}) => {
             info["Type"] = projectAcf.type
             info["Rôle(s) dans le projet"] = projectAcf.roleDansLeProjet
             info["Logiciel(s) utilisé"] = projectAcf.logicielsUtilise
-            description = {__html: projectAcf.description}
-            images = projectAcf.photos
             break
         case "video":
-
+            embed = projectAcf.liensVersVideo
+            info["Logiciel(s) utilisé"] = projectAcf.logicielsUtilise
+            info["Crédits"] = projectAcf.credits
             break
         case "web":
-
+            info["Lien vers le site web"] = projectAcf.lienVersLeSiteWeb
+            info["Lien vers le code source"] = projectAcf.lienVersLeCode
             break
         default:
             break
     }
-
-    console.log(projectAcf)
 
     return(
         <Container>
@@ -40,8 +39,8 @@ const ProjectInfo = ({project}) => {
                         {embed &&
                             <Col lg="8">
                                 {embed.map((link, index) => (
-                                    <Embed link={link.oembed}/>
-                                    ))}
+                                    <Embed link={link.oembed} key={index}/>
+                                ))}
                             </Col>
                         }
                         <Col>
@@ -65,11 +64,9 @@ const ProjectInfo = ({project}) => {
             {images &&
                 <section>
                     <Row>
-                        <Col lg="12">
-                            {images.map((image, index) => (
-                                <ProjectImage image={image}/>
-                            ))}
-                        </Col>
+                        {images.map((image, index) => (
+                            <ProjectImage image={image} key={index}/>
+                        ))}
                     </Row>
                 </section>
             }
