@@ -37,7 +37,7 @@ const ProjectInfo = ({project}) => {
                 <section>
                     <Row>
                         {embed &&
-                            <Col lg="8">
+                            <Col lg="7">
                                 {embed.map((link, index) => (
                                     <Embed link={link.oembed} key={index}/>
                                 ))}

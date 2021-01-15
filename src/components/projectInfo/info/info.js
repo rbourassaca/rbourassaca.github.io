@@ -1,9 +1,10 @@
 import React from "react"
 import { Table } from "react-bootstrap"
+import "./info.scss"
 
 const Info = ({info}) => {
     return(
-        <Table responsive>
+        <Table responsive className="info">
             <tbody>
                 {Object.keys(info).map((key, index) => (
                     <tr>
