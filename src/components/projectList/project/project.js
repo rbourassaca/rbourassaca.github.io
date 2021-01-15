@@ -6,7 +6,6 @@ import { Row, Col } from "react-bootstrap"
 import "./project.scss"
 
 const Project = ({ project, index, archive, defaultThumbnail }) => {
-    console.log(project)
     return(
         <div className="project" key={index}>
             <Row>
