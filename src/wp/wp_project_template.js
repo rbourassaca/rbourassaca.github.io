@@ -56,6 +56,29 @@ export const data = graphql `
                         }
                     }
                 }
+                acf_video{
+                    description
+                    logicielsUtilise
+                    credits
+                    liensVersVideo{
+                        oembed
+                    }
+                    photos{
+                        localFile{
+                            childImageSharp{
+                                fluid(maxWidth: $maxWidth){
+                                    ...GatsbyImageSharpFluid
+                                }
+                            }
+                        }
+                    }
+                    client{
+                        ... on WpClient{
+                            id
+                            title
+                        }
+                    }
+                }
                 contentType{
                     node{
                         name
@@ -67,6 +90,27 @@ export const data = graphql `
                 featuredImage {
                     node {
                         localFile {
+                            childImageSharp{
+                                fluid(maxWidth: $maxWidth){
+                                    ...GatsbyImageSharpFluid
+                                }
+                            }
+                        }
+                    }
+                }
+                acf_web{
+                    description
+                    lienVersLeCode
+                    lienVersLeSite
+                    logicielsUtilise
+                    client{
+                        ... on WpClient{
+                            id
+                            title
+                        }
+                    }
+                    photos{
+                        localFile{
                             childImageSharp{
                                 fluid(maxWidth: $maxWidth){
                                     ...GatsbyImageSharpFluid
