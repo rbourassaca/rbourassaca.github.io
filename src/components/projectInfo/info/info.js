@@ -9,7 +9,14 @@ const Info = ({info}) => {
                 {Object.keys(info).map((key, index) => ( info[key] &&
                     <tr key={index}>
                         <td>{key}:</td>
-                        <td>{info[key]}</td>
+                        <td>
+                            {typeof(info[key]) === "object" 
+                                ? 
+                                info[key].join(", ")
+                                : 
+                                info[key]
+                            }
+                        </td>
                     </tr>
                 ))}
             </tbody>
