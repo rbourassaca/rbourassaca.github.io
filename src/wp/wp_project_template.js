@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import SEO from "../components/seo.js"
 import Layout from "../components/layout.js"
 import Hero from "../components/hero/hero.js"
+import ProjectInfo from "../components/projectInfo/projectInfo.js"
 
 export const data = graphql `
     query($id: String, $maxWidth: Int=3840){
@@ -144,6 +145,7 @@ const WpProjectTemplate = ({data}) => {
         <Layout>
             <SEO title={title} />
             <Hero title={title} background={background}/>
+            <ProjectInfo project={data.wpContentNode}/>
         </Layout>
     )
 }
