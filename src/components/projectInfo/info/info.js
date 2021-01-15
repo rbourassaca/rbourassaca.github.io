@@ -6,8 +6,8 @@ const Info = ({info}) => {
     return(
         <Table responsive className="info">
             <tbody>
-                {Object.keys(info).map((key, index) => (
-                    <tr>
+                {Object.keys(info).map((key, index) => ( info[key] &&
+                    <tr key={index}>
                         <td>{key}:</td>
                         <td>{info[key]}</td>
                     </tr>
