@@ -24,8 +24,12 @@ const ProjectInfo = ({project}) => {
             info["Crédits"] = projectAcf.credits
             break
         case "web":
-            info["Lien vers le site web"] = projectAcf.lienVersLeSite
-            info["Lien vers le code source"] = projectAcf.lienVersLeCode
+            if(projectAcf.lienVersLeSite){
+                info["Lien vers le site web"] = `<a href="${projectAcf.lienVersLeSite}" target="_blank" rel="noreferrer">${projectAcf.lienVersLeSite}</a>`
+            }
+            if(projectAcf.lienVersLeCode){
+                info["Lien vers le code source"] = `<a href="${projectAcf.lienVersLeCode}" target="_blank" rel="noreferrer">${projectAcf.lienVersLeCode}</a>`
+            }
             break
         default:
             break
