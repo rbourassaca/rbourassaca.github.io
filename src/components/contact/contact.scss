@@ -1,0 +1,13 @@
+@import "../../styles/colors.scss";
+
+.container{
+    form{
+        display: flex; 
+        flex-direction: column;
+        label{
+            color: $text;
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}

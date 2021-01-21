@@ -28,4 +28,10 @@ body{
             margin-bottom: $defaultMargin;
         }
     }
+    footer{
+        padding: $defaultMargin/2 0;
+        form{
+            padding-bottom: $defaultMargin/2/2;
+        }
+    }
 }
