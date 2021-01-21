@@ -2,12 +2,24 @@
 
 .container{
     form{
-        display: flex; 
-        flex-direction: column;
-        label{
-            color: $text;
-            display: flex;
-            flex-direction: column;
+        div.form-group{
+            label{
+                color: $text;
+            }
+            input, textarea{
+                border-radius: 0;
+            }
+        }
+        button{
+            width: 100%;
+            background-color: $background;
+            border: none;
+        }
+        button:hover{
+            background-color: $background;
+        }
+        button:active, button:focus{
+            background-color: $highlight !important;
         }
     }
 }
