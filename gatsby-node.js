@@ -49,7 +49,7 @@ exports.createPages = async ({ actions, graphql }) => {
     })
 
     projects.forEach(project => {
-        if(project.node.nodeType != "MediaItem"){
+        if(project.node.nodeType != "MediaItem" && project.node.nodeType != "Client"){
             actions.createPage({
                 path: project.node.uri,
                 component: require.resolve('./src/wp/wp_project_template.js'),
