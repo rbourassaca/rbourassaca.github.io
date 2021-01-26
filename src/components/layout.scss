@@ -12,12 +12,15 @@ body{
     }
     a:hover{
         color: $highlight;
+        text-decoration: none;
+        h1, h2, h3, h4, h5, h6, p{
+            color: $highlight;
+        }
     }
 
     section:not(.hero){
         padding: $defaultMargin 0;
     }
-
     main{
         section.list{
             div.project:not(:last-child){

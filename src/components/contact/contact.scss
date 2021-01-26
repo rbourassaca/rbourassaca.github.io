@@ -1,13 +1,16 @@
 @import "../../styles/colors.scss";
 
+$borderRadius: 3px;
+
 .container{
     form{
         div.form-group{
             label{
                 color: $text;
+                display: none;
             }
             input, textarea{
-                border-radius: 0;
+                border-radius: $borderRadius;
             }
         }
         button{
@@ -20,6 +23,9 @@
         }
         button:active, button:focus{
             background-color: $highlight !important;
+        }
+        button.btn{
+            border-radius: $borderRadius;
         }
     }
 }
