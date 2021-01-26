@@ -11,79 +11,79 @@ export const query = graphql`
         wpContentType(id: {eq: $id}) {
             label
             name
-            contentNodes{
-                nodes{
-                    ... on WpAudio{
-                        id
-                        title
-                        uri
-                        acf_audio{
-                            description
-                        }
-                        featuredImage {
-                            node {
-                                localFile {
-                                    childImageSharp{
-                                        fluid(maxWidth: $thumb){
-                                            ...GatsbyImageSharpFluid
-                                        }
+        }
+        allWpContentNode(filter: {contentType: {node: {id: {eq: $id}}}}){
+            nodes{
+                ... on WpAudio{
+                    id
+                    title
+                    uri
+                    acf_audio{
+                        description
+                    }
+                    featuredImage {
+                        node {
+                            localFile {
+                                childImageSharp{
+                                    fluid(maxWidth: $thumb){
+                                        ...GatsbyImageSharpFluid
                                     }
                                 }
                             }
                         }
                     }
-                    ... on WpVideo{
-                        id
-                        title
-                        uri
-                        acf_video{
-                            description
-                        }
-                        featuredImage {
-                            node {
-                                localFile {
-                                    childImageSharp{
-                                        fluid(maxWidth: $thumb){
-                                            ...GatsbyImageSharpFluid
-                                        }
+                }
+                ... on WpVideo{
+                    id
+                    title
+                    uri
+                    acf_video{
+                        description
+                    }
+                    featuredImage {
+                        node {
+                            localFile {
+                                childImageSharp{
+                                    fluid(maxWidth: $thumb){
+                                        ...GatsbyImageSharpFluid
                                     }
                                 }
                             }
                         }
                     }
-                    ... on WpWeb{
-                        id
-                        title
-                        uri
-                        acf_web{
-                            description
-                        }
-                        featuredImage {
-                            node {
-                                localFile {
-                                    childImageSharp{
-                                        fluid(maxWidth: $thumb){
-                                            ...GatsbyImageSharpFluid
-                                        }
+                }
+                ... on WpWeb{
+                    id
+                    title
+                    uri
+                    acf_web{
+                        description
+                    }
+                    featuredImage {
+                        node {
+                            localFile {
+                                childImageSharp{
+                                    fluid(maxWidth: $thumb){
+                                        ...GatsbyImageSharpFluid
                                     }
                                 }
                             }
                         }
                     }
-                    ... on WpClient{
-                        id
-                        title
-                        uri
-                        acf_client{
-                            description
-                        }
-                        featuredImage {
-                            node {
-                                localFile {
-                                    childImageSharp{
-                                        fluid(maxWidth: $thumb){
-                                            ...GatsbyImageSharpFluid
-                                        }
+                }
+                ... on WpClient{
+                    id
+                    title
+                    uri
+                    acf_client{
+                        description
+                    }
+                    featuredImage {
+                        node {
+                            localFile {
+                                childImageSharp{
+                                    fluid(maxWidth: $thumb){
+                                        ...GatsbyImageSharpFluid
                                     }
                                 }
                             }
@@ -154,7 +154,7 @@ const wptemplate = ( {data} ) => {
     const archive = data.wpContentType
     const heroImages = data.wp.heroSettings.images[archive.name]
     const defaultThumbnail = data.wp.themeSettings.general.thumbnailParDefaut.localFile
-    var projects = archive.contentNodes.nodes;
+    var projects = data.allWpContentNode.nodes;
     var background;
 
     if(typeof(heroImages) === "object" && heroImages.length > 1){
