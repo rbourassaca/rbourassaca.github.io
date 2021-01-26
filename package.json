@@ -28,6 +28,8 @@
     "react-bootstrap": "^1.4.3",
     "react-dom": "^16.12.0",
     "react-helmet": "^6.1.0",
+    "react-masonry-css": "^1.0.14",
+    "react-medium-image-zoom": "^4.3.1",
     "react-player": "^2.8.1",
     "typescript": "^4.1.2"
   },

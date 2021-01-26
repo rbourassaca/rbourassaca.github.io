@@ -3,6 +3,8 @@ import { Container, Row, Col } from "react-bootstrap"
 import Embed from "./embed/embed.js"
 import Info from "./info/info.js"
 import ProjectImage from "./projectImage/projectImage.js"
+import Masonry from 'react-masonry-css'
+import "./masonry.scss"
 
 const ProjectInfo = ({project}) => {
     const projectAcf = project["acf_"+project.contentType.node.name]
@@ -68,11 +70,11 @@ const ProjectInfo = ({project}) => {
             }
             {images &&
                 <section>
-                    <Row>
-                        {images.map((image, index) => (
-                            <ProjectImage image={image} key={index}/>
-                        ))}
-                    </Row>
+                        <Masonry breakpointCols={{default: 4, 992: 2, 576: 1}} className="masonry-grid" columnClassName="masonry-grid-col">
+                            {images.map((image, index) => (
+                                <ProjectImage image={image} key={index}/>
+                            ))}
+                        </Masonry>
                 </section>
             }
         </Container>
