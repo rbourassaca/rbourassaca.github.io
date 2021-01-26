@@ -62,6 +62,15 @@ module.exports = {
           families: ['Roboto']
         }
       },
+    },
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: [
+          process.env.NODE_ENV === `production` &&
+          process.env.GOOGLE_ANALYTICS_ID,
+        ],
+      },
     }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
