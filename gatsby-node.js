@@ -37,7 +37,7 @@ exports.createPages = async ({ actions, graphql }) => {
 
 
     archives.forEach(archive => {
-        if(archive.node.uri != null && archive.node.uri != "/"){
+        if(archive.node.uri != null && archive.node.uri != "/" && archive.node.name != "client"){
             actions.createPage({
                 path: archive.node.uri,
                 component: require.resolve('./src/wp/wp_archive_template.js'),
