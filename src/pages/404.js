@@ -3,14 +3,12 @@ import { Container } from "react-bootstrap"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Hero from "../components/hero/hero.js"
 
 const NotFoundPage = () => (
   <Layout>
-    <Container>
-      <SEO title="404: Not found" />
-      <h1>404: Not Found</h1>
-      <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-    </Container>
+    <SEO title="404" />
+    <Hero title="404" subtitle="Humm... la page n'existe pas..."/>
   </Layout>
 )
 
