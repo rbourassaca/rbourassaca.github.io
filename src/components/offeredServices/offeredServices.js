@@ -5,7 +5,6 @@ import { Container, Row } from "react-bootstrap"
 import "./offeredServices.scss"
 
 const OfferedServices = ({services}) => {
-    console.log(services);
     return(
         <section className="offeredServices">
             <Container>
