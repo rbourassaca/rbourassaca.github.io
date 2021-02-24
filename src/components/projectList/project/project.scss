@@ -1,3 +1,5 @@
+@import '../../../styles/breakpoint.scss';
+
 div.project{
     div.row{
         display: flex;
@@ -12,17 +14,18 @@ div.project{
     }
 }
 
-div.project:nth-child(even){
-    div.row{
-        flex-direction: row-reverse;
+@media(min-width: $md){
+    div.project:nth-child(even){
+        div.row{
+            flex-direction: row-reverse;
+        }
     }
-}
-
-div.project:nth-child(odd){
-    text-align: right;
-    div.row{
-        div.info{
-            justify-content: end;
+    div.project:nth-child(odd){
+        text-align: right;
+        div.row{
+            div.info{
+                justify-content: end;
+            }
         }
     }
 }

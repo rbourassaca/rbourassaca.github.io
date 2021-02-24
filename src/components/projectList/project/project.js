@@ -9,7 +9,7 @@ const Project = ({ project, index, archive, defaultThumbnail }) => {
     return(
         <div className="project" key={index}>
             <Row>
-                <Col lg={8} className="info">
+                <Col md={8} className="info">
                     <div>
                         <Link to={project.uri}><h2>{project.title}</h2></Link>
                         <p>{project["acf_"+archive].description.replace(/<\/?[^>]+(>|$)/g, "").slice(0, 400)+"..."}</p>
