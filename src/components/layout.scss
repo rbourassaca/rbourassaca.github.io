@@ -1,5 +1,6 @@
 @import '../styles/colors.scss';
 $defaultMargin: 80px;
+$linkTransition: ease-in-out 0.15s;
 
 @font-face{
     font-family: 'Roboto';
@@ -11,15 +12,19 @@ body{
     background-color: $background;
     h1, h2, h3, h4, h5, h6, p, a{
         color: $text;
+        transition: $linkTransition;
     }
     a:link, a:visited, a:active{
         color: $text;
+        transition: $linkTransition;
     }
     a:hover{
         color: $highlight;
         text-decoration: none;
+        transition: $linkTransition;
         h1, h2, h3, h4, h5, h6, p{
             color: $highlight;
+            transition: $linkTransition;
         }
     }
 
