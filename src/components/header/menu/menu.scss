@@ -10,7 +10,8 @@ nav.navbar{
     padding: $menuPaddingHeight $menuPaddingSides;
     position: fixed;
     width: 100vw;
-    background-color: rgba(0,0,0,0.3);
+    background-color: rgba(0,0,0,0.5);
+    backdrop-filter: blur(10px);
     z-index: 100;
     div#links{
         div.navbar-nav{
