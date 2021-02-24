@@ -11,6 +11,11 @@ div.project{
                 font-weight: bolder;
             }
         }
+        div.col{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
     }
 }
 
