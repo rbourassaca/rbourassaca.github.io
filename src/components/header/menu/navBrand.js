@@ -17,8 +17,8 @@ const NavBrand = (props) => {
     `)
 
     return(
-        <Link to={props.url} className="navbar-brand">
-            <Img fixed={logo.file.childImageSharp.fixed}/>
+        <Link to={props.url} className="navbar-brand" title="Logo du site.">
+            <Img fixed={logo.file.childImageSharp.fixed} />
         </Link>
     )
 }

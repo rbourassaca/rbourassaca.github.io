@@ -31,22 +31,22 @@ const Hero = (props) =>{
     query.wp.heroSettings.reseauxSociaux.liens.map((item, index) => {
         switch(item.reseau){
             case "Facebook":
-                social.push({"link" : item.lien, "icon" : faFacebookF});
+                social.push({"link" : item.lien, "icon" : faFacebookF, "title" : item.reseau});
                 break;
             case "Instagram":
-                social.push({"link" : item.lien, "icon" : faInstagram});
+                social.push({"link" : item.lien, "icon" : faInstagram, "title" : item.reseau});
                 break;
             case "LinkedIn":
-                social.push({"link" : item.lien, "icon" : faLinkedin});
+                social.push({"link" : item.lien, "icon" : faLinkedin, "title" : item.reseau});
                 break;
             case "Youtube":
-                social.push({"link" : item.lien, "icon" : faYoutube});
+                social.push({"link" : item.lien, "icon" : faYoutube, "title" : item.reseau});
                 break;
             case "GitHub":
-                social.push({"link" : item.lien, "icon" : faGithub});
+                social.push({"link" : item.lien, "icon" : faGithub, "title" : item.reseau});
                 break;
             default:
-                social.push({"link" : item.lien, "icon" : faGlobe});
+                social.push({"link" : item.lien, "icon" : faGlobe, "title" : item.reseau});
                 break;
         }
         return null;
@@ -58,11 +58,11 @@ const Hero = (props) =>{
             <aside>
                 <ul>
                     {social.map((item, index) =>
-                    <li key={index}>
-                        <a href={item.link} target="_blank" rel="noreferrer">
-                            <FontAwesomeIcon icon={item.icon}/>
-                        </a>
-                    </li>
+                        <li key={index}>
+                            <a href={item.link} target="_blank" rel="noreferrer" title={item.title}>
+                                <FontAwesomeIcon icon={item.icon}/>
+                            </a>
+                        </li>
                     )}
                 </ul>
             </aside>
