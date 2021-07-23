@@ -18,7 +18,9 @@ nav.navbar{
             li.nav-item{
                 a{
                     font-weight: bold;
-                    font-size: 1.2em;
+                    font-size: 1.3em;
+                    padding: 0;
+                    margin: 1em;
                 }
                 a:link, a:visited, a:active{
                     color: $text;
