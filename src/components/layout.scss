@@ -1,3 +1,4 @@
+@use "sass:math";
 @import '../styles/colors.scss';
 $defaultMargin: 80px;
 $linkTransition: ease-in-out 0.15s;
@@ -43,9 +44,9 @@ body{
         }
     }
     footer{
-        padding: $defaultMargin/2 0;
+        padding: math.div($defaultMargin, 2) 0;
         form{
-            padding-bottom: $defaultMargin/2;
+            padding-bottom: math.div($defaultMargin, 2);
         }
     }
 }

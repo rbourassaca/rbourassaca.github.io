@@ -1,8 +1,9 @@
+@use "sass:math";
 $gutter: 10px;
 
 .masonry-grid {
     display: flex;
-    margin-left: -$gutter/2; /* gutter size offset */
+    margin-left: math.div(-$gutter, 2); /* gutter size offset */
     width: 100%;
   }
   .masonry-grid-col {
