@@ -12,9 +12,9 @@ function Menu({siteTitle, menuItems}){
       <NavBrand url="/" title={siteTitle} />
       <Navbar.Toggle aria-controls="links" />
       <Navbar.Collapse id="links">
-        {menuItems.map((link, index) => 
-          <Link link={link} key={index}/>
-        )}
+          {menuItems.map((link, index) =>
+            <Link link={link} key={index}/>
+          )}
       </Navbar.Collapse>
     </Navbar>
   );
@@ -22,9 +22,9 @@ function Menu({siteTitle, menuItems}){
 
 const Link = ({link}) => (
   <>
-    <Nav className="">
+    <ul className="nav">
       <NavItem url={link.path}>{link.label}</NavItem>
-    </Nav>
+    </ul>
   </>
 )
 
