@@ -48,7 +48,21 @@ section.hero{
     }
     @media (max-width: $lg){
         aside{
+            position: absolute;
+            height: auto;
+            width: 100%;
+            bottom: 30px;
             border-right: initial;
+            ul{
+                display: flex;
+                li{
+                    padding: 0 10px;
+                    margin-bottom: 0;
+                }
+                li:last-child, li:not(:last-child){
+                    margin-bottom: 0;
+                }
+            }
         }
     }
     div.inner{
@@ -58,6 +72,9 @@ section.hero{
             margin-top: 0;
             h1.page-title{
                 font-size: 5em;
+            }
+            @media (max-width: $lg){
+                font-size: 0.5em;
             }
             h2.page-subtitle{
                 font-size: 2em;
