@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-import SEO from "../components/seo.js"
+import Seo from "../components/seo.js"
 import Layout from "../components/layout.js"
 import Hero from "../components/hero/hero.js"
 import OfferedServices from "../components/offeredServices/offeredServices.js"
@@ -68,7 +68,7 @@ const index = ({data}) => {
 
     return (
         <Layout>
-            <SEO title={title} />
+            <Seo title={title} />
             <Hero logo={logoBig} background={background}/>
             <OfferedServices services={services}/>
         </Layout>

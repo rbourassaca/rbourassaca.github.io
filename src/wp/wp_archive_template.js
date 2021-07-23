@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-import SEO from "../components/seo.js"
+import Seo from "../components/seo.js"
 import Layout from "../components/layout.js"
 import Hero from "../components/hero/hero.js"
 import ProjectList from "../components/projectList/projectList.js"
@@ -165,7 +165,7 @@ const wptemplate = ( {data} ) => {
 
     return (
         <Layout>
-            <SEO title={archive.label} />
+            <Seo title={archive.label} />
             <Hero title={archive.label} background={background}/>
             <ProjectList projects={projects} archive={archive.name} defaultThumbnail={defaultThumbnail}/>
         </Layout>

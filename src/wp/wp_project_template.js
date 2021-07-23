@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import SEO from "../components/seo.js"
+import Seo from "../components/seo.js"
 import Layout from "../components/layout.js"
 import Hero from "../components/hero/hero.js"
 import ProjectInfo from "../components/projectInfo/projectInfo.js"
@@ -187,7 +187,7 @@ const WpProjectTemplate = ({data}) => {
 
     return(
         <Layout>
-            <SEO title={title} />
+            <Seo title={title} />
             <Hero title={title} background={background}/>
             <ProjectInfo project={data.wpContentNode}/>
         </Layout>
