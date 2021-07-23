@@ -2,4 +2,16 @@
 
 table.info{
     color: $text;
+    tbody{
+        tr{
+            td{
+                border-color: rgba(255,255,255,0.05)
+            }
+        }
+        tr:last-child{
+            td{
+                border: none;
+            }
+        }
+    }
 }
