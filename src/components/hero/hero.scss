@@ -68,17 +68,16 @@ section.hero{
     div.inner{
         padding-left: $asideWidth+40px;
         width: 100%;
-        div.container{
-            margin-top: 0;
-            h1.page-title{
-                font-size: 5em;
-            }
-            @media (max-width: $lg){
-                font-size: 0.5em;
-            }
-            h2.page-subtitle{
-                font-size: 2em;
-            }
+        margin-top: 0;
+        h1.page-title{
+            font-size: 4.5em;
+        }
+        @media (max-width: $lg){
+            font-size: 0.75em;
+            text-align: center;
+        }
+        h2.page-subtitle{
+            font-size: 2em;
         }
     }
 

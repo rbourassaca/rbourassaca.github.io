@@ -72,14 +72,12 @@ const Hero = (props) =>{
                 }
             </Container>
             <div className="inner">
-                <Container>
                     {props.title &&
                         <h1 className="page-title">{props.title}</h1>
                     }
                     {props.subtitle &&
                         <h2 className="page-subtitle">{props.subtitle}</h2>
                     }
-                </Container>
             </div>
             <FontAwesomeIcon icon={faArrowDown} />
         </section>
