@@ -5,13 +5,14 @@ table.info{
     tbody{
         tr{
             td{
-                border-color: rgba(255,255,255,0.05)
+                border: none
             }
         }
-        tr:last-child{
-            td{
-                border: none;
-            }
+        tr:nth-child(2n){
+            background-color: lighten($background, 1);
+        }
+        tr:nth-child(2n+1){
+            background-color: darken($background, 4);
         }
     }
 }
