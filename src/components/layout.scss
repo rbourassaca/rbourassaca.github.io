@@ -34,6 +34,9 @@ body{
         padding: $defaultMargin 0;
     }
     main{
+        section:not(:last-child){
+            padding-bottom: 0;
+        }
         section.list{
             div.project:not(:last-child){
                 margin-bottom: $defaultMargin;
