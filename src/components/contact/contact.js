@@ -1,27 +1,26 @@
 import React from "react"
-import { Container, Form, Button } from "react-bootstrap"
+import { Container } from "react-bootstrap"
+import { graphql, useStaticQuery } from "gatsby"
 import "./contact.scss"
 
 const Contact = () => {
+    const query = useStaticQuery(graphql `
+        query Contact{
+            wp{
+                contactSettings{
+                    contact{
+                        email
+                        phone
+                    }
+                }
+            }
+        }
+    `)
+
     return(
         <Container>
-            <Form action="https://getform.io/f/42517e42-48ff-4710-9bf8-24ce83ae50bb" method="POST">
-                <Form.Group controlId="name">
-                    <Form.Label>Nom:</Form.Label>
-                    <Form.Control name="name" type="text" required placeholder="Entrer votre nom"/>
-                </Form.Group>
-                <Form.Group controlId="email">
-                    <Form.Label>Email:</Form.Label>
-                    <Form.Control name="email" type="email" required placeholder="Entrer votre email"/>
-                </Form.Group>
-                <Form.Group controlId="message">
-                    <Form.Label>Message:</Form.Label>
-                    <Form.Control name="message" as="textarea" required rows={5} placeholder="Entrer votre message"/>
-                </Form.Group>
-                <Button variant="primary" type="submit">
-                    Envoyer
-                </Button>
-            </Form>
+            {query.wp.contactSettings.contact.email !== null && <p>Courriel: <a href={`mailto:${query.wp.contactSettings.contact.email}?subject=Formulaire de contact rbourassa.ca`}>{query.wp.contactSettings.contact.email}</a></p>}
+            {query.wp.contactSettings.contact.phone !== null && <p>Téléphone: <a href={`tel:${query.wp.contactSettings.contact.phone}`}>{query.wp.contactSettings.contact.phone}</a></p>}
         </Container>
     )
 }

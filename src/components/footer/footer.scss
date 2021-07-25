@@ -5,4 +5,7 @@ footer{
     p{
         margin-bottom: 0;
     }
+    div:not(:last-child){
+        padding-bottom: 2rem;
+    }
 }
