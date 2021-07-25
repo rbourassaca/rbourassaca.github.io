@@ -31,6 +31,8 @@
     "react-masonry-css": "^1.0.16",
     "react-medium-image-zoom": "^4.3.4",
     "react-player": "^2.9.0",
+    "react-spring": "^9.2.4",
+    "rimraf": "^3.0.2",
     "sass": "^1.36.0",
     "typescript": "^4.3.5"
   },
