@@ -3,8 +3,9 @@ import Img from "gatsby-image"
 import { graphql, useStaticQuery } from "gatsby"
 import { Container } from "react-bootstrap"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowDown, faGlobe } from '@fortawesome/free-solid-svg-icons'
+import {  faGlobe } from '@fortawesome/free-solid-svg-icons'
 import { faFacebookF, faInstagram, faLinkedin, faYoutube, faGithub } from '@fortawesome/free-brands-svg-icons'
+import ArrowDown from "./arrowDown"
 
 import "./hero.scss"
 
@@ -79,7 +80,7 @@ const Hero = (props) =>{
                         <h2 className="page-subtitle">{props.subtitle}</h2>
                     }
             </div>
-            <FontAwesomeIcon icon={faArrowDown} />
+            <ArrowDown />
         </section>
     )
 }
