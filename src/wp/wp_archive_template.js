@@ -12,7 +12,7 @@ export const query = graphql`
             label
             name
         }
-        allWpContentNode(filter: {contentType: {node: {id: {eq: $id}}}}){
+        allWpContentNode(filter: {contentType: {node: {id: {eq: $id}}}} sort: {fields: date, order: DESC}){
             nodes{
                 ... on WpAudio{
                     id
