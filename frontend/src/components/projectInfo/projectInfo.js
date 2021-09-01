@@ -8,10 +8,10 @@ import "./masonry.scss"
 
 const ProjectInfo = ({project}) => {
     const projectAcf = project["acf_"+project.contentType.node.name]
-    var embed = null
-    var info = {}
-    var description = {__html: projectAcf.description}
-    var images = projectAcf.photos
+    let embed = null
+    let info = {}
+    const description = {__html: projectAcf.description}
+    const images = projectAcf.photos
 
     switch(project.contentType.node.name){
         case "audio":

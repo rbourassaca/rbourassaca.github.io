@@ -175,7 +175,7 @@ const WpProjectTemplate = ({data}) => {
     const title = data.wpContentNode.title
     const contentType = data.wpContentNode.contentType.node.name
     const contentTypeBackground = data.wp.heroSettings.images[contentType]
-    var background
+    let background
 
     if(data.wpContentNode.featuredImage != null){
         background = data.wpContentNode.featuredImage.node.localFile.childImageSharp.fluid

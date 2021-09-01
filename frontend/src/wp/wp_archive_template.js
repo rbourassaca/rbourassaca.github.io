@@ -154,8 +154,8 @@ const wptemplate = ( {data} ) => {
     const archive = data.wpContentType
     const heroImages = data.wp.heroSettings.images[archive.name]
     const defaultThumbnail = data.wp.themeSettings.general.thumbnailParDefaut.localFile
-    var projects = data.allWpContentNode.nodes;
-    var background;
+    const projects = data.allWpContentNode.nodes;
+    let background;
 
     if(typeof(heroImages) === "object" && heroImages.length > 1){
         background = heroImages[Math.floor((Math.random() * heroImages.length))].localFile.childImageSharp.fluid

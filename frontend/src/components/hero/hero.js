@@ -12,7 +12,7 @@ import "./hero.scss"
 
 
 const Hero = (props) =>{
-    var social = [];
+    let social = [];
 
     const query = useStaticQuery(graphql `
         query MyQuery {
