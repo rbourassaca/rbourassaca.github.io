@@ -40,7 +40,7 @@ exports.createPages = async ({ actions, graphql }) => {
         if(archive.node.uri != null && archive.node.uri != "/" && archive.node.name != "client"){
             actions.createPage({
                 path: archive.node.uri,
-                component: require.resolve('./src/wp/wp_archive_template.js'),
+                component: require.resolve('./src/template/archive.js'),
                 context:{
                     id: archive.node.id
                 },
@@ -52,7 +52,7 @@ exports.createPages = async ({ actions, graphql }) => {
         if(project.node.nodeType != "MediaItem" && project.node.nodeType != "Client"){
             actions.createPage({
                 path: project.node.uri,
-                component: require.resolve('./src/wp/wp_project_template.js'),
+                component: require.resolve('./src/template/project.js'),
                 context:{
                     id: project.node.id
                 },
