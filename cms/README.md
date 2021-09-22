@@ -1,2 +1,3 @@
-# rbourassa_backend
-Ceci est le répertoire git du backend de mon site web.
+# Strapi application
+
+A quick description of your strapi application
