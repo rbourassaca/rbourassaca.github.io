@@ -74,8 +74,8 @@
         "project.audio"
       ]
     },
-    "project_categories": {
-      "collection": "project-category"
+    "project_category": {
+      "model": "project-category"
     },
     "description": {
       "pluginOptions": {
@@ -87,6 +87,20 @@
     },
     "gallery": {
       "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "featuredImage": {
+      "model": "file",
       "via": "related",
       "allowedTypes": [
         "images"
