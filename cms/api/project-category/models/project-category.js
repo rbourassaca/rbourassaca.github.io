@@ -1,3 +1,4 @@
+const createSlug = require("../../../lib/functions/createSlug").createSlug;
 'use strict';
 
 /**
@@ -5,4 +6,13 @@
  * to customize this model
  */
 
-module.exports = {};
+module.exports = {
+    lifecycles: {
+        beforeCreate: async (data) => {
+            data.slug = createSlug(data.name);
+        },
+        beforeUpdate: async (params, data) => {
+            data.slug = createSlug(data.name);
+        }
+    }
+};
