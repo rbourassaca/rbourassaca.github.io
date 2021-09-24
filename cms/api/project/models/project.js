@@ -1,4 +1,4 @@
-const slugify = require("slugify");
+const createSlug = require("../../../lib/functions/createSlug").createSlug;
 'use strict';
 
 /**
@@ -9,10 +9,10 @@ const slugify = require("slugify");
 module.exports = {
     lifecycles: {
         beforeCreate: async (data) => {
-            (data.name ? data.slug = slugify(data.name) : null);
+            data.slug = createSlug(data.name);
         },
         beforeUpdate: async (params, data) => {
-            (data.name ? data.slug = slugify(data.name) : null);
+            data.slug = createSlug(data.name);
         }
     }
 };
