@@ -20,7 +20,27 @@
       "type": "text",
       "required": true
     },
-    "logo": {
+    "logoBig": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "logoSmall": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "defaultThumbnail": {
       "model": "file",
       "via": "related",
       "allowedTypes": [
