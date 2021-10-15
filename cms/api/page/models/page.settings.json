@@ -41,13 +41,6 @@
       },
       "type": "richtext",
       "required": true
-    },
-    "navigation": {
-      "model": "navigationitem",
-      "plugin": "navigation",
-      "via": "related",
-      "configurable": false,
-      "hidden": true
     }
   }
 }

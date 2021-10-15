@@ -12,7 +12,9 @@ module.exports = {
             data.slug = createSlug(data.name);
         },
         beforeUpdate: async (params, data) => {
-            data.slug = createSlug(data.name);
+            if(data.name !== undefined){
+                data.slug = createSlug(data.name);
+            }
         }
     }
 };
