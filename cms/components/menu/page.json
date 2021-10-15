@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_menu_pages",
+  "info": {
+    "name": "page",
+    "icon": "newspaper",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "page": {
+      "model": "page"
+    }
+  }
+}
