@@ -40,7 +40,8 @@
       },
       "type": "dynamiczone",
       "components": [
-        "menu.page"
+        "menu.page",
+        "menu.project-category"
       ]
     }
   }

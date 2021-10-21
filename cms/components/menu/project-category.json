@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_menu_project_categories",
+  "info": {
+    "name": "projectCategory",
+    "icon": "project-diagram"
+  },
+  "options": {},
+  "attributes": {
+    "project_category": {
+      "model": "project-category"
+    }
+  }
+}
