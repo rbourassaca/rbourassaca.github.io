@@ -31,7 +31,7 @@ module.exports = {
     {
       resolve: `gatsby-source-wordpress`,
       options: {
-        url: process.env.WPGRAPHQL_URL,
+        url: process.env.API_URL,
         verbose: true,
         develop: {
           hardCacheMediaFiles: true,
