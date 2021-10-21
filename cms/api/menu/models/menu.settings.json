@@ -32,7 +32,7 @@
       },
       "type": "string"
     },
-    "item": {
+    "items": {
       "pluginOptions": {
         "i18n": {
           "localized": true
