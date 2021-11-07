@@ -6,21 +6,15 @@ import "./contact.scss"
 const Contact = () => {
     const query = useStaticQuery(graphql `
         query Contact{
-            wp{
-                contactSettings{
-                    contact{
-                        email
-                        phone
-                    }
-                }
+            strapiFrontendSettings {
+                contactEmail
             }
         }
     `)
-
+    
     return(
         <Container>
-            {query.wp.contactSettings.contact.email !== null && <p>Courriel: <a href={`mailto:${query.wp.contactSettings.contact.email}?subject=Formulaire de contact rbourassa.ca`}>{query.wp.contactSettings.contact.email}</a></p>}
-            {query.wp.contactSettings.contact.phone !== null && <p>Téléphone: <a href={`tel:${query.wp.contactSettings.contact.phone}`}>{query.wp.contactSettings.contact.phone}</a></p>}
+            {query.strapiFrontendSettings.contactEmail !== null && <p>Courriel: <a href={`mailto:${query.strapiFrontendSettings.contactEmail}?subject=Formulaire de contact rbourassa.ca`}>{query.strapiFrontendSettings.contactEmail}</a></p>}
         </Container>
     )
 }
