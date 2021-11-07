@@ -5,7 +5,7 @@
  */
 
 // You can delete this file if you're not using it
-
+/*
 exports.createPages = async ({ actions, graphql }) => {
     const result = await graphql(`
         {
@@ -59,4 +59,4 @@ exports.createPages = async ({ actions, graphql }) => {
             })
         }
     })
-}
+}*/

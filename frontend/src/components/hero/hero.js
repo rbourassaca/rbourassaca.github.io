@@ -13,7 +13,8 @@ import "./hero.scss"
 
 const Hero = (props) =>{
     let social = [];
-
+    //TODO: Ajuster la requête du CMS
+/*
     const query = useStaticQuery(graphql `
         query MyQuery {
             wp{
@@ -28,8 +29,8 @@ const Hero = (props) =>{
             }
         }
     `)
-
-    query.wp.heroSettings.reseauxSociaux.liens.map((item, index) => {
+*/
+    [].map((item, index) => {
         switch(item.reseau){
             case "Facebook":
                 social.push({"link" : item.lien, "icon" : faFacebookF, "title" : item.reseau});

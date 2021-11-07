@@ -15,7 +15,8 @@ import Header from "./header/header"
 import Footer from "./footer/footer"
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
+  //TODO: Ajuster la requête du CMS
+  /*const data = useStaticQuery(graphql`
       query {
         wp {
           generalSettings {
@@ -33,10 +34,10 @@ const Layout = ({ children }) => {
         }
       }
     `)
-
+      */
   return (
     <div className="d-flex flex-column" style={{minHeight: "100vh"}}>
-      <Header siteTitle={data.wp.generalSettings.title} menuItems={data.wpMenu.menuItems.nodes} />
+      <Header siteTitle={"titre"} menuItems={["allo"]} />
       <main className="flex-fill">{children}</main>
       <Footer/>
     </div>

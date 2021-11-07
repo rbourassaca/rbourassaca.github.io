@@ -11,6 +11,8 @@ import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
 function Seo({ description, lang, meta, title }) {
+  //TODO: Ajuster la requête du CMS
+  /*
   const { wp } = useStaticQuery(
     graphql`
       query {
@@ -24,9 +26,9 @@ function Seo({ description, lang, meta, title }) {
       }
     `
   )
-
-  const metaDescription = wp.generalSettings.description
-  const defaultTitle = wp.generalSettings.title
+  */
+  const metaDescription = "description"
+  const defaultTitle = "titre"
 
   return (
     <Helmet
