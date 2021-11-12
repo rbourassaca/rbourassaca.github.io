@@ -2,7 +2,8 @@
   "kind": "singleType",
   "collectionName": "home_pages",
   "info": {
-    "name": "homePage"
+    "name": "homePage",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -50,7 +51,7 @@
         "images"
       ],
       "plugin": "upload",
-      "required": false,
+      "required": true,
       "pluginOptions": {
         "i18n": {
           "localized": false
