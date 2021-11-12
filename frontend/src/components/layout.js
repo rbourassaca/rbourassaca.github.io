@@ -1,10 +1,3 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.com/docs/use-static-query/
- */
-
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
@@ -15,29 +8,28 @@ import Header from "./header/header"
 import Footer from "./footer/footer"
 
 const Layout = ({ children }) => {
-  //TODO: Ajuster la requête du CMS
-  /*const data = useStaticQuery(graphql`
-      query {
-        wp {
-          generalSettings {
-            title
-          }
-        }
-        wpMenu(locations: {eq: GATSBY_HEADER_MENU}) {
-          menuItems {
-            nodes {
-              label
-              path
-              id
-            }
-          }
-        }
+  const data = useStaticQuery(graphql`
+    query{
+      strapiFrontendSettings{
+        name
       }
-    `)
-      */
+      strapiMenu{
+        items
+      }
+    }
+  `)
+
+  let menuItems = []
+  data.strapiMenu.items.forEach(({project_category}) => {
+    menuItems.push({
+      path: `/${project_category.slug}`, 
+      label: project_category.name
+    })
+  })
+
   return (
     <div className="d-flex flex-column" style={{minHeight: "100vh"}}>
-      <Header siteTitle={"titre"} menuItems={["allo"]} />
+      <Header siteTitle={data.strapiFrontendSettings.name} menuItems={menuItems} />
       <main className="flex-fill">{children}</main>
       <Footer/>
     </div>

@@ -11,24 +11,16 @@ import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
 function Seo({ description, lang, meta, title }) {
-  //TODO: Ajuster la requête du CMS
-  /*
-  const { wp } = useStaticQuery(
-    graphql`
-      query {
-          wp {
-            generalSettings {
-              title
-              description
-              language
-            }
-          }
+  const data = useStaticQuery(graphql`
+    query{
+      strapiFrontendSettings{
+        name
+        description
       }
-    `
-  )
-  */
-  const metaDescription = "description"
-  const defaultTitle = "titre"
+    }
+  `)
+  const metaDescription = data.strapiFrontendSettings.description
+  const defaultTitle = data.strapiFrontendSettings.name
 
   return (
     <Helmet
