@@ -1,4 +1,3 @@
-const createSlug = require("../../../lib/functions/createSlug").createSlug;
 'use strict';
 
 /**
@@ -6,15 +5,4 @@ const createSlug = require("../../../lib/functions/createSlug").createSlug;
  * to customize this model
  */
 
-module.exports = {
-    lifecycles: {
-        beforeCreate: async (data) => {
-            data.slug = createSlug(data.name);
-        },
-        beforeUpdate: async (params, data) => {
-            if(data.name !== undefined){
-                data.slug = createSlug(data.name);
-            }
-        }
-    }
-};
+module.exports = {};
