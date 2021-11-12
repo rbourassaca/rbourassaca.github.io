@@ -32,8 +32,8 @@ module.exports = {
       resolve: `gatsby-source-strapi`,
       options: {
         apiURL: process.env.API_URL,
-        collectionTypes: ['menus', 'pages', 'projects', 'project-categories'],
-        singleTypes: ['frontend-settings'],
+        collectionTypes: ['pages', 'projects', 'project-categories'],
+        singleTypes: ['frontend-settings', 'home-page', 'menu'],
         loginData: {
           identifier: process.env.API_IDENTIFIER,
           password: process.env.API_PASSWORD,
