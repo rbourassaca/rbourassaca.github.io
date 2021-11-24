@@ -2,26 +2,16 @@
   "kind": "singleType",
   "collectionName": "menus",
   "info": {
-    "name": "menu",
-    "description": ""
+    "name": "menu"
   },
   "options": {
     "increments": true,
     "timestamps": true,
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
-  "pluginOptions": {
-    "i18n": {
-      "localized": true
-    }
-  },
+  "pluginOptions": {},
   "attributes": {
-    "items": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
+    "item": {
       "type": "dynamiczone",
       "components": [
         "menu.page",
