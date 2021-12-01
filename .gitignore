@@ -3,3 +3,6 @@
 
 # Jetbrains
 .idea/
+
+# PNPM
+.pnpm-debug.log
