@@ -2,9 +2,6 @@ lockfileVersion: 5.3
 
 importers:
 
-  .:
-    specifiers: {}
-
   cms:
     specifiers:
       knex: ^0.21.18
