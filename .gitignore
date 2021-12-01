@@ -6,3 +6,6 @@
 
 # PNPM
 .pnpm-debug.log
+
+# NPM
+package-lock.json
