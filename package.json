@@ -1,0 +1,18 @@
+{
+  "name": "rbourassa-portfolio",
+  "private": true,
+  "description": "Portfolio de Raphael Bourassa",
+  "version": "2.0.0",
+  "author": "Raphael Bourassa <bourassa.raphael@outlook.com>",
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "install": "cd cms && pnpm i && cd ../frontend && pnpm i",
+    "init-develop-cms": "cd cms && pnpm develop",
+    "init-develop-frontend": "cd frontend && pnpm develop",
+    "develop": "start pnpm init-develop-cms && sleep 5 && start pnpm init-develop-frontend"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rbourassaca/rbourassaca.github.io"
+  }
+}
