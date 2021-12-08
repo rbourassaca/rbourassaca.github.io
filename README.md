@@ -1,15 +1,15 @@
-#rbourassa.github.io
+# rbourassa.github.io
 
 ***
 
-##Introduction
+## Introduction
 Ceci est le répertoire git de mon site web.
 Le dossier CMS contient le système de gestion de données [Strapi](https://strapi.io/) et le dossier frontend contient l'interface du site web utilisant [Gatsby](https://www.gatsbyjs.com/).
 
 ***
 
-##Comment utiliser le projet
-###Développement
+## Comment utiliser le projet
+### Développement
 1. Installer des dépendances avec `npm install`.
 2. Démmarer le serveur de développement avec `npm run develop`.
 3. Configurer [Strapi](http://localhost:1337/admin).
@@ -20,7 +20,7 @@ Le dossier CMS contient le système de gestion de données [Strapi](https://stra
 4. Entrer le nom et le mot de passe du compte pour l'api dans `/frontend/.env.development`.
 5. Relancer `npm run develop`.
 
-###Publier sur Github Pages
+### Publier sur Github Pages
 À venir...
 
 ***
