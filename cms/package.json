@@ -1,8 +1,8 @@
 {
-  "name": "cms",
+  "name": "@rbourassaca/portfolio_cms",
   "private": true,
-  "version": "0.1.0",
-  "description": "A Strapi application",
+  "version": "2.0.0",
+  "description": "Portfolio backend.",
   "scripts": {
     "develop": "strapi develop",
     "start": "strapi start",
@@ -25,9 +25,7 @@
     "strapi-plugin-users-permissions": "^3.6.8",
     "strapi-utils": "^3.6.8"
   },
-  "author": {
-    "name": "A Strapi developer"
-  },
+  "author": "Raphael Bourassa <bourassa.raphael@outlook.com>",
   "strapi": {
     "uuid": "bbb176c3-92b9-4e78-8e33-e1b1de349b6e"
   },
