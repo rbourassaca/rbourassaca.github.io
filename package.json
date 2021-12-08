@@ -7,6 +7,7 @@
     "createDevEnvFrontend": "[ ! -f ./frontend/.env.development ] && cp ./frontend/.env.example ./frontend/.env.development",
     "install": "npm run createDevEnvFrontend && cd ./cms/ && npm install && cd ./../frontend/ && npm install",
     "develop": "cd ./cms/ && start npm run develop && wait-on http://localhost:1337 && cd ./../frontend/ && npm run develop"
+    "clean": "cd ./cms/ && rm -r ./.cache ./build && cd ./../frontend/ && gatsby clean"
   },
   "repository": {
     "type": "git",
