@@ -3,6 +3,7 @@
 
 # Jetbrains
 .idea/
+.graphqlconfig
 
 # PNPM
 .pnpm-debug.log
