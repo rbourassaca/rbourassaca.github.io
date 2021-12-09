@@ -32,4 +32,4 @@ Le dossier CMS contient le système de gestion de données [Strapi](https://stra
 
 **Note**
 
-La branche `development` contient tous les changements les plus récents du projet, il est très probable qu'elle soit non fonctionnelle. Pour voir le code d'une version en ligne du projet, veuillez utiliser les tags du projet.
+La branche `development` contient tous les changements les plus récents, il est très probable qu'elle soit non fonctionnelle. Pour voir le code d'une version en ligne du projet, veuillez utiliser les tags.
