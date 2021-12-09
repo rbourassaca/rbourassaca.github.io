@@ -3,60 +3,53 @@
  *
  * See: https://www.gatsbyjs.com/docs/node-apis/
  */
-
-// You can delete this file if you're not using it
-/*
 exports.createPages = async ({ actions, graphql }) => {
+    const { createPage } = actions
     const result = await graphql(`
         {
-            allWpContentType {
-                edges {
-                    node {
-                      id
-                      uri
-                      name
-                    }
+            allStrapiProjectCategories {
+                nodes {
+                    id
+                    slug
                 }
             }
-            allWpContentNode{
-                edges{
-                    node{
-                        id
-                        uri
-                        nodeType  
+            allStrapiProjects{
+                nodes{
+                    id
+                    slug
+                    project_category{
+                        slug
                     }
                 }
             }
         }
     `);
 
-
-    const archives = result.data.allWpContentType.edges
-    const projects = result.data.allWpContentNode.edges
+    const path = require("path")
+    const archives = result.data.allStrapiProjectCategories.nodes
+    const projects = result.data.allStrapiProjects.nodes
 
 
 
     archives.forEach(archive => {
-        if(archive.node.uri != null && archive.node.uri != "/" && archive.node.name != "client"){
-            actions.createPage({
-                path: archive.node.uri,
-                component: require.resolve('./src/template/archive.js'),
-                context:{
-                    id: archive.node.id
-                },
-            })
-        }
+        createPage({
+            path: archive.slug,
+            component: path.resolve('./src/template/archive.js'),
+            context:{
+                id: archive.id
+            },
+        })
     })
 
+
     projects.forEach(project => {
-        if(project.node.nodeType != "MediaItem" && project.node.nodeType != "Client"){
-            actions.createPage({
-                path: project.node.uri,
-                component: require.resolve('./src/template/project.js'),
-                context:{
-                    id: project.node.id
-                },
-            })
-        }
+        actions.createPage({
+            path: project.project_category.slug+"/"+project.slug,
+            component: path.resolve('./src/template/project.js'),
+            context:{
+                id: project.id
+            },
+        })
     })
-}*/
+
+}

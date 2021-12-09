@@ -5,173 +5,8 @@ import Layout from "../components/layout.js"
 import Hero from "../components/hero/hero.js"
 import ProjectInfo from "../components/projectInfo/projectInfo.js"
 
-export const data = graphql `
-    query($id: String, $maxWidth: Int=3840){
-        wpContentNode(id: {eq: $id}) {
-            ... on WpAudio{
-                title
-                featuredImage {
-                    node {
-                        localFile {
-                            childImageSharp{
-                                fluid(maxWidth: $maxWidth){
-                                    ...GatsbyImageSharpFluid
-                                }
-                            }
-                        }
-                    }
-                }
-                acf_audio{
-                    nom
-                    description
-                    logicielsUtilise
-                    roleDansLeProjet
-                    type
-                    liensProjet{
-                        oembed
-                    }
-                    client{
-                        ... on WpClient{
-                            id
-                            title
-                        }
-                    }
-                }
-                contentType{
-                    node{
-                        name
-                    }
-                }
-            }
-            ... on WpVideo{
-                title
-                featuredImage {
-                    node {
-                        localFile {
-                            childImageSharp{
-                                fluid(maxWidth: $maxWidth){
-                                    ...GatsbyImageSharpFluid
-                                }
-                            }
-                        }
-                    }
-                }
-                acf_video{
-                    description
-                    logicielsUtilise
-                    credits
-                    liensVersVideo{
-                        oembed
-                    }
-                    photos{
-                        localFile{
-                            childImageSharp{
-                                fluid(maxWidth: $maxWidth){
-                                    ...GatsbyImageSharpFluid
-                                }
-                            }
-                        }
-                    }
-                    client{
-                        ... on WpClient{
-                            id
-                            title
-                        }
-                    }
-                }
-                contentType{
-                    node{
-                        name
-                    }
-                }
-            }
-            ... on WpWeb{
-                title
-                featuredImage {
-                    node {
-                        localFile {
-                            childImageSharp{
-                                fluid(maxWidth: $maxWidth){
-                                    ...GatsbyImageSharpFluid
-                                }
-                            }
-                        }
-                    }
-                }
-                acf_web{
-                    description
-                    lienVersLeCode
-                    lienVersLeSite
-                    logicielsUtilise
-                    client{
-                        ... on WpClient{
-                            id
-                            title
-                        }
-                    }
-                    photos{
-                        localFile{
-                            childImageSharp{
-                                fluid(maxWidth: $maxWidth){
-                                    ...GatsbyImageSharpFluid
-                                }
-                            }
-                        }
-                    }
-                }
-                contentType{
-                    node{
-                        name
-                    }
-                }
-            }
-        }
-        wp {
-            heroSettings {
-                images {
-                    audio {
-                        localFile {
-                            childImageSharp {
-                                fluid(maxWidth: $maxWidth) {
-                                    ...GatsbyImageSharpFluid
-                                }
-                            }
-                        }
-                    }
-                    video {
-                        localFile {
-                            childImageSharp {
-                                fluid(maxWidth: $maxWidth) {
-                                    ...GatsbyImageSharpFluid
-                                }
-                            }
-                        }
-                    }
-                    web {
-                        localFile {
-                            childImageSharp {
-                                fluid(maxWidth: $maxWidth) {
-                                    ...GatsbyImageSharpFluid
-                                }
-                            }
-                        }
-                    }
-                    client {
-                        localFile {
-                            childImageSharp {
-                                fluid(maxWidth: $maxWidth) {
-                                    ...GatsbyImageSharpFluid
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-`
-
-const WpProjectTemplate = ({data}) => {
+const Project = () => {
+    /*
     const title = data.wpContentNode.title
     const contentType = data.wpContentNode.contentType.node.name
     const contentTypeBackground = data.wp.heroSettings.images[contentType]
@@ -184,14 +19,14 @@ const WpProjectTemplate = ({data}) => {
     }else{
         background = contentTypeBackground[0].localFile.childImageSharp.fluid
     }
+    */
 
     return(
         <Layout>
-            <Seo title={title} />
-            <Hero title={title} background={background}/>
-            <ProjectInfo project={data.wpContentNode}/>
+            <Seo title={"title"} />
+            <Hero title={"title"}/>
         </Layout>
     )
 }
 
-export default WpProjectTemplate
+export default Project
