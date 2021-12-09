@@ -19,7 +19,7 @@ Le dossier CMS contient le système de gestion de données [Strapi](https://stra
    4. Créer un compte dans `Collection Types > Users` et lui donner le rôle créer.
 4. Entrer le nom et le mot de passe du compte pour l'api dans `/frontend/.env.development`.
 5. Relancer `npm run develop`.
-6. 
+
 ### Développement
 1. Installer des dépendances avec `npm install`.
 2. Démarrer le serveur de développement avec `npm run develop`.
