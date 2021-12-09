@@ -4,6 +4,7 @@
 # Jetbrains
 .idea/
 .graphqlconfig
+schema.graphql
 
 # PNPM
 .pnpm-debug.log
