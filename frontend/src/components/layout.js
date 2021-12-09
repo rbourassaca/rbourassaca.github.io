@@ -14,13 +14,13 @@ const Layout = ({ children }) => {
         name
       }
       strapiMenu{
-        items
+        item
       }
     }
   `)
 
   let menuItems = []
-  data.strapiMenu.items.forEach(({project_category}) => {
+  data.strapiMenu.item.forEach(({project_category}) => {
     menuItems.push({
       path: `/${project_category.slug}`, 
       label: project_category.name
@@ -30,7 +30,7 @@ const Layout = ({ children }) => {
   return (
     <div className="d-flex flex-column" style={{minHeight: "100vh"}}>
       <Header siteTitle={data.strapiFrontendSettings.name} menuItems={menuItems} />
-      <main className="flex-fill">{children}</main>
+        <main className="flex-fill">{children}</main>
       <Footer/>
     </div>
   )
