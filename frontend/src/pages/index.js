@@ -3,7 +3,6 @@ import { graphql, useStaticQuery } from "gatsby"
 import Seo from "../components/seo.js"
 import Layout from "../components/layout.js"
 import Hero from "../components/hero/hero.js"
-import OfferedServices from "../components/offeredServices/offeredServices.js"
 
 const Index = () => {
     const data = useStaticQuery(graphql`
@@ -34,7 +33,7 @@ const Index = () => {
             }
         }
     `)
-    
+
     return (
         <Layout>
             <Seo title={data.strapiHomePage.name} />
