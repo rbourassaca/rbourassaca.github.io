@@ -25,5 +25,9 @@
   "homepage": "https://github.com/rbourassaca/rbourassaca.github.io#readme",
   "dependencies": {
     "wait-on": "^6.0.0"
+  },
+  "devDependencies": {
+    "concurrently": "^6.4.0",
+    "shx": "^0.3.3"
   }
 }
