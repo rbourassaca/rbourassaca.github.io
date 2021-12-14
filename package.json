@@ -6,6 +6,7 @@
   "scripts": {
     "init": "shx cp ./frontend/.env.example ./frontend/.env.development",
     "install": "cd ./cms/ && npm install && cd ./../frontend/ && npm install",
+    "update": "cd ./cms/ && npm update && cd ./../frontend/ && npm update",
     "develop": "concurrently -n \"CMS,FRONTEND\" -c \"bgBlue.black.bold,bgMagenta.black.bold\" \"cd ./cms/ && npm run develop\" \"wait-on http://localhost:1337 && cd ./frontend/ && npm run develop\"",
     "clean": "cd ./cms/ && shx rm -r ./.cache ./build && cd ./../frontend/ && gatsby clean"
   },
