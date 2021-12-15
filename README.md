@@ -11,14 +11,15 @@ Le dossier CMS contient le système de gestion de données [Strapi](https://stra
 ## Comment utiliser le projet
 ### Développement (premier démarrage)
 1. Installer des dépendances avec `npm install`.
-2. Démarrer le serveur de développement avec `npm run develop`.
+2. Démarrer le cms dans le dossier `/cms/` avec `cd ./cms/ && npm run develop`.
 3. Configurer [Strapi](http://localhost:1337/admin).
    1. Créer un compte administrateur.
    2. Ajouter un rôle dans `Settings > Users & permissions plugin > Roles`.
    3. Donner les permissions requises par le frontend au rôle créer.
    4. Créer un compte dans `Collection Types > Users` et lui donner le rôle créer.
-4. Entrer le nom et le mot de passe du compte pour l'api dans `/frontend/.env.development`.
-5. Relancer `npm run develop`.
+4. Créer le fichier `.env.development` dans `/frontend/` avec `npm run init`
+5. Entrer le nom et le mot de passe du compte pour l'api dans `/frontend/.env.development`.
+6. Lancer le projet avec `npm run develop`.
 
 ### Développement
 1. Installer des dépendances avec `npm install`.
