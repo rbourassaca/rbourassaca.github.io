@@ -3,6 +3,7 @@ import { graphql, useStaticQuery } from "gatsby"
 import Seo from "../components/seo.js"
 import Layout from "../components/layout.js"
 import Hero from "../components/hero/hero.js"
+import { useStrapiComponents } from "../hooks/useStrapiComponents";
 
 const Index = () => {
     const data = useStaticQuery(graphql`
@@ -34,6 +35,8 @@ const Index = () => {
         }
     `)
 
+    const pageContent = useStrapiComponents(data.strapiHomePage.content)
+
     return (
         <Layout>
             <Seo title={data.strapiHomePage.name} />
@@ -42,6 +45,11 @@ const Index = () => {
                 background={data.strapiHomePage.featuredImage.localFile.childImageSharp.fluid}
                 social={[]} //TODO: Ajouter les liens vers les résaux sociaux
             />
+          {
+            pageContent.map((item) => (
+              <item.strapi_component />
+            ))
+          }
         </Layout>
     )
 }
