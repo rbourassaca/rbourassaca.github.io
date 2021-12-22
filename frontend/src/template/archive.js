@@ -5,24 +5,42 @@ import Layout from "../components/layout.js"
 import Hero from "../components/hero/hero.js"
 import ProjectList from "../components/projectList/projectList.js"
 
-const Archive = () => {
-  /*
-    const archive = data.wpContentType
-    const heroImages = data.wp.heroSettings.images[archive.name]
-    const defaultThumbnail = data.wp.themeSettings.general.thumbnailParDefaut.localFile
-    const projects = data.allWpContentNode.nodes;
-    let background;
-
-    if(typeof(heroImages) === "object" && heroImages.length > 1){
-        background = heroImages[Math.floor((Math.random() * heroImages.length))].localFile.childImageSharp.fluid
-    }else{
-        background = heroImages[0].localFile.childImageSharp.fluid
+export const data = graphql`
+  query data($id: String, $slug: String) {
+    strapiProjectCategories(id: { eq: $id }) {
+      name
+      featuredImage {
+        localFile {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
     }
-    */
+    allStrapiProjects(filter: { project_category: { slug: { eq: $slug } } }) {
+      nodes {
+        slug
+        name
+        description
+      }
+    }
+  }
+`
+
+const Archive = ({ data }) => {
   return (
     <Layout>
-      <Seo title={"archive.label"} />
-      <Hero title={"archive.label"} />
+      <Seo title={data.strapiProjectCategories.name} />
+      <Hero
+        title={data.strapiProjectCategories.name}
+        background={
+          data.strapiProjectCategories.featuredImage.localFile.childImageSharp
+            .fluid
+        }
+      />
+      <ProjectList projects={data.allStrapiProjects.nodes} />
     </Layout>
   )
 }

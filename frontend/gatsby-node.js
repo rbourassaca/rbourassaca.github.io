@@ -35,6 +35,7 @@ exports.createPages = async ({ actions, graphql }) => {
       component: path.resolve("./src/template/archive.js"),
       context: {
         id: archive.id,
+        slug: archive.slug,
       },
     })
   })
