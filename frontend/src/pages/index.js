@@ -46,8 +46,8 @@ const Index = () => {
                 social={[]} //TODO: Ajouter les liens vers les résaux sociaux
             />
           {
-            pageContent.map((item) => (
-              <item.strapi_component />
+            pageContent.map((item, i) => (
+              <item.strapi_component key={i} />
             ))
           }
         </Layout>

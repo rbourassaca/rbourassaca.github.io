@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_page_offered_services",
+  "info": {
+    "name": "offeredServices",
+    "icon": "boxes",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "services": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.service"
+    }
+  }
+}
