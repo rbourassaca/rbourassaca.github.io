@@ -10,16 +10,51 @@ export const data = graphql`
     strapiProjects(id: { eq: $id }) {
       slug
       name
+      description
+      credit
+      categorySpecific
+      Oembed {
+        link
+      }
+      featuredImage {
+        localFile {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+      project_category {
+        featuredImage {
+          localFile {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+      }
     }
   }
 `
 
 const Project = ({ data }) => {
-  console.log(data)
+  let background
+  if (data.strapiProjects.featuredImage !== null) {
+    background =
+      data.strapiProjects.featuredImage.localFile.childImageSharp.fluid
+  } else {
+    background =
+      data.strapiProjects.project_category.featuredImage.localFile
+        .childImageSharp.fluid
+  }
   return (
     <Layout>
       <Seo title={data.strapiProjects.name} />
-      <Hero title={data.strapiProjects.name} />
+      <Hero title={data.strapiProjects.name} background={background} />
+      <ProjectInfo project={data.strapiProjects} />
     </Layout>
   )
 }
