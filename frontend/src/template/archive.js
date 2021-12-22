@@ -6,7 +6,7 @@ import Hero from "../components/hero/hero.js"
 import ProjectList from "../components/projectList/projectList.js"
 
 const Archive = () => {
-    /*
+  /*
     const archive = data.wpContentType
     const heroImages = data.wp.heroSettings.images[archive.name]
     const defaultThumbnail = data.wp.themeSettings.general.thumbnailParDefaut.localFile
@@ -19,12 +19,12 @@ const Archive = () => {
         background = heroImages[0].localFile.childImageSharp.fluid
     }
     */
-    return (
-        <Layout>
-            <Seo title={"archive.label"} />
-            <Hero title={"archive.label"}/>
-        </Layout>
-    )
+  return (
+    <Layout>
+      <Seo title={"archive.label"} />
+      <Hero title={"archive.label"} />
+    </Layout>
+  )
 }
 
 export default Archive

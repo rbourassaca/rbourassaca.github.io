@@ -1,9 +1,9 @@
 import React from "react"
 import PropTypes from "prop-types"
-import ReactMarkdown from "react-markdown";
+import ReactMarkdown from "react-markdown"
 
-const RichText = ({content}) => {
-  return(
+const RichText = ({ content }) => {
+  return (
     <div className="container">
       <ReactMarkdown>{content}</ReactMarkdown>
     </div>
@@ -11,7 +11,7 @@ const RichText = ({content}) => {
 }
 
 RichText.propType = {
-  content: PropTypes.string.isRequired
+  content: PropTypes.string.isRequired,
 }
 
 export default RichText

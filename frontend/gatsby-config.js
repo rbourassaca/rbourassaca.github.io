@@ -1,4 +1,4 @@
-require("dotenv").config({ path: `.env.${process.env.NODE_ENV}`})
+require("dotenv").config({ path: `.env.${process.env.NODE_ENV}` })
 module.exports = {
   siteMetadata: {
     title: `Portfolio de Raphael Bourassa`,
@@ -32,8 +32,8 @@ module.exports = {
       resolve: `gatsby-source-strapi`,
       options: {
         apiURL: process.env.API_URL,
-        collectionTypes: ['pages', 'projects', 'project-categories'],
-        singleTypes: ['frontend-settings', 'home-page', 'menu'],
+        collectionTypes: ["pages", "projects", "project-categories"],
+        singleTypes: ["frontend-settings", "home-page", "menu"],
         loginData: {
           identifier: process.env.API_IDENTIFIER,
           password: process.env.API_PASSWORD,
@@ -42,11 +42,11 @@ module.exports = {
     },
     `gatsby-plugin-sass`,
     {
-      resolve: 'gatsby-plugin-web-font-loader',
+      resolve: "gatsby-plugin-web-font-loader",
       options: {
         google: {
-          families: ['Roboto']
-        }
+          families: ["Roboto"],
+        },
       },
     },
     {
@@ -54,10 +54,10 @@ module.exports = {
       options: {
         trackingIds: [
           process.env.NODE_ENV === `production` &&
-          process.env.GOOGLE_ANALYTICS_ID,
+            process.env.GOOGLE_ANALYTICS_ID,
         ],
       },
-    }
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

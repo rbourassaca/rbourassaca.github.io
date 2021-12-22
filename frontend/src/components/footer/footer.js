@@ -1,12 +1,14 @@
-import React from 'react'
+import React from "react"
 import Contact from "../contact/contact.js"
 import "./footer.scss"
 
 const Footer = () => (
   <footer>
-    <Contact/>
+    <Contact />
     <div className="container">
-      <p>© {new Date().getFullYear()}, Raphael Bourassa. Tous droits réservés.</p>
+      <p>
+        © {new Date().getFullYear()}, Raphael Bourassa. Tous droits réservés.
+      </p>
     </div>
   </footer>
 )

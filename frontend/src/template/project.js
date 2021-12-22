@@ -6,7 +6,7 @@ import Hero from "../components/hero/hero.js"
 import ProjectInfo from "../components/projectInfo/projectInfo.js"
 
 const Project = () => {
-    /*
+  /*
     const title = data.wpContentNode.title
     const contentType = data.wpContentNode.contentType.node.name
     const contentTypeBackground = data.wp.heroSettings.images[contentType]
@@ -21,12 +21,12 @@ const Project = () => {
     }
     */
 
-    return(
-        <Layout>
-            <Seo title={"title"} />
-            <Hero title={"title"}/>
-        </Layout>
-    )
+  return (
+    <Layout>
+      <Seo title={"title"} />
+      <Hero title={"title"} />
+    </Layout>
+  )
 }
 
 export default Project

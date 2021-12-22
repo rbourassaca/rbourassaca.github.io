@@ -12,8 +12,8 @@ import { useStaticQuery, graphql } from "gatsby"
 
 function Seo({ description, lang, meta, title }) {
   const data = useStaticQuery(graphql`
-    query{
-      strapiFrontendSettings{
+    query {
+      strapiFrontendSettings {
         name
         description
       }

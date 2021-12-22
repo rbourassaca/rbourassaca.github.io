@@ -9,29 +9,32 @@ import Footer from "./footer/footer"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
-    query{
-      strapiFrontendSettings{
+    query {
+      strapiFrontendSettings {
         name
       }
-      strapiMenu{
+      strapiMenu {
         item
       }
     }
   `)
 
   let menuItems = []
-  data.strapiMenu.item.forEach(({project_category}) => {
+  data.strapiMenu.item.forEach(({ project_category }) => {
     menuItems.push({
-      path: `/${project_category.slug}`, 
-      label: project_category.name
+      path: `/${project_category.slug}`,
+      label: project_category.name,
     })
   })
 
   return (
-    <div className="d-flex flex-column" style={{minHeight: "100vh"}}>
-      <Header siteTitle={data.strapiFrontendSettings.name} menuItems={menuItems} />
-        <main className="flex-fill">{children}</main>
-      <Footer/>
+    <div className="d-flex flex-column" style={{ minHeight: "100vh" }}>
+      <Header
+        siteTitle={data.strapiFrontendSettings.name}
+        menuItems={menuItems}
+      />
+      <main className="flex-fill">{children}</main>
+      <Footer />
     </div>
   )
 }
