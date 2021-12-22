@@ -47,7 +47,6 @@ const Index = () => {
         background={
           data.strapiHomePage.featuredImage.localFile.childImageSharp.fluid
         }
-        social={[]} //TODO: Ajouter les liens vers les résaux sociaux
       />
       {pageContent.map((item, i) => (
         <item.strapi_component key={i} />

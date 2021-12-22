@@ -58,6 +58,11 @@
     "contactEmail": {
       "type": "email",
       "required": true
+    },
+    "socialLinks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.social-links"
     }
   }
 }
