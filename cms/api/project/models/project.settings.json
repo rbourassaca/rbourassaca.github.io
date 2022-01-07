@@ -61,7 +61,8 @@
       "type": "dynamiczone",
       "components": [
         "page.offered-services",
-        "page.rich-text"
+        "page.rich-text",
+        "page.o-embed"
       ]
     }
   }

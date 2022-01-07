@@ -42,7 +42,8 @@
       "type": "dynamiczone",
       "components": [
         "page.rich-text",
-        "page.offered-services"
+        "page.offered-services",
+        "page.o-embed"
       ]
     },
     "featuredImage": {
