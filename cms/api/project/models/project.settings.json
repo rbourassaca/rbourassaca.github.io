@@ -62,7 +62,8 @@
       "components": [
         "page.offered-services",
         "page.rich-text",
-        "page.o-embed"
+        "page.o-embed",
+        "page.gallery"
       ]
     }
   }

@@ -43,7 +43,8 @@
       "components": [
         "page.rich-text",
         "page.offered-services",
-        "page.o-embed"
+        "page.o-embed",
+        "page.gallery"
       ]
     },
     "featuredImage": {

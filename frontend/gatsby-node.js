@@ -17,6 +17,7 @@ exports.createPages = async ({ actions, graphql }) => {
         nodes {
           id
           slug
+          content
           project_category {
             slug
           }
@@ -41,11 +42,22 @@ exports.createPages = async ({ actions, graphql }) => {
   })
 
   projects.forEach(project => {
+    let galleryImagesId = []
+    if (project.content.length > 0) {
+      project.content.map(item => {
+        if (item.strapi_component === "page.gallery") {
+          item.images.map(image => {
+            galleryImagesId.push(image.localFile___NODE)
+          })
+        }
+      })
+    }
     actions.createPage({
       path: project.project_category.slug + "/" + project.slug,
       component: path.resolve("./src/template/project.js"),
       context: {
         id: project.id,
+        galleryImagesId: galleryImagesId,
       },
     })
   })

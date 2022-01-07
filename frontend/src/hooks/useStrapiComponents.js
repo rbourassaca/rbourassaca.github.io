@@ -5,12 +5,13 @@
  * - être importé au début du hook
  * - être exporté dans le switch
  */
+import PropTypes from "prop-types"
 import RichText from "../components/strapi/richText"
 import OfferedServices from "../components/strapi/offeredServices/offeredServices"
 import OEmbed from "../components/strapi/oEmbed/oEmbed"
+import Gallery from "../components/strapi/gallery/gallery"
 
-export const useStrapiComponents = content => {
-  console.log(content)
+export const useStrapiComponents = (content, images) => {
   content.forEach(item => {
     switch (item.strapi_component) {
       case "page.rich-text":
@@ -23,8 +24,15 @@ export const useStrapiComponents = content => {
       case "page.o-embed":
         item.strapi_component = () => OEmbed({ url: item.url })
         break
+      case "page.gallery":
+        item.strapi_component = () => Gallery({ images: images })
     }
   })
 
   return content
+}
+
+useStrapiComponents.propTypes = {
+  content: PropTypes.object.isRequired,
+  images: PropTypes.array,
 }
