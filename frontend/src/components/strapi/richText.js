@@ -4,9 +4,9 @@ import ReactMarkdown from "react-markdown"
 
 const RichText = ({ content }) => {
   return (
-    <div className="container">
+    <section className="container">
       <ReactMarkdown>{content}</ReactMarkdown>
-    </div>
+    </section>
   )
 }
 
