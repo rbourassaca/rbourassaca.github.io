@@ -8,6 +8,14 @@ import PropTypes from "prop-types"
 import "./project.scss"
 
 const Project = ({ project, index, defaultThumbnail }) => {
+  let description
+  if (project.content.length > 0) {
+    project.content.map(item => {
+      if (item.strapi_component === "page.rich-text") {
+        description = item.content
+      }
+    })
+  }
   return (
     <div className="project" key={index}>
       <Row>
@@ -16,7 +24,7 @@ const Project = ({ project, index, defaultThumbnail }) => {
             <Link to={project.slug}>
               <h2>{project.name}</h2>
             </Link>
-            <ReactMarkDown>{project.description}</ReactMarkDown>
+            <ReactMarkDown>{description}</ReactMarkDown>
           </div>
         </Col>
         <Col>

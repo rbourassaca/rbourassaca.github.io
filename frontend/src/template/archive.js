@@ -23,7 +23,7 @@ export const data = graphql`
       nodes {
         slug
         name
-        description
+        content
       }
     }
   }

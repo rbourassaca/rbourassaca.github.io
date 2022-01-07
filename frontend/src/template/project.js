@@ -3,19 +3,14 @@ import { graphql } from "gatsby"
 import Seo from "../components/seo.js"
 import Layout from "../components/layout.js"
 import Hero from "../components/hero/hero.js"
-import ProjectInfo from "../components/projectInfo/projectInfo.js"
+import { useStrapiComponents } from "../hooks/useStrapiComponents.js"
 
 export const data = graphql`
   query project($id: String) {
     strapiProjects(id: { eq: $id }) {
       slug
       name
-      description
-      credit
-      categorySpecific
-      Oembed {
-        link
-      }
+      content
       featuredImage {
         localFile {
           childImageSharp {
@@ -41,6 +36,8 @@ export const data = graphql`
 `
 
 const Project = ({ data }) => {
+  const pageContent = useStrapiComponents(data.strapiProjects.content)
+
   let background
   if (data.strapiProjects.featuredImage !== null) {
     background =
@@ -54,7 +51,9 @@ const Project = ({ data }) => {
     <Layout>
       <Seo title={data.strapiProjects.name} />
       <Hero title={data.strapiProjects.name} background={background} />
-      <ProjectInfo project={data.strapiProjects} />
+      {pageContent.map((item, i) => (
+        <item.strapi_component key={i} />
+      ))}
     </Layout>
   )
 }
