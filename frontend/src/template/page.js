@@ -29,7 +29,6 @@ const Page = ({ data }) => {
     data.strapiPages.content,
     data.allFile.nodes
   )
-  console.log(data)
   return (
     <Layout>
       <Seo title="Le titre de la page" />
