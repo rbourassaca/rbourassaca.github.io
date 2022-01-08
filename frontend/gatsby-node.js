@@ -6,7 +6,13 @@
 exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions
   const result = await graphql(`
-    {
+    query {
+      allStrapiPages {
+        nodes {
+          id
+          slug
+        }
+      }
       allStrapiProjectCategories {
         nodes {
           id
@@ -27,6 +33,7 @@ exports.createPages = async ({ actions, graphql }) => {
   `)
 
   const path = require("path")
+  const pages = result.data.allStrapiPages.nodes
   const archives = result.data.allStrapiProjectCategories.nodes
   const projects = result.data.allStrapiProjects.nodes
 
@@ -43,6 +50,16 @@ exports.createPages = async ({ actions, graphql }) => {
     }
     return imagesIds
   }
+
+  pages.forEach(page => {
+    createPage({
+      path: page.slug === "accueil" || "home" ? "/" : page.slug,
+      component: path.resolve("./src/template/page.js"),
+      context: {
+        id: page.id,
+      },
+    })
+  })
 
   archives.forEach(archive => {
     createPage({
