@@ -6,7 +6,7 @@ import Hero from "../components/hero/hero.js"
 import { useStrapiComponents } from "../hooks/useStrapiComponents.js"
 
 export const data = graphql`
-  query project($id: String, $galleryImagesId: [String]) {
+  query project($id: String, $imagesIds: [String]) {
     strapiProjects(id: { eq: $id }) {
       slug
       name
@@ -32,7 +32,7 @@ export const data = graphql`
         }
       }
     }
-    allFile(filter: { id: { in: $galleryImagesId } }) {
+    allFile(filter: { id: { in: $imagesIds } }) {
       nodes {
         childImageSharp {
           fluid(maxWidth: 200, maxHeight: 200) {

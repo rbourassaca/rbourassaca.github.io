@@ -30,6 +30,20 @@ exports.createPages = async ({ actions, graphql }) => {
   const archives = result.data.allStrapiProjectCategories.nodes
   const projects = result.data.allStrapiProjects.nodes
 
+  const returnRequiredImagesIds = pageType => {
+    let imagesIds = []
+    if (pageType.content.length > 0) {
+      pageType.content.map(item => {
+        if (item.strapi_component === "page.gallery") {
+          item.images.map(image => {
+            imagesIds.push(image.localFile___NODE)
+          })
+        }
+      })
+    }
+    return imagesIds
+  }
+
   archives.forEach(archive => {
     createPage({
       path: archive.slug,
@@ -42,22 +56,13 @@ exports.createPages = async ({ actions, graphql }) => {
   })
 
   projects.forEach(project => {
-    let galleryImagesId = []
-    if (project.content.length > 0) {
-      project.content.map(item => {
-        if (item.strapi_component === "page.gallery") {
-          item.images.map(image => {
-            galleryImagesId.push(image.localFile___NODE)
-          })
-        }
-      })
-    }
+    let imagesIds = returnRequiredImagesIds(project)
     actions.createPage({
       path: project.project_category.slug + "/" + project.slug,
       component: path.resolve("./src/template/project.js"),
       context: {
         id: project.id,
-        galleryImagesId: galleryImagesId,
+        imagesIds: imagesIds,
       },
     })
   })
