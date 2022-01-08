@@ -35,7 +35,7 @@ export const data = graphql`
     allFile(filter: { id: { in: $imagesIds } }) {
       nodes {
         childImageSharp {
-          fluid(maxWidth: 200, maxHeight: 200) {
+          fluid {
             ...GatsbyImageSharpFluid
           }
         }
