@@ -19,7 +19,7 @@ export const useStrapiComponents = (content, images) => {
         break
       case "page.offered-services":
         item.strapi_component = () =>
-          OfferedServices({ services: item.services })
+          OfferedServices({ services: item.services, images: images })
         break
       case "page.o-embed":
         item.strapi_component = () => OEmbed({ url: item.url })

@@ -14,6 +14,7 @@ export const data = graphql`
     }
     allFile(filter: { id: { in: $imagesIds } }) {
       nodes {
+        id
         childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid

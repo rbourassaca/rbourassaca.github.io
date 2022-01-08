@@ -1,3 +1,5 @@
+const { isTemplateExpression } = require("typescript")
+
 /**
  * Implement Gatsby's Node APIs in this file.
  *
@@ -11,6 +13,7 @@ exports.createPages = async ({ actions, graphql }) => {
         nodes {
           id
           slug
+          content
         }
       }
       allStrapiProjectCategories {
@@ -41,10 +44,17 @@ exports.createPages = async ({ actions, graphql }) => {
     let imagesIds = []
     if (pageType.content.length > 0) {
       pageType.content.map(item => {
-        if (item.strapi_component === "page.gallery") {
-          item.images.map(image => {
-            imagesIds.push(image.localFile___NODE)
-          })
+        switch (item.strapi_component) {
+          case "page.gallery":
+            item.images.map(image => {
+              imagesIds.push(image.localFile___NODE)
+            })
+            break
+          case "page.offered-services":
+            item.services.map(service => {
+              imagesIds.push(service.logo.localFile___NODE)
+            })
+            break
         }
       })
     }
@@ -57,6 +67,7 @@ exports.createPages = async ({ actions, graphql }) => {
       component: path.resolve("./src/template/page.js"),
       context: {
         id: page.id,
+        imagesIds: returnRequiredImagesIds(page),
       },
     })
   })
@@ -73,13 +84,12 @@ exports.createPages = async ({ actions, graphql }) => {
   })
 
   projects.forEach(project => {
-    let imagesIds = returnRequiredImagesIds(project)
     actions.createPage({
       path: project.project_category.slug + "/" + project.slug,
       component: path.resolve("./src/template/project.js"),
       context: {
         id: project.id,
-        imagesIds: imagesIds,
+        imagesIds: returnRequiredImagesIds(project),
       },
     })
   })
