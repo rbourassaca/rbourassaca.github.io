@@ -7,11 +7,9 @@ import "./offeredServices.scss"
 
 const OfferedServices = ({ services, images }) => {
   services.map(service => {
-    if (service.logo !== undefined) {
-      service.logo = images.find(
-        image => image.id === service.logo.localFile___NODE
-      )
-    }
+    service.logoSource = images.find(
+      image => image.id === service.logo.localFile___NODE
+    )
   })
 
   return (
@@ -22,7 +20,7 @@ const OfferedServices = ({ services, images }) => {
           {services.map((service, index) => (
             <figure key={index} className={"col-lg-" + 12 / services.length}>
               <Img
-                fluid={service.logo.childImageSharp.fluid}
+                fluid={service.logoSource.childImageSharp.fluid}
                 alt={`Logo pour ${service.name}`}
               />
               <figcaption>
