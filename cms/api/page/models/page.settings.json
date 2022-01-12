@@ -44,7 +44,8 @@
         "page.rich-text",
         "page.offered-services",
         "page.o-embed",
-        "page.gallery"
+        "page.gallery",
+        "page.table"
       ]
     },
     "featuredImage": {

@@ -10,6 +10,7 @@ import RichText from "../components/strapi/richText"
 import OfferedServices from "../components/strapi/offeredServices/offeredServices"
 import OEmbed from "../components/strapi/oEmbed/oEmbed"
 import Gallery from "../components/strapi/gallery/gallery"
+import Table from "../components/strapi/table/table"
 
 export const useStrapiComponents = (content, images) => {
   content.forEach(item => {
@@ -26,6 +27,10 @@ export const useStrapiComponents = (content, images) => {
         break
       case "page.gallery":
         item.strapi_component = () => Gallery({ images: images })
+        break
+      case "page.table":
+        item.strapi_component = () => Table({ items: item.tableRow })
+        break
     }
   })
 

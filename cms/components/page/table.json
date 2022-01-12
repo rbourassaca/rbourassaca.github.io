@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_page_tables",
+  "info": {
+    "name": "table",
+    "icon": "table"
+  },
+  "options": {},
+  "attributes": {
+    "tableRow": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.table-row"
+    }
+  }
+}

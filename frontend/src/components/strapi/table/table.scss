@@ -1,0 +1,18 @@
+@import "../../../styles/colors.scss";
+
+table.info{
+    color: $text;
+    tbody{
+        tr{
+            td{
+                border: none
+            }
+        }
+        tr:nth-child(2n){
+            background-color: lighten($background, 1);
+        }
+        tr:nth-child(2n+1){
+            background-color: darken($background, 4);
+        }
+    }
+}

@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_components_table_rows",
+  "info": {
+    "name": "tableRow",
+    "icon": "align-center",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "value": {
+      "type": "richtext",
+      "required": true
+    }
+  }
+}
