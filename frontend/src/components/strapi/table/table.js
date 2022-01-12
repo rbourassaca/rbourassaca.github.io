@@ -9,8 +9,8 @@ const Table = ({ items }) => {
     <section className="container">
       <BootstrapTable responsive className="info">
         <tbody>
-          {items.map(item => (
-            <tr>
+          {items.map((item, i) => (
+            <tr key={i}>
               <td>{item.name}</td>
               <td>
                 <ReactMarkdown>{item.value}</ReactMarkdown>
