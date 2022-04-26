@@ -1,4 +1,7 @@
 ---
 title: Accueil
-content: Ceci est un test.
+content: |-
+  # Bonjour!
+
+  ceci est un **test**.
 ---
