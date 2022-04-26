@@ -20,6 +20,7 @@
 		"@babel/preset-react": "^7.16.7",
 		"@netlify/plugin-nextjs": "^4.4.4",
 		"eslint": "8.14.0",
+		"eslint-config-next": "^12.1.5",
 		"frontmatter-markdown-loader": "^3.7.0"
 	}
 }
