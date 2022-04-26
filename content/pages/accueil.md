@@ -5,3 +5,6 @@ content: |-
 
   ceci est un **test**.
 ---
+# Bonjour!
+
+  *ceci* est un **test**.
