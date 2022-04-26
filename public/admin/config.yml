@@ -30,7 +30,7 @@ collections:
     files:
       - name: 'main'
         label: 'Principal'
-        file: 'content/menus/main.yml'
+        file: 'content/menus/main.md'
         fields:
           - name: 'item'
             label: 'Élément'
