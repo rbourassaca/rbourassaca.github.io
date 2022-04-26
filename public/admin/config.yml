@@ -16,7 +16,7 @@ collections:
       - { label: 'Titre', name: 'title', widget: 'string' }
       - { label: 'Date de publication', name: 'date', widget: 'date' }
       - { label: "Image mise de l'avant", name: 'thumbnail', widget: 'image' }
-      - { label: 'Contenu', name: 'content', widget: 'markdown' }
+      - { label: 'Contenu', name: 'body', widget: 'markdown' }
   - name: 'pages'
     label: 'Pages'
     folder: 'content/pages'
@@ -24,7 +24,7 @@ collections:
     slug: '{{slug}}'
     fields:
       - { label: 'Titre', name: 'title', widget: 'string' }
-      - { label: 'Contenu', name: 'content', widget: 'markdown' }
+      - { label: 'Contenu', name: 'body', widget: 'markdown' }
   - name: 'menus'
     label: 'Menus'
     files:
