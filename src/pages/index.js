@@ -1,12 +1,10 @@
-import * as React from "react"
-import { Helmet } from "react-helmet"
+import * as React from "react";
+import Seo from "../components/seo";
 
 const IndexPage = () => {
   return (
     <>
-      <Helmet
-        title="Gatsby site!"
-      />
+      <Seo title={"Gatsby site!"} />
       <main>
         <title>Home Page</title>
         <h1>
@@ -18,15 +16,15 @@ const IndexPage = () => {
           </span>
         </h1>
         <p>
-          Edit <code>src/pages/index.js</code> to see this page
-          update in real-time.{" "}
+          Edit <code>src/pages/index.js</code> to see this page update in
+          real-time.{" "}
           <span role="img" aria-label="Sunglasses smiley emoji">
             😎
           </span>
         </p>
       </main>
     </>
-  )
-}
+  );
+};
 
-export default IndexPage
+export default IndexPage;
