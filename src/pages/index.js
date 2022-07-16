@@ -6,7 +6,6 @@ const IndexPage = () => {
     <>
       <Seo title={"Gatsby site!"} />
       <main>
-        <title>Home Page</title>
         <h1>
           Congratulations
           <br />

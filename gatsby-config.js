@@ -6,7 +6,7 @@ module.exports = {
     siteUrl: `https://rbourassa.ca`,
   },
   plugins: [
-    "gatsby-plugin-sass",
+    "gatsby-plugin-postcss",
     {
       resolve: "gatsby-plugin-google-analytics",
       options: {
