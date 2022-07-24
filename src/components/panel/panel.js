@@ -1,8 +1,15 @@
 import React from "react";
 import backgroundHighlightColors from "../../lib/backgroundHighlightColors";
 
-const Panel = ({ children, className, title, highlightColor }) => {
-  let colorClass = backgroundHighlightColors(highlightColor);
+const Panel = ({ children, className, title, highlightColors }) => {
+  if (typeof highlightColors !== "undefined") {
+    if (Array.isArray(highlightColors)) {
+    } else {
+      highlightColors = [highlightColors];
+    }
+  } else {
+    highlightColors = [];
+  }
   return (
     <div
       className={
@@ -11,13 +18,17 @@ const Panel = ({ children, className, title, highlightColor }) => {
       }
     >
       <h2 className={"text-xl font-bold flex flex-row items-center"}>
-        {highlightColor ? (
-          <span
-            className={
-              "w-2 h-2 rounded-full mr-2 " + colorClass.backgroundHighlightColor
-            }
-          />
-        ) : null}
+        {highlightColors.map((color) => {
+          color = backgroundHighlightColors(color);
+          return (
+            <span
+              className={
+                "w-2 h-2 rounded-full mr-2 " + color.backgroundHighlightColor
+              }
+            />
+          );
+        })}
+
         {title}
       </h2>
       {children}

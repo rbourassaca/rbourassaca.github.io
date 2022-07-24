@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import ProfilePicture from "./picture";
 import Cover from "./cover";
 import Socials from "../socials";
 import Filter from "../filter";
+import Project from "../project";
 import { graphql, useStaticQuery } from "gatsby";
 import ReactMarkdown from "react-markdown";
 import Panel, { PanelContainer } from "../panel";
@@ -12,6 +13,7 @@ const Profile = () => {
     directus: {
       frontendSettings: { ...fs },
       categories: [...cat],
+      projects: [...proj],
     },
   } = useStaticQuery(graphql`
     query {
@@ -36,9 +38,37 @@ const Profile = () => {
           color
           title
         }
+        projects {
+          id
+          slug
+          title
+          status
+          oEmbed
+          content
+          gallery {
+            directus_files_id {
+              id
+            }
+          }
+          categories {
+            categories_id {
+              id
+              title
+              color
+            }
+          }
+          tags {
+            tags_id {
+              id
+              title
+              color
+            }
+          }
+        }
       }
     }
   `);
+  const [projects, setProjects] = useState(proj);
   return (
     <div className={"h-screen"}>
       <Cover />
@@ -57,15 +87,9 @@ const Profile = () => {
         </PanelContainer>
         <PanelContainer className={"w-full"}>
           <Filter categories={cat} />
-          <Panel title={"Example 01"} highlightColor={"#84CC16"}>
-            <p>... example 01</p>
-          </Panel>
-          <Panel title={"Example 02"}>
-            <p>... example 02</p>
-          </Panel>
-          <Panel title={"Example 03"}>
-            <p>... example 03</p>
-          </Panel>
+          {projects.map((project) => (
+            <Project key={project.id} project={project} />
+          ))}
         </PanelContainer>
       </div>
     </div>
