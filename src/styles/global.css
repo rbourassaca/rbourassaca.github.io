@@ -6,10 +6,13 @@
     *{
         @apply antialiased;
     }
+    body{
+        @apply bg-gray-50 dark:bg-gray-900;
+    }
     a,p,h1,h2,h3,h5,h4,h6{
-        @apply text-gray-700;
+        @apply text-gray-700 dark:text-gray-50;
     }
     svg{
-        @apply fill-gray-700;
+        @apply fill-gray-700 dark:fill-gray-50;
     }
 }

@@ -9,7 +9,7 @@ const ProfilePicture = ({ picture, alt }) => {
         alt={alt}
         image={picture}
         className={
-          "rounded-full -top-20 -mb-20 aspect-square w-56 border-4 border-white"
+          "rounded-full -top-20 -mb-20 aspect-square w-56 border-4 border-gray-50 dark:border-gray-900"
         }
       />
     </div>
