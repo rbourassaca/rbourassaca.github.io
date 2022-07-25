@@ -1,7 +1,7 @@
 import React from "react";
 
 const Cover = () => {
-  return <div className={"bg-gray-800 h-1/4 min-h-[6rem] w-screen"}></div>;
+  return <div className={"bg-gray-800 h-40 lg:h-80 w-full"}></div>;
 };
 
 export default Cover;

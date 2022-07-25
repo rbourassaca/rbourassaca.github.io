@@ -70,7 +70,7 @@ const Profile = () => {
   `);
   const [projects, setProjects] = useState(proj);
   return (
-    <div className={"h-screen"}>
+    <>
       <Cover />
       <ProfilePicture picture={fs.profile.imageFile} alt={fs.profile.title} />
       <h1 className={"font-bold text-3xl text-center ml-8 mr-8"}>{fs.name}</h1>
@@ -92,7 +92,7 @@ const Profile = () => {
           ))}
         </PanelContainer>
       </div>
-    </div>
+    </>
   );
 };
 
