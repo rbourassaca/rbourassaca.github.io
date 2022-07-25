@@ -18,10 +18,11 @@ const Panel = ({ children, className, title, highlightColors }) => {
       }
     >
       <h2 className={"text-xl font-bold flex flex-row items-center"}>
-        {highlightColors.map((color) => {
+        {highlightColors.map((color, i) => {
           color = backgroundHighlightColors(color);
           return (
             <span
+              key={i}
               className={
                 "w-2 h-2 rounded-full mr-2 " + color.backgroundHighlightColor
               }
