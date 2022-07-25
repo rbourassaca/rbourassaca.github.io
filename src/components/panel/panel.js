@@ -17,7 +17,7 @@ const Panel = ({ children, className, title, highlightColors }) => {
         className
       }
     >
-      <h2 className={"text-xl font-bold flex flex-row items-center"}>
+      <h2 className={"text-xl font-bold flex flex-row items-center capitalize"}>
         {highlightColors.map((color, i) => {
           color = backgroundHighlightColors(color);
           return (
