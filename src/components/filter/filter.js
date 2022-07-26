@@ -26,19 +26,20 @@ const Filter = ({ categories, setProjectState, projects }) => {
         }),
       ]);
       setProjectState((prevState) => {
-        let result = [...prevState, ...projects];
-        result = [...new Set(result)].filter((item) => {
-          let status = toggle.length <= 1;
-          item.categories.forEach((cat) => {
-            if (status === false) {
-              toggle.forEach((tog) => {
-                status = cat.categories_id.id !== tog;
-              });
-            }
+        let arr = [...new Set([...prevState, ...projects])];
+        if (toggle.length > 1) {
+          return arr.filter((item) => {
+            let result = false;
+            item.categories.forEach((cat) => {
+              if (result === false) {
+                result = cat.categories_id.id !== id;
+              }
+            });
+            return result;
           });
-          return status;
-        });
-        return result;
+        } else {
+          return arr;
+        }
       });
     }
   };
