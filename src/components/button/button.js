@@ -6,7 +6,7 @@ const Button = ({ highlightColor, text, action, toggle }) => {
   return (
     <button
       className={
-        "group flex flex-row items-center space-x-1 bg-gray-100 dark:bg-gray-700 pt-1 pb-1 pl-4 pr-4 rounded-full transition-colors" +
+        "group flex flex-row items-center space-x-1 bg-gray-100 dark:bg-gray-700 pt-1 pb-1 pl-4 pr-4 rounded-full transition active:opacity-80" +
         (toggle
           ? " " +
             colorClass.backgroundHighlightColor +
