@@ -73,7 +73,9 @@ const Profile = () => {
     <>
       <Cover />
       <ProfilePicture picture={fs.profile.imageFile} alt={fs.profile.title} />
-      <h1 className={"font-bold text-3xl text-center ml-8 mr-8"}>{fs.name}</h1>
+      <h1 className={"font-bold text-3xl text-center ml-8 mr-8 mt-1"}>
+        {fs.name}
+      </h1>
       <div
         className={
           "flex flex-col space-y-8 lg:flex-row lg:space-x-8 lg:space-y-0 m-8"
