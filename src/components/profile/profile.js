@@ -86,7 +86,11 @@ const Profile = () => {
           </Panel>
         </PanelContainer>
         <PanelContainer className={"w-full"}>
-          <Filter categories={cat} />
+          <Filter
+            categories={cat}
+            setProjectState={setProjects}
+            projects={proj}
+          />
           {projects.map((project) => (
             <Project key={project.id} project={project} />
           ))}
