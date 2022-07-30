@@ -2,7 +2,7 @@ const filterCategories = (id, toggle, setToggle, setProjectState, projects) => {
   if (toggle.includes(id) === false) {
     setToggle((prevState) => [...prevState, id]);
     setProjectState((prevState) => [
-      ...prevState.filter((item) => fl(item, id)),
+      ...prevState.filter((item) => filterCategoriesItems(item, id)),
     ]);
   } else {
     setToggle((prevState) => [
@@ -13,7 +13,7 @@ const filterCategories = (id, toggle, setToggle, setProjectState, projects) => {
     setProjectState((prevState) => {
       let arr = [...new Set([...prevState, ...projects])];
       if (toggle.length > 1) {
-        return arr.filter((item) => fl(item, id, true));
+        return arr.filter((item) => filterCategoriesItems(item, id, true));
       } else {
         return arr;
       }
@@ -21,7 +21,7 @@ const filterCategories = (id, toggle, setToggle, setProjectState, projects) => {
   }
 };
 
-const fl = (item, id, reverse) => {
+const filterCategoriesItems = (item, id, reverse) => {
   let result = false;
   item.categories.forEach((cat) => {
     if (result === false) {
