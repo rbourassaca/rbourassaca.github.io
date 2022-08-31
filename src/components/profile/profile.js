@@ -83,7 +83,7 @@ const Profile = () => {
 					"flex flex-col space-y-8 lg:flex-row lg:space-x-8 lg:space-y-0 p-8 max-w-screen-xl m-auto"
 				}
 			>
-				<PanelContainer className={"w-full lg:w-1/4"}>
+				<PanelContainer className={"w-full lg:w-80"}>
 					<Panel title={"À propos"}>
 						<ReactMarkdown>{fs.bio}</ReactMarkdown>
 						<Socials email={fs.email} links={fs.socialMedia} />
