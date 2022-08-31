@@ -70,7 +70,7 @@ const Profile = () => {
 			}
 		}
 	`);
-	const [projects, setProjects] = useState(proj);
+	const [projects, setProjects] = useState(orderProjects(proj));
 	return (
 		<>
 			<Cover />
@@ -96,11 +96,9 @@ const Profile = () => {
 						projectState={projects}
 						projects={proj}
 					/>
-					{orderProjects(projects)
-						.reverse()
-						.map((project) => (
-							<Project key={project.id} project={project} />
-						))}
+					{projects.map((project) => (
+						<Project key={project.id} project={project} />
+					))}
 				</PanelContainer>
 			</div>
 		</>

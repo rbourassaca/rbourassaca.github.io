@@ -1,3 +1,5 @@
+import { orderProjects } from "./orderProjects";
+
 const filterCategories = (id, toggle, setToggle, setProjectState, projects) => {
 	if (toggle.includes(id) === false) {
 		setToggle((prevState) => [...prevState, id]);
@@ -11,7 +13,7 @@ const filterCategories = (id, toggle, setToggle, setProjectState, projects) => {
 			}),
 		]);
 		setProjectState((prevState) => {
-			let arr = [...new Set([...prevState, ...projects])];
+			let arr = orderProjects([...new Set([...prevState, ...projects])]);
 			if (toggle.length > 1) {
 				return arr.filter((item) => filterCategoriesItems(item, id, true));
 			} else {
