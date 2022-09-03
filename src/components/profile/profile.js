@@ -80,7 +80,7 @@ const Profile = () => {
 			</h1>
 			<div
 				className={
-					"flex flex-col space-y-8 lg:flex-row lg:space-x-8 lg:space-y-0 pt-8"
+					"flex flex-col space-y-8 lg:flex-row lg:space-x-8 lg:space-y-0 pt-8 pb-8"
 				}
 			>
 				<PanelContainer className={"w-full lg:w-80"}>
