@@ -4,7 +4,7 @@ const Cover = () => {
 	return (
 		<div
 			className={
-				"bg-white dark:bg-gray-800 h-40 lg:h-80 w-full bg-no-repeat bg-cover bg-center"
+				"bg-white dark:bg-gray-800 h-40 lg:h-80 w-full rounded-b bg-no-repeat bg-cover bg-center"
 			}
 			style={{
 				backgroundImage:
