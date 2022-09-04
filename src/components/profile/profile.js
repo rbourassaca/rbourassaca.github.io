@@ -72,7 +72,7 @@ const Profile = () => {
 	`);
 	const [projects, setProjects] = useState(orderProjects(proj));
 	return (
-		<div className="max-w-screen-xl m-auto pl-8 pr-8">
+		<div className="max-w-screen-xl m-auto pl-4 pr-4 sm:pl-8 sm:pr-8">
 			<Cover />
 			<ProfilePicture picture={fs.profile.imageFile} alt={fs.profile.title} />
 			<h1 className={"font-bold text-3xl text-center ml-8 mr-8 mt-1"}>
