@@ -6,7 +6,6 @@ type TagsProps = {
 };
 
 const Tag = ({ title, color }: TagsProps) => {
-	console.log(color);
 	return (
 		<span
 			className={

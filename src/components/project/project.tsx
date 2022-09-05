@@ -35,7 +35,6 @@ type ProjectType = {
 };
 
 const Project = ({ project }: ProjectType) => {
-	console.log(project);
 	let highlightColor: [string?] = [];
 	project.categories.forEach(({ categories_id }) => {
 		highlightColor.push(categories_id.color);
