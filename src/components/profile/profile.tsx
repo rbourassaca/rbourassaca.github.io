@@ -8,6 +8,7 @@ import { graphql, useStaticQuery } from "gatsby";
 import ReactMarkdown from "react-markdown";
 import Panel, { PanelContainer } from "../panel";
 import { orderProjects } from "../../lib/filter/orderProjects";
+import { ProjectType } from "../project/type";
 
 const Profile = () => {
 	const {
@@ -93,10 +94,9 @@ const Profile = () => {
 					<Filter
 						categories={cat}
 						setProjectState={setProjects}
-						projectState={projects}
 						projects={proj}
 					/>
-					{projects.map((project) => (
+					{projects.map((project: ProjectType) => (
 						<Project key={project.id} project={project} />
 					))}
 				</PanelContainer>

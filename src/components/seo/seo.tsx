@@ -1,7 +1,11 @@
 import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
-const Head = ({ title }) => {
+type SeoType = {
+	title?: string;
+};
+
+const Head = ({ title }: SeoType) => {
 	const {
 		directus: {
 			frontendSettings: { name },

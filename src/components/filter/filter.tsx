@@ -2,9 +2,22 @@ import React, { useState } from "react";
 import Panel from "../panel";
 import Button from "../button";
 import filterCategories from "../../lib/filter";
+import { ProjectType } from "../project/type";
 
-const Filter = ({ categories, setProjectState, projects }) => {
-	const [toggle, setToggle] = useState([]);
+type FilterType = {
+	categories: [
+		{
+			id: string;
+			color: string;
+			title: string;
+		}
+	];
+	setProjectState: Function;
+	projects: ProjectType;
+};
+
+const Filter = ({ categories, setProjectState, projects }: FilterType) => {
+	const [toggle, setToggle] = useState<[string?]>([]);
 
 	return (
 		<Panel title={"Filtrer les éléments"}>

@@ -2,39 +2,13 @@ import React from "react";
 import ReactMarkdown from "react-markdown";
 import Panel from "../panel";
 import Tag from "../tag";
+import { ProjectType } from "./type";
 
-type ProjectType = {
-	project: {
-		categories: [
-			{
-				categories_id: {
-					color: string;
-					id: string;
-					title: string;
-				};
-			}
-		];
-		content: string;
-		date_created: string;
-		gallery: [];
-		id: string;
-		oEmbed: [];
-		slug: string;
-		status: string;
-		tags: [
-			{
-				tags_id: {
-					color: string;
-					id: string;
-					title: string;
-				};
-			}
-		];
-		title: string;
-	};
-};
+interface ProjectInterface {
+	project: ProjectType;
+}
 
-const Project = ({ project }: ProjectType) => {
+const Project = ({ project }: ProjectInterface) => {
 	let highlightColor: [string?] = [];
 	project.categories.forEach(({ categories_id }) => {
 		highlightColor.push(categories_id.color);
