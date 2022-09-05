@@ -1,6 +1,13 @@
 import React from "react";
 
-const Panel = ({ children, className, title, highlightColors }) => {
+type PanelType = {
+	children?: React.ReactNode;
+	className?: string;
+	title: string;
+	highlightColors?: [string?];
+};
+
+const Panel = ({ children, className, title, highlightColors }: PanelType) => {
 	return (
 		<div
 			className={
