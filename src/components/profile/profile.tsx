@@ -72,6 +72,7 @@ const Profile = () => {
 		}
 	`);
 	const [projects, setProjects] = useState(orderProjects(proj));
+	console.log(projects.length);
 	return (
 		<>
 			<Cover />
@@ -91,14 +92,20 @@ const Profile = () => {
 					</Panel>
 				</PanelContainer>
 				<PanelContainer className={"w-full"}>
-					<Filter
-						categories={cat}
-						setProjectState={setProjects}
-						projects={proj}
-					/>
-					{projects.map((project: ProjectType) => (
-						<Project key={project.id} project={project} />
-					))}
+					{projects.length > 0 ? (
+						<>
+							<Filter
+								categories={cat}
+								setProjectState={setProjects}
+								projects={proj}
+							/>
+							{projects.map((project: ProjectType) => (
+								<Project key={project.id} project={project} />
+							))}
+						</>
+					) : (
+						<p>Il n'y a aucun projet à présenter pour l'instant.</p>
+					)}
 				</PanelContainer>
 			</div>
 		</>
