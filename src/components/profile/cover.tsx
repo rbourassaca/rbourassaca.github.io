@@ -1,16 +1,21 @@
+import { GatsbyImage, getImage, ImageDataLike } from "gatsby-plugin-image";
 import React from "react";
 
-const Cover = () => {
+type props = {
+	picture: ImageDataLike;
+	title: string;
+};
+
+const Cover = ({ picture, title }: props) => {
+	let pictureObj: any = getImage(picture);
 	return (
-		<div
+		<GatsbyImage
+			alt={title}
+			image={pictureObj}
 			className={
 				"bg-white dark:bg-gray-800 h-40 lg:h-80 w-full rounded-b bg-no-repeat bg-cover bg-center"
 			}
-			style={{
-				backgroundImage:
-					"url(https://source.unsplash.com/category/wallpaper/1200x800)",
-			}}
-		></div>
+		/>
 	);
 };
 

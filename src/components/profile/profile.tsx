@@ -25,6 +25,15 @@ const Profile = () => {
 					bio
 					socialMedia
 					email
+					cover {
+						id
+						title
+						imageFile {
+							childImageSharp {
+								gatsbyImageData
+							}
+						}
+					}
 					profile {
 						id
 						title
@@ -72,10 +81,9 @@ const Profile = () => {
 		}
 	`);
 	const [projects, setProjects] = useState(orderProjects(proj));
-	console.log(projects.length);
 	return (
 		<>
-			<Cover />
+			<Cover picture={fs.cover.imageFile} title={fs.cover.title} />
 			<ProfilePicture picture={fs.profile.imageFile} alt={fs.profile.title} />
 			<h1 className={"font-bold text-3xl text-center ml-8 mr-8 mt-1"}>
 				{fs.name}
