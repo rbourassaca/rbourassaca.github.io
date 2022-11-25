@@ -11,8 +11,8 @@ const Panel = ({ children, className, title, highlightColors }: PanelType) => {
 	return (
 		<div
 			className={
-				"bg-white border border-gray-100 dark:border-gray-900 dark:bg-gray-800 rounded shadow-lg flex flex-col space-y-3 p-8 h-fit " +
-				className
+				"bg-white border border-gray-100 dark:border-gray-900 dark:bg-gray-800 rounded shadow-lg flex flex-col space-y-3 p-8 h-fit"
+				+ (className !== undefined ? " " + className : "")
 			}
 		>
 			<h2 className={"text-xl font-bold flex flex-row items-center capitalize"}>
