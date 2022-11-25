@@ -14,7 +14,11 @@ const Project = ({ project }: ProjectInterface) => {
 		highlightColor.push(categories_id.color);
 	});
 	return (
-		<Panel title={project.title} highlightColors={highlightColor}>
+		<Panel
+			title={project.title}
+			highlightColors={highlightColor}
+			className={"hover:border-gray-300 hover:dark:border-gray-700 hover:cursor-pointer"}
+		>
 			{project.tags.length > 0 && (
 				<div className="flex flex-row space-x-2 items-center">
 					{project.tags.map((tag) => (
