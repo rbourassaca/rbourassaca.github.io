@@ -1,25 +1,13 @@
 import React from "react";
-import { graphql, useStaticQuery } from "gatsby";
+import { useSeoData } from "../../hooks/useSeoData";
 
 type SeoType = {
 	title?: string;
 };
 
 const Head = ({ title }: SeoType) => {
-	const {
-		directus: {
-			frontendSettings: { name },
-		},
-	} = useStaticQuery(graphql`
-		query {
-			directus {
-				frontendSettings {
-					name
-				}
-			}
-		}
-	`);
-	return title ? <title>{title + " | " + name}</title> : <title>{name}</title>;
+	const seoData = useSeoData()
+	return title ? <title>{title + " | " + seoData.site_name}</title> : <title>{seoData.site_name}</title>;
 };
 
 export default Head;

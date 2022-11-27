@@ -10,7 +10,7 @@ import {
 } from "../icons";
 
 type SocialsType = {
-	links: [{ url: string }];
+	links: [string];
 	email: string;
 };
 
@@ -26,7 +26,7 @@ const Socials = ({ links, email }: SocialsType) => {
 			)}
 			{links.map((link) => {
 				let Icon;
-				switch (new URL(link.url).host.replace("www.", "").split(".")[0]) {
+				switch (new URL(link).host.replace("www.", "").split(".")[0]) {
 					case "facebook":
 						Icon = Facebook;
 						break;
@@ -48,8 +48,8 @@ const Socials = ({ links, email }: SocialsType) => {
 				}
 				return (
 					<a
-						key={link.url}
-						href={link.url}
+						key={link}
+						href={link}
 						target={"_blank"}
 						rel="noreferrer"
 						className={"block w-10"}
