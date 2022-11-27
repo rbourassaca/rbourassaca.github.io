@@ -4,89 +4,22 @@ import Cover from "./cover";
 import Socials from "../socials";
 import Filter from "../filter";
 import Project from "../project";
-import { graphql, useStaticQuery } from "gatsby";
 import ReactMarkdown from "react-markdown";
 import Panel, { PanelContainer } from "../panel";
 import { orderProjects } from "../../lib/filter/orderProjects";
 import { ProjectType } from "../project/type";
+import { useProfileData } from "../../hooks/useProfileData";
 
 const Profile = () => {
-	const {
-		directus: {
-			frontendSettings: { ...fs },
-			categories: [...cat],
-			projects: [...proj],
-		},
-	} = useStaticQuery(graphql`
-		query {
-			directus {
-				frontendSettings {
-					name
-					bio
-					socialMedia
-					email
-					cover {
-						id
-						title
-						imageFile {
-							childImageSharp {
-								gatsbyImageData
-							}
-						}
-					}
-					profile {
-						id
-						title
-						imageFile {
-							childImageSharp {
-								gatsbyImageData
-							}
-						}
-					}
-				}
-				categories {
-					id
-					color
-					title
-				}
-				projects {
-					id
-					slug
-					title
-					status
-					oEmbed
-					content
-					date_created
-					gallery {
-						directus_files_id {
-							id
-						}
-					}
-					categories {
-						categories_id {
-							id
-							title
-							color
-						}
-					}
-					tags {
-						tags_id {
-							id
-							title
-							color
-						}
-					}
-				}
-			}
-		}
-	`);
+	const profileData = useProfileData()
+	const proj:[] = [];
 	const [projects, setProjects] = useState(orderProjects(proj));
 	return (
 		<>
-			<Cover picture={fs.cover.imageFile} title={fs.cover.title} />
-			<ProfilePicture picture={fs.profile.imageFile} alt={fs.profile.title} />
+			<Cover picture={profileData.coverImage} title={"Image d'entête"} />
+			<ProfilePicture picture={profileData.profilePicture} alt={"Image du profile"} />
 			<h1 className={"font-bold text-3xl text-center ml-8 mr-8 mt-1"}>
-				{fs.name}
+				{profileData.name}
 			</h1>
 			<div
 				className={
@@ -95,8 +28,8 @@ const Profile = () => {
 			>
 				<PanelContainer className={"w-full lg:w-80"}>
 					<Panel title={"À propos"}>
-						<ReactMarkdown>{fs.bio}</ReactMarkdown>
-						<Socials email={fs.email} links={fs.socialMedia} />
+						<ReactMarkdown>{profileData.bio}</ReactMarkdown>
+						<Socials email={profileData.email} links={profileData.socialMedia} />
 					</Panel>
 				</PanelContainer>
 				<PanelContainer className={"w-full"}>
