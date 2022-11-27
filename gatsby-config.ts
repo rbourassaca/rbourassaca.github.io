@@ -1,16 +1,20 @@
-require("dotenv").config();
-
 module.exports = {
 	siteMetadata: {
 		title: `Raphael Bourassa`,
 		siteUrl: `https://rbourassa.ca`,
 	},
 	plugins: [
+		{
+			resolve: "gatsby-plugin-mdx",
+			options: {
+				extensions: [".mdx", ".md"]
+			}
+		},
 		"gatsby-plugin-postcss",
 		{
 			resolve: "gatsby-plugin-google-analytics",
 			options: {
-				trackingId: process.env.GOOGLETRACKINGID,
+				trackingId: "UA-141806665-1",
 			},
 		},
 		"gatsby-plugin-image",
@@ -18,7 +22,7 @@ module.exports = {
 		{
 			resolve: "gatsby-plugin-manifest",
 			options: {
-				icon: "src/images/icon.png",
+				icon: "./src/content/images/icon.png",
 			},
 		},
 		{
@@ -33,19 +37,26 @@ module.exports = {
 		{
 			resolve: "gatsby-source-filesystem",
 			options: {
+				name: "settings",
+				path: "./src/content/settings",
+			},
+			__key: "settings",
+		},
+		{
+			resolve: "gatsby-source-filesystem",
+			options: {
 				name: "images",
-				path: "./src/images/",
+				path: "./src/content/images",
 			},
 			__key: "images",
 		},
 		{
-			resolve: "@directus/gatsby-source-directus",
+			resolve: "gatsby-source-filesystem",
 			options: {
-				url: process.env.APIURL,
-				auth: {
-					token: process.env.APIKEY,
-				},
+				name: "projects",
+				path: "./src/content/projects",
 			},
+			__key: "projects",
 		},
 	],
 };
