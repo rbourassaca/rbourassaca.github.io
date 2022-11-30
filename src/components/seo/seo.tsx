@@ -1,5 +1,5 @@
 import React from "react";
-import { useSeoData } from "../../hooks/useSeoData";
+import { useSeoData } from "../../lib/hooks/useSeoData";
 
 type SeoType = {
 	title?: string;

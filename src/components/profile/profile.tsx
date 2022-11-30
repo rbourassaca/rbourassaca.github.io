@@ -8,7 +8,8 @@ import ReactMarkdown from "react-markdown";
 import Panel, { PanelContainer } from "../panel";
 import { orderProjects } from "../../lib/filter/orderProjects";
 import { ProjectType } from "../project/type";
-import { useProfileData } from "../../hooks/useProfileData";
+import { useProfileData } from "../../lib/hooks/useProfileData";
+import { useProjectData } from "../../lib/hooks/useProjectData";
 
 const Profile = () => {
 	const profileData = useProfileData()
