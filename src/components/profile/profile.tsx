@@ -13,6 +13,7 @@ import { useProjectData } from "../../lib/hooks/useProjectData";
 
 const Profile = () => {
 	const profileData = useProfileData()
+	const projectsData = useProjectData()
 	const proj:[] = [];
 	const [projects, setProjects] = useState(orderProjects(proj));
 	return (
