@@ -1,19 +1,35 @@
 <script lang="ts">
 	import 'normalize.css';
+	import CoverImage from "$lib/components/coverImage.svelte";
+	import ProfilePicture from "$lib/components/profilePicture.svelte";
+	import Footer from "$lib/components/footer.svelte";
 </script>
 
-<slot />
+<CoverImage />
+<ProfilePicture />
+<div class='content'>
+	<slot />
+</div>
+<Footer />
 
-<!--suppress CssUnknownTarget -->
+
 <style lang="scss">
-	@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+	@use "../lib/styles/var";
+	@use "../lib/styles/font";
 
 	:global{
-		body {
-			font-family: 'Montserrat', sans-serif;
-			margin: 2rem 4rem;
-			-webkit-font-smoothing: antialiased;
-			-moz-osx-font-smoothing: grayscale;
+		body{
+			display: flex;
+			flex-direction: column;
+			min-height: 100vh;
+			margin: auto;
+			padding: var.$spacingPagePaddingY var.$spacingPagePaddingX;
+			max-width: var.$spacingPageWidth;
+			background-color: var.$colorBg;
+			div.content{
+				flex: 1;
+			}
 		}
 	}
+
 </style>
