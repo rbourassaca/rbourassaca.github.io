@@ -9,6 +9,6 @@
 <style lang='scss'>
 	@use '../styles/var';
 	footer{
-		padding: var.$spacingBetweenElements;
+		padding: var.$spacingBetweenElements 0;
 	}
 </style>
