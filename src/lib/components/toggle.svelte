@@ -4,6 +4,8 @@
 </label>
 
 <style lang="scss">
+	@use '../styles/var.scss';
+
 	$padding: 4px;
 	$sizeX: 55px;
 	/*	$sizeY
@@ -11,10 +13,10 @@
 	- calc($sizeX / 2) + $padding pour un point rond
 	*/
 	$sizeY: calc($sizeX / 2) + $padding;
-	$transitionSpeed: 0.2s;
-	$colorOn: green;
-	$colorOff: gray;
-	$colorDot: white;
+	$transitionSpeed: 0.15s all ease-in-out;
+	$colorOn: var(--colorOn, green);
+	$colorOff: var(--colorOff, gray);
+	$colorDot: var.$colorBg;
 
 	// Le toggle
 	label {
