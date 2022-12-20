@@ -1,14 +1,14 @@
 <script lang="ts">
-	const year = new Date().getFullYear()
+	const year = new Date().getFullYear();
 </script>
 
 <footer>
 	&copy; Raphael Bourassa {year}
 </footer>
 
-<style lang='scss'>
+<style lang="scss">
 	@use '../styles/var';
-	footer{
+	footer {
 		padding: var.$spacingBetweenElements 0;
 	}
 </style>

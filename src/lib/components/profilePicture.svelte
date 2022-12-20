@@ -1,12 +1,9 @@
-<img
-	src='https://via.placeholder.com/200'
-	alt='Profile'
-/>
+<img src="https://via.placeholder.com/200" alt="Profile" />
 
-<style lang='scss'>
+<style lang="scss">
 	@use '../styles/var';
 	$size: 200;
-	img{
+	img {
 		height: $size;
 		width: $size;
 		align-self: center;
