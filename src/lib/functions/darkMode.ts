@@ -7,6 +7,11 @@ type darkModeSetterFunction = (value: boolean) => void;
 */
 const watchDarkMode = (darkModeSetter: darkModeSetterFunction) => {
 	window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+		if (e.matches) {
+			setDarkMode(false);
+		} else {
+			setDarkMode(true);
+		}
 		darkModeSetter(e.matches ? false : true);
 	});
 };
@@ -26,8 +31,22 @@ export const detectDarkMode = (
 		watchDarkMode(darkModeSetter);
 	}
 	if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+		setDarkMode(false);
 		return false;
 	} else {
+		setDarkMode(true);
 		return true;
+	}
+};
+
+/*
+	On appel la fonction setDarkMode afin d'ajouter ou enlever
+	la classe dark du body.
+*/
+export const setDarkMode = (value: boolean) => {
+	if (value === false) {
+		document.documentElement.classList.add('dark');
+	} else {
+		document.documentElement.classList.remove('dark');
 	}
 };

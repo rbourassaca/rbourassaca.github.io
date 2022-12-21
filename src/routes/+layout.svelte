@@ -17,6 +17,7 @@
 <style lang="scss">
 	@use '../lib/styles/var';
 	@use '../lib/styles/font';
+	@use '../lib/styles/colors.scss';
 
 	:global {
 		body {
@@ -27,7 +28,6 @@
 			margin: auto;
 			padding: var.$spacingPagePaddingY var.$spacingPagePaddingX;
 			max-width: var.$spacingPageWidth;
-			background-color: var.$colorBg;
 			div.content {
 				flex: 1;
 			}

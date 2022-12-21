@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { detectDarkMode } from '$lib/functions/darkMode';
+	import { detectDarkMode, setDarkMode } from '$lib/functions/darkMode';
 	import Toggle from '$lib/components/toggle.svelte';
 	let dark: boolean;
 	/*
@@ -26,7 +26,7 @@
 </script>
 
 <span class="darkModeToggle">
-	<Toggle enabled={dark} --colorOn="#f59e0b" --colorOff="#1e3a8a" />
+	<Toggle enabled={dark} --colorOn="#f59e0b" --colorOff="#1e3a8a" action={setDarkMode} />
 </span>
 
 <style lang="scss">

@@ -1,0 +1,23 @@
+@mixin light {
+	--color-background: #f9f9f9;
+	--color-text: #000;
+}
+
+@mixin dark {
+	--color-background: #000;
+	--color-text: #f9f9f9;
+}
+
+:global {
+	:root {
+		@include light;
+	}
+	:root.dark {
+		@include dark;
+	}
+
+	body {
+		background-color: var(--color-background);
+		color: var(--color-text);
+	}
+}

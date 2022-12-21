@@ -1,9 +1,13 @@
 <script lang="ts">
 	export let enabled: boolean;
+	export let action: (value: boolean) => void;
+	const performAction = (e: Event) => {
+		action((<HTMLInputElement>e.target).checked);
+	};
 </script>
 
 <label>
-	<input type="checkbox" checked={enabled} />
+	<input type="checkbox" checked={enabled} on:change={performAction} />
 	<span />
 </label>
 
@@ -20,7 +24,7 @@
 	$transitionSpeed: 0.15s all ease-in-out;
 	$colorOn: var(--colorOn, green);
 	$colorOff: var(--colorOff, gray);
-	$colorDot: var(--colorDot, var.$colorBg);
+	$colorDot: var(--colorDot, var(--color-background));
 
 	// Le toggle
 	label {
