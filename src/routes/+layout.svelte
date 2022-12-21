@@ -1,14 +1,12 @@
 <script lang="ts">
 	import 'normalize.css';
+	import DarkModeToggle from '$lib/components/darkModeToggle.svelte';
 	import CoverImage from '$lib/components/coverImage.svelte';
 	import ProfilePicture from '$lib/components/profilePicture.svelte';
 	import Footer from '$lib/components/footer.svelte';
-	import Toggle from '$lib/components/toggle.svelte';
 </script>
 
-<span class="darkModeToggle">
-	<Toggle --colorOn="#f59e0b" --colorOff="#1e3a8a" />
-</span>
+<DarkModeToggle />
 <CoverImage />
 <ProfilePicture />
 <div class="content">
@@ -33,13 +31,6 @@
 			div.content {
 				flex: 1;
 			}
-		}
-
-		span.darkModeToggle {
-			position: absolute;
-			top: 0;
-			right: var.$spacingPagePaddingX;
-			padding: 1rem;
 		}
 	}
 </style>

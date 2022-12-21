@@ -1,5 +1,9 @@
+<script lang="ts">
+	export let enabled: boolean;
+</script>
+
 <label>
-	<input type="checkbox" />
+	<input type="checkbox" checked={enabled} />
 	<span />
 </label>
 
@@ -16,7 +20,7 @@
 	$transitionSpeed: 0.15s all ease-in-out;
 	$colorOn: var(--colorOn, green);
 	$colorOff: var(--colorOff, gray);
-	$colorDot: var.$colorBg;
+	$colorDot: var(--colorDot, var.$colorBg);
 
 	// Le toggle
 	label {
