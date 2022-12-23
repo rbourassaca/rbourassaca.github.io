@@ -4,15 +4,28 @@
 	import CoverImage from '$lib/components/coverImage.svelte';
 	import ProfilePicture from '$lib/components/profilePicture.svelte';
 	import Footer from '$lib/components/footer.svelte';
+	import Panel from '$lib/components/panel.svelte';
 </script>
+
+<svelte:head>
+	<title>Raphael Bourassa</title>
+</svelte:head>
 
 <DarkModeToggle />
 <CoverImage />
 <ProfilePicture />
-<div class="content">
-	<slot />
-</div>
-<Footer />
+<h1>Raphael Bourassa</h1>
+<section>
+	<div>
+		<Panel>
+			<p>Informations</p>
+		</Panel>
+		<Footer />
+	</div>
+	<div>
+		<slot />
+	</div>
+</section>
 
 <style lang="scss">
 	@use '../lib/styles/var';
@@ -26,10 +39,35 @@
 			flex-direction: column;
 			min-height: 100vh;
 			margin: auto;
-			padding: var.$spacingPagePaddingY var.$spacingPagePaddingX;
 			max-width: var.$spacingPageWidth;
-			div.content {
-				flex: 1;
+			padding: var.$spacingPagePaddingY 1rem;
+			@media screen and (min-width: var.$md) {
+				padding: var.$spacingPagePaddingY var.$spacingPagePaddingX;
+			}
+		}
+	}
+
+	h1 {
+		text-align: center;
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		column-gap: var.$spacingBetweenElements;
+		div:first-child {
+			width: 100%;
+		}
+		div:nth-child(2) {
+			width: 100%;
+		}
+		@media screen and (min-width: var.$lg) {
+			flex-direction: row;
+			div:first-child {
+				width: calc(1 / 3 * 100%);
+			}
+			div:nth-child(2) {
+				width: calc(2 / 3 * 100%);
 			}
 		}
 	}

@@ -1,11 +1,19 @@
 @mixin light {
-	--color-background: #f9f9f9;
-	--color-text: #000;
+	--color-background: #dbe7e4;
+	--color-panel-shadow1: #bac4c2;
+	--color-panel-shadow2: #fcffff;
+	--color-text: #2c3333;
+	--color-secondary: #a5c9ca;
+	--color-primary: #395b64;
 }
 
 @mixin dark {
-	--color-background: #000;
-	--color-text: #f9f9f9;
+	--color-background: #2c3333;
+	--color-panel-shadow1: #252b2b;
+	--color-panel-shadow2: #333b3b;
+	--color-text: #e7f6f2;
+	--color-secondary: #a5c9ca;
+	--color-primary: #395b64;
 }
 
 :global {
@@ -19,5 +27,11 @@
 	body {
 		background-color: var(--color-background);
 		color: var(--color-text);
+		a:link,
+		a:visited,
+		a:hover,
+		a:active {
+			color: var(--color-secondary);
+		}
 	}
 }

@@ -1,11 +1,20 @@
 /*
+|| Breakpoints
+*/
+$xs: 0;
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1400px;
+
+/*
 || Spacing
 */
-
 $spacingPagePaddingX: 2rem;
 $spacingPagePaddingY: 0rem;
-$spacingPageWidth: 1200px;
-$spacingBetweenElements: 1rem;
+$spacingPageWidth: $xxl;
+$spacingBetweenElements: 2rem;
 
 /*
 || General

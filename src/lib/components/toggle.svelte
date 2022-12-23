@@ -22,9 +22,9 @@
 	*/
 	$sizeY: calc($sizeX / 2) + $padding;
 	$transitionSpeed: 0.15s all ease-in-out;
-	$colorOn: var(--colorOn, green);
-	$colorOff: var(--colorOff, gray);
-	$colorDot: var(--colorDot, var(--color-background));
+	$colorOn: var(--colorOn, var(--color-background));
+	$colorOff: var(--colorOff, var(--color-background));
+	$colorDot: var(--colorDot, var(--color-secondary));
 
 	// Le toggle
 	label {

@@ -26,7 +26,7 @@
 </script>
 
 <span class="darkModeToggle">
-	<Toggle enabled={dark} --colorOn="#f59e0b" --colorOff="#1e3a8a" action={setDarkMode} />
+	<Toggle enabled={dark} action={setDarkMode} />
 </span>
 
 <style lang="scss">
