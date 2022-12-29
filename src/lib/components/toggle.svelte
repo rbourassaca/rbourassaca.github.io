@@ -21,7 +21,6 @@
 	- calc($sizeX / 2) + $padding pour un point rond
 	*/
 	$sizeY: calc($sizeX / 2) + $padding;
-	$transitionSpeed: 0.15s all ease-in-out;
 	$colorOn: var(--colorOn, var(--color-background));
 	$colorOff: var(--colorOff, var(--color-background));
 	$colorDot: var(--colorDot, var(--color-secondary));
@@ -47,7 +46,7 @@
 			right: 0;
 			bottom: 0;
 			background-color: $colorOff;
-			transition: $transitionSpeed;
+			transition: var.$transition;
 			border-radius: calc(#{$sizeX} / 2 - #{$padding});
 		}
 		// Le point du toggle
@@ -59,7 +58,7 @@
 			left: $padding;
 			bottom: $padding;
 			background-color: $colorDot;
-			transition: $transitionSpeed;
+			transition: var.$transition;
 			border-radius: calc(#{$sizeX} / 2 - #{$padding});
 		}
 		// Le fond tu toggle quand la checkbox est activé
