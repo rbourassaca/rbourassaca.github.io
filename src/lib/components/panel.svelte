@@ -11,5 +11,7 @@
 		height: fit-content;
 		border-radius: var.$borderRadius;
 		box-shadow: 5px 5px 10px var(--color-panel-shadow1), -5px -5px 10px var(--color-panel-shadow2);
+		display: flex;
+		flex-direction: column;
 	}
 </style>

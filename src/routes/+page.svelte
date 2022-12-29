@@ -1,1 +1,5 @@
-<p>Ceci est le contenu.</p>
+<script lang="ts">
+	import Filter from '$lib/components/filter.svelte';
+</script>
+
+<Filter />
