@@ -5,12 +5,16 @@
 </script>
 
 <section>
-	<Filter />
-	{#each projects as [path, module]}
-		<Panel>
-			<svelte:component this={module.default} />
-		</Panel>
-	{/each}
+	{#if projects.length > 0}
+		<Filter />
+		{#each projects as [path, module]}
+			<Panel>
+				<svelte:component this={module.default} />
+			</Panel>
+		{/each}
+	{:else}
+		<p>Aucun projet à afficher.</p>
+	{/if}
 </section>
 
 <style lang="scss">
