@@ -4,10 +4,18 @@
 	const projects = Object.entries(import.meta.glob('/src/content/projects/*.svx', { eager: true }));
 </script>
 
-<Filter />
+<section>
+	<Filter />
+	{#each projects as [path, module]}
+		<Panel>
+			<svelte:component this={module.default} />
+		</Panel>
+	{/each}
+</section>
 
-{#each projects as [path, module]}
-	<Panel>
-		<svelte:component this={module.default} />
-	</Panel>
-{/each}
+<style lang="scss">
+	section {
+		display: flex;
+		flex-direction: column;
+	}
+</style>
