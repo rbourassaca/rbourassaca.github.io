@@ -13,6 +13,7 @@
 		user-select: none;
 		color: var(--color-secondary);
 		display: flex;
+		align-items: center;
 		column-gap: var.$spacingBetweenElementsSmall;
 		padding: var.$spacingBetweenElementsSmall;
 		cursor: pointer;
