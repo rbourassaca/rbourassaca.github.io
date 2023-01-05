@@ -8,7 +8,7 @@
 	{#if projects.length > 0}
 		<Filter />
 		{#each projects as [path, module]}
-			<Panel>
+			<Panel post={true} slug="allo">
 				<svelte:component this={module.default} />
 			</Panel>
 		{/each}
