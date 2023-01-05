@@ -5,5 +5,11 @@
 		font-family: 'Montserrat', sans-serif;
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
+		a:link,
+		a:visited,
+		a:hover,
+		a:active {
+			text-decoration: none;
+		}
 	}
 }
