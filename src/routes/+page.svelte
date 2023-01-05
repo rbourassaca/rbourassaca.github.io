@@ -7,7 +7,6 @@
 
 <section>
 	{#if projects.length > 0}
-		<Filter />
 		{#each projects as [path, module]}
 			<Panel post={true} slug={getSlugFromPath(path)}>
 				<svelte:component this={module.default} />
