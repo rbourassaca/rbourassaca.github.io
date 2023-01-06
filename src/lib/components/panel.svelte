@@ -70,8 +70,12 @@
 		box-shadow: 5px 5px 10px var(--color-panel-shadow1), -5px -5px 10px var(--color-panel-shadow2);
 		display: flex;
 		flex-direction: column;
-		div:last-child {
+		> div:last-child {
 			display: flex;
+			flex-direction: column;
+			@media screen and (min-width: var.$sm) {
+				flex-direction: row;
+			}
 		}
 		div > div {
 			display: flex;

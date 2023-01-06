@@ -16,6 +16,7 @@
 		align-items: center;
 		column-gap: var.$spacingBetweenElementsSmall;
 		padding: var.$spacingBetweenElementsSmall;
+		width: fit-content;
 		cursor: pointer;
 		border-radius: var.$borderRadius;
 		:global {
