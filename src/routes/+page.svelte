@@ -2,7 +2,8 @@
 	import Filter from '$lib/components/filter.svelte';
 	import Panel from '$lib/components/panel.svelte';
 	import { getSlugFromPath } from '$lib/functions/getSlugFromPath';
-	const projects = Object.entries(import.meta.glob('/src/content/projects/*.svx', { eager: true }));
+	import { getProjects } from '$lib/functions/projects';
+	const projects = getProjects();
 </script>
 
 <section>

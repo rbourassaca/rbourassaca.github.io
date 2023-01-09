@@ -1,7 +1,6 @@
 <script lang="ts">
 	import type { PageData } from './$types';
 	export let data: PageData;
-
 	import Panel from '$lib/components/panel.svelte';
 	import Button from '$lib/components/button.svelte';
 </script>
@@ -17,7 +16,7 @@
 	</Button>
 </a>
 <Panel>
-	<h2>{data.slug}</h2>
+	<svelte:component this={data.project[1].default} />
 </Panel>
 
 <style lang="scss">
