@@ -1,16 +1,14 @@
 <script lang="ts">
-	import Filter from '$lib/components/filter.svelte';
+	import type { PageData } from './$types';
 	import Panel from '$lib/components/panel.svelte';
-	import { getSlugFromPath } from '$lib/functions/getSlugFromPath';
-	import { getProjects } from '$lib/functions/projects';
-	const projects = getProjects();
+	export let data: PageData;
 </script>
 
 <section>
-	{#if projects.length > 0}
-		{#each projects as [path, module]}
-			<Panel post={true} slug={getSlugFromPath(path)}>
-				<svelte:component this={module.default} />
+	{#if data.projects.length > 0}
+		{#each data.projects as project}
+			<Panel post={true} slug={project.slug}>
+				<svelte:component this={project.component} />
 			</Panel>
 		{/each}
 	{:else}

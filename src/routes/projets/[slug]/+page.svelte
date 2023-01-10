@@ -16,7 +16,7 @@
 	</Button>
 </a>
 <Panel>
-	<svelte:component this={data.project[1].default} />
+	<svelte:component this={data.project.component} />
 </Panel>
 
 <style lang="scss">
