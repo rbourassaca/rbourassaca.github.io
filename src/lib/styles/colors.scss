@@ -1,19 +1,19 @@
 @mixin light {
-	--color-background: #dbe7e4;
-	--color-panel-shadow1: #bac4c2;
-	--color-panel-shadow2: #fcffff;
-	--color-text: #2c3333;
-	--color-secondary: #a5c9ca;
-	--color-primary: #395b64;
+	--color-background: #eaeaeb;
+	--color-panel-shadow1: #d5d5d6;
+	--color-panel-shadow2: #f8f8fa;
+	--color-text: #424242;
+	--color-primary: #1e88e5;
+	--color-secondary: #2196f3;
 }
 
 @mixin dark {
-	--color-background: #2c3333;
-	--color-panel-shadow1: #252b2b;
-	--color-panel-shadow2: #333b3b;
-	--color-text: #e7f6f2;
-	--color-secondary: #a5c9ca;
-	--color-primary: #395b64;
+	--color-background: #21252b;
+	--color-panel-shadow1: #191c20;
+	--color-panel-shadow2: #2a2f37;
+	--color-text: #e4e9ff;
+	--color-primary: #1976d2;
+	--color-secondary: #1e88e5;
 }
 
 :global {
