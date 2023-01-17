@@ -1,26 +1,27 @@
 <script lang="ts">
 	import 'normalize.css';
-	import { metadata } from '/src/content/info.md';
 	import DarkModeToggle from '$lib/components/darkModeToggle.svelte';
 	import CoverImage from '$lib/components/coverImage.svelte';
 	import ProfilePicture from '$lib/components/profilePicture.svelte';
-	import Info from '$lib/components/info.svelte';
+	import Info from '$lib/content/info.svelte';
 	import Footer from '$lib/components/footer.svelte';
 	import Panel from '$lib/components/panel.svelte';
+
+	let title: string;
 </script>
 
 <svelte:head>
-	<title>{metadata.title}</title>
+	<title>{title}</title>
 </svelte:head>
 
 <DarkModeToggle />
 <CoverImage />
 <ProfilePicture />
-<h1>{metadata.title}</h1>
+<h1>{title}</h1>
 <section>
 	<div>
 		<Panel>
-			<Info />
+			<Info bind:title />
 		</Panel>
 		<Footer />
 	</div>
