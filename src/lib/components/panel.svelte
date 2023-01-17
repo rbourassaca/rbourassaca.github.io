@@ -7,7 +7,7 @@
 
 	let copyUrl = () => {
 		if (!shared) {
-			navigator.clipboard.writeText(window.location.origin + '/projets/' + slug);
+			navigator.clipboard.writeText(window.location.origin + '/projet/' + slug);
 			shared = true;
 			window.setTimeout(() => {
 				shared = false;
@@ -21,7 +21,7 @@
 	{#if post}
 		<div>
 			<div>
-				<a href="/projets/{slug}">
+				<a href="/projet/{slug}">
 					<Button>
 						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
 							<path

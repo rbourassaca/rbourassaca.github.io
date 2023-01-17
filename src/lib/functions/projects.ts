@@ -3,7 +3,7 @@ import { getSlugFromPath } from './getSlugFromPath';
 type project = { slug: string; path: string; component: any };
 
 export const getProjects = (): project[] => {
-	const glob_import = import.meta.glob('/src/content/projects/*.svx', { eager: true });
+	const glob_import = import.meta.glob('$lib/content/projects/*.svelte', { eager: true });
 	const projects = Object.entries(glob_import);
 	return projects.map(([path, module]: any) => {
 		return {
