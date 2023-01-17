@@ -29,9 +29,17 @@
 		color: var(--color-text);
 		a:link,
 		a:visited,
-		a:hover,
 		a:active {
 			color: var(--color-secondary);
+			svg {
+				fill: var(--color-secondary);
+			}
+		}
+		a:hover {
+			color: var(--color-primary);
+			svg {
+				fill: var(--color-primary);
+			}
 		}
 		svg {
 			fill: var(--color-text);
