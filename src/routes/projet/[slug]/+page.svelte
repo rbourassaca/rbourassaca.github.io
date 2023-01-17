@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { PageData } from './$types';
 	export let data: PageData;
-	import Panel from '$lib/components/panel.svelte';
+	import Panel from '$lib/components/panel/panel.svelte';
 	import Button from '$lib/components/button.svelte';
 </script>
 

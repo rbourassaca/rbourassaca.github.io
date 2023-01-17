@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { PageData } from './$types';
-	import Panel from '$lib/components/panel.svelte';
+	import Panel from '$lib/components/panel/panel.svelte';
 	export let data: PageData;
 </script>
 

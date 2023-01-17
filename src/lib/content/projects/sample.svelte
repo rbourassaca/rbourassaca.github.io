@@ -1,5 +1,8 @@
 <script lang="ts">
 	const title: string = 'Lorem ipsum';
+	const dateCreated = new Date('2022-01-17');
+	const dateUpdated = new Date('2022-01-17');
+	const tags: string[] = ['Tag 1', 'Tag 2'];
 </script>
 
 <h1>{title}</h1>
