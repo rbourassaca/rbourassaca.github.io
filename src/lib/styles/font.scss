@@ -11,5 +11,8 @@
 		a:active {
 			text-decoration: none;
 		}
+		p:not(:first-child) {
+			margin-top: 0;
+		}
 	}
 }
