@@ -1,7 +1,12 @@
 <script lang="ts" context="module">
 	import type { metadataType } from '$lib/types/project';
+	import { categories, tags } from './_projectMetadata';
 	export const metadata: metadataType = {
-		title: 'Lorem ipsum dolor'
+		title: 'Lorem ipsum dolor',
+		categories: [categories[0]],
+		tags: [tags[0], tags[1], tags[3]],
+		dateCreated: new Date('2022-01-19'),
+		dateUpdated: new Date('2022-01-19')
 	};
 </script>
 

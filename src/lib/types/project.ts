@@ -7,8 +7,11 @@ export type projectType = {
 
 export type metadataType = {
 	title: string;
-	categories?: string[];
-	tags?: string[];
+	categories?: categoryType[];
+	tags?: tagType[];
 	dateCreated?: Date;
 	dateUpdated?: Date;
 };
+
+export type categoryType = string;
+export type tagType = { name: string; colorHex: `#${string}` };
