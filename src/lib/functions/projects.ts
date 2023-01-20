@@ -1,15 +1,17 @@
+import type { projectType } from '$lib/types/project';
 import { getSlugFromPath } from './getSlugFromPath';
 
-type project = { slug: string; path: string; component: any };
-
-export const getProjects = (): project[] => {
-	const glob_import = import.meta.glob('$lib/content/projects/*.svelte', { eager: true });
+export const getProjects = (): projectType[] => {
+	const glob_import = import.meta.glob('$lib/content/projects/*.svelte', {
+		eager: true
+	});
 	const projects = Object.entries(glob_import);
-	return projects.map(([path, module]: any) => {
+	return projects.map(([path, module]: any): projectType => {
 		return {
 			slug: getSlugFromPath(path),
 			path,
-			component: module.default
+			component: module.default,
+			metadata: module.metadata
 		};
 	});
 };

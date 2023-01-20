@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { PageData } from './$types';
-	export let data: PageData;
+	import type { projectType } from '$lib/types/project';
+	export let data: { project: projectType };
 	import Panel from '$lib/components/panel/panel.svelte';
 	import Button from '$lib/components/button.svelte';
 </script>
@@ -16,6 +16,7 @@
 	</Button>
 </a>
 <Panel>
+	<h2>{data.project.metadata.title}</h2>
 	<svelte:component this={data.project.component} />
 </Panel>
 
