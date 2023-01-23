@@ -6,15 +6,35 @@
 	export let projectList: projectType[];
 	export let filteredProjects: projectType[];
 	let recentFirst: boolean = true;
+
 	const invert = (bool: boolean) => {
 		recentFirst = !bool;
-		filteredProjects = orderProjects(projectList, recentFirst);
+		filteredProjects = orderProjects(filteredProjects, recentFirst);
+	};
+
+	const search = (string: string) => {
+		if (string.length > 0) {
+			filteredProjects = orderProjects(
+				projectList.filter((project) =>
+					project.metadata.title.toLowerCase().includes(string.toLowerCase())
+				),
+				recentFirst
+			);
+		} else {
+			filteredProjects = orderProjects(projectList, recentFirst);
+		}
+	};
+
+	const handleInput = (e: any) => {
+		if (e.target !== null) {
+			search(e.target.value);
+		}
 	};
 </script>
 
 <Panel>
 	<div>
-		<input type="text" placeholder="Recherche..." />
+		<input type="text" placeholder="Recherche..." on:input={(e) => handleInput(e)} />
 		<Button
 			action={() => {
 				invert(recentFirst);
