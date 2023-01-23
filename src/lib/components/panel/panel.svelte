@@ -4,12 +4,16 @@
 	import PostControl from './postControl.svelte';
 </script>
 
-<article>
-	<slot />
-	{#if post}
+{#if post}
+	<article id={slug}>
+		<slot />
 		<PostControl {slug} />
-	{/if}
-</article>
+	</article>
+{:else}
+	<article>
+		<slot />
+	</article>
+{/if}
 
 <style lang="scss">
 	@use '../../styles/var.scss';
