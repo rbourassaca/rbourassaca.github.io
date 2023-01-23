@@ -63,16 +63,17 @@
 
 <style lang="scss">
 	@use '../../styles/var.scss';
-	div:last-child {
-		display: flex;
-		flex-direction: column;
-		@media screen and (min-width: var.$sm) {
-			flex-direction: row;
+	div:first-of-type {
+		display: grid;
+		@media (min-width: var.$sm) {
+			grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
 		}
-	}
-	div > div {
-		display: flex;
-		justify-content: center;
-		width: 100%;
+		a {
+			width: fit-content;
+		}
+
+		> * {
+			margin: auto;
+		}
 	}
 </style>
