@@ -13,5 +13,5 @@ export type metadataType = {
 	dateUpdated?: Date;
 };
 
-export type categoryType = string;
+export type categoryType = { name: string; icon: string };
 export type tagType = { name: string; colorHex: `#${string}` };

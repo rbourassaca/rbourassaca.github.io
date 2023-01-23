@@ -4,7 +4,7 @@
 	export const metadata: metadataType = {
 		title: 'Lorem ipsum dolor',
 		categories: [categories[0]],
-		tags: [tags[0], tags[1], tags[3]],
+		tags: [tags[0], tags[1], tags[2]],
 		dateCreated: new Date('2022-01-19'),
 		dateUpdated: new Date('2022-01-19')
 	};

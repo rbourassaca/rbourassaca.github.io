@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { projectType } from '$lib/types/project';
+	import PostHeader from '$lib/components/postHeader.svelte';
 	export let data: { project: projectType };
 	import Panel from '$lib/components/panel/panel.svelte';
 	import Button from '$lib/components/button.svelte';
@@ -16,7 +17,7 @@
 	</Button>
 </a>
 <Panel post={true} slug={data.project.slug}>
-	<h2>{data.project.metadata.title}</h2>
+	<PostHeader metadata={data.project.metadata} />
 	<svelte:component this={data.project.component} />
 </Panel>
 
