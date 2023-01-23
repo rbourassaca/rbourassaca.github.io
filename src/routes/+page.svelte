@@ -4,12 +4,14 @@
 	import PostHeader from '$lib/components/postHeader.svelte';
 	import Filter from '$lib/components/filter.svelte';
 	export let data: { projects: projectType[] };
+	const projects = data.projects;
+	let filteredProjects = projects;
 </script>
 
 <section>
-	<Filter />
+	<Filter projectList={projects} bind:filteredProjects />
 	{#if data.projects.length > 0}
-		{#each data.projects as project}
+		{#each filteredProjects as project}
 			<Panel post={true} slug={project.slug}>
 				<PostHeader metadata={project.metadata} />
 				<svelte:component this={project.component} />

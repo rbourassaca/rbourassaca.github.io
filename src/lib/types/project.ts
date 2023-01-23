@@ -7,10 +7,10 @@ export type projectType = {
 
 export type metadataType = {
 	title: string;
-	categories?: categoryType[];
-	tags?: tagType[];
-	dateCreated?: Date;
-	dateUpdated?: Date;
+	categories: categoryType[];
+	tags: tagType[];
+	dateCreated: Date;
+	dateUpdated: Date;
 };
 
 export type categoryType = { name: string; icon: string };

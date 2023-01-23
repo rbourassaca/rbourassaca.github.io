@@ -1,9 +1,14 @@
 <script lang="ts">
 	import Panel from '$lib/components/panel/panel.svelte';
 	import Button from '$lib/components/button.svelte';
+	import type { projectType } from '$lib/types/project';
+	import { orderProjects } from '$lib/functions/projects';
+	export let projectList: projectType[];
+	export let filteredProjects: projectType[];
 	let recentFirst: boolean = true;
 	const invert = (bool: boolean) => {
 		recentFirst = !bool;
+		filteredProjects = orderProjects(projectList, recentFirst);
 	};
 </script>
 

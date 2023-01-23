@@ -5,8 +5,8 @@ export const getProjects = (): projectType[] => {
 	const glob_import = import.meta.glob('$lib/content/projects/*.svelte', {
 		eager: true
 	});
-	const projects = Object.entries(glob_import);
-	return projects.map(([path, module]: any): projectType => {
+	const projects_entries = Object.entries(glob_import);
+	let projects = projects_entries.map(([path, module]: any): projectType => {
 		return {
 			slug: getSlugFromPath(path),
 			path,
@@ -14,10 +14,23 @@ export const getProjects = (): projectType[] => {
 			metadata: module.metadata
 		};
 	});
+	return orderProjects(projects, true);
 };
 
 export const getProject = (slug: string) => {
 	return getProjects().find((project) => {
 		return getSlugFromPath(project.path) === slug;
 	});
+};
+
+export const orderProjects = (projects: projectType[], recentFirst: boolean) => {
+	if (recentFirst) {
+		return projects.sort((a, b) => {
+			return b.metadata.dateCreated.getTime() - a.metadata.dateCreated.getTime();
+		});
+	} else {
+		return projects.sort((a, b) => {
+			return a.metadata.dateCreated.getTime() - b.metadata.dateCreated.getTime();
+		});
+	}
 };
