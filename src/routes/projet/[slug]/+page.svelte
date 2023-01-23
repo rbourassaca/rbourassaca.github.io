@@ -15,7 +15,7 @@
 		Revenir au profile
 	</Button>
 </a>
-<Panel>
+<Panel post={true} slug={data.project.slug}>
 	<h2>{data.project.metadata.title}</h2>
 	<svelte:component this={data.project.component} />
 </Panel>
