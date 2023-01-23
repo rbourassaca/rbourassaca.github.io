@@ -18,8 +18,9 @@
 </section>
 
 <style lang="scss">
+	@use '../lib/styles/var';
 	section {
-		display: flex;
-		flex-direction: column;
+		display: grid;
+		row-gap: var.$spacingBetweenElements;
 	}
 </style>

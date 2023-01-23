@@ -16,7 +16,6 @@
 
 	article {
 		padding: var.$spacingBetweenElementsSmall var.$spacingBetweenElements;
-		margin: 10px 0;
 		height: fit-content;
 		border-radius: var.$borderRadius;
 		box-shadow: 5px 5px 10px var(--color-panel-shadow1), -5px -5px 10px var(--color-panel-shadow2);
