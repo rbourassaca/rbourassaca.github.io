@@ -6,6 +6,7 @@
 	import Info from '$lib/content/info.svelte';
 	import Footer from '$lib/components/footer.svelte';
 	import Panel from '$lib/components/panel/panel.svelte';
+	import BackToTop from '$lib/components/backToTop.svelte';
 
 	let title: string;
 </script>
@@ -19,6 +20,7 @@
 <ProfilePicture />
 <h1>{title}</h1>
 <section>
+	<BackToTop />
 	<div>
 		<Panel>
 			<Info bind:title />
