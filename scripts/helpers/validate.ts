@@ -1,9 +1,9 @@
 export const validateText = (t: string) => {
 	if (t.length > 0) {
-		if (t.match(/^[\p{L}\p{N}]*$/u)) {
+		if (t.match(/^[\p{L}\p{N} ]*$/u)) {
 			return true;
 		} else {
-			return 'Only character from a to z and 0 to 9 are allowed.';
+			return 'Only character from a to z, 0 to 9 and spaces are allowed.';
 		}
 	} else {
 		return 'You must enter a name.';
