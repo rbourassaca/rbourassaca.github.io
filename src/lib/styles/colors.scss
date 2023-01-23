@@ -1,5 +1,6 @@
 @mixin light {
 	--color-background: #eaeaeb;
+	--color-background-alt: #d5d5d6;
 	--color-panel-shadow1: #d5d5d6;
 	--color-panel-shadow2: #f8f8fa;
 	--color-text: #424242;
@@ -9,6 +10,7 @@
 
 @mixin dark {
 	--color-background: #21252b;
+	--color-background-alt: #2a2f37;
 	--color-panel-shadow1: #191c20;
 	--color-panel-shadow2: #2a2f37;
 	--color-text: #e4e9ff;
