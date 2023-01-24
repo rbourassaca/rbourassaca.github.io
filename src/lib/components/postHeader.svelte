@@ -13,6 +13,12 @@
 		{/if}
 		&nbsp;{metadata.title}
 	</h2>
+	<span>
+		Créer le: {metadata.dateCreated.toLocaleDateString('fr-CA')}
+		{#if metadata.dateCreated.getTime() !== metadata.dateUpdated.getTime()}
+			- Mis à jour le {metadata.dateUpdated.toLocaleDateString('fr-CA')}
+		{/if}
+	</span>
 	{#if metadata.tags !== undefined}
 		{#each metadata.tags as tag}
 			<span style={`background-color: ${tag.colorHex}`}>{tag.name}</span>
@@ -33,6 +39,9 @@
 					height: 1.75rem;
 				}
 			}
+		}
+		> span:first-of-type {
+			color: var(--color-text-light);
 		}
 		> span {
 			padding: var.$spacingBetweenElementsSmall;

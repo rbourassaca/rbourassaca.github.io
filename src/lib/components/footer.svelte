@@ -9,7 +9,7 @@
 <style lang="scss">
 	@use '../styles/var';
 	footer {
-		color: #686e79;
+		color: var(--color-text-light);
 		padding: 1.5rem 0;
 	}
 </style>
