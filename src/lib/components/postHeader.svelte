@@ -19,18 +19,19 @@
 			- Mis à jour le {metadata.dateUpdated.toLocaleDateString('fr-CA')}
 		{/if}
 	</span>
-	{#if metadata.tags !== undefined}
-		{#each metadata.tags as tag}
-			<span style={`background-color: ${tag.colorHex}`}>{tag.name}</span>
-		{/each}
-	{/if}
+	<div>
+		{#if metadata.tags !== undefined}
+			{#each metadata.tags as tag}
+				<span style={`background-color: ${tag.colorHex}`}>{tag.name}</span>
+			{/each}
+		{/if}
+	</div>
 </span>
 
 <style lang="scss">
 	@use '../styles/var.scss';
 
 	span {
-		margin-bottom: var.$spacingBetweenElements;
 		h2 {
 			display: flex;
 			align-items: center;
@@ -43,13 +44,19 @@
 		> span:first-of-type {
 			color: var(--color-text-light);
 		}
-		> span {
+		> div {
+			margin-top: var.$spacingBetweenElementsSmall;
+			margin-bottom: var.$spacingBetweenElementsSmall;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			gap: var.$spacingBetweenElementsSmall;
+		}
+		div > span {
 			padding: var.$spacingBetweenElementsSmall;
 			border-radius: 1rem;
 			font-size: 0.75rem;
-		}
-		> span:not(:last-child) {
-			margin-right: var.$spacingBetweenElementsSmall;
+			width: fit-content;
 		}
 	}
 </style>
