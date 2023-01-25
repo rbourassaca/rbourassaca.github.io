@@ -1,11 +1,13 @@
-<img src="https://via.placeholder.com/200" alt="Profile" />
+<script lang="ts">
+	import src from '$lib/content/images/placeholder_200x200.png';
+</script>
+
+<img {src} alt="Profile" width="200px" height="200px" />
 
 <style lang="scss">
 	@use '../styles/var';
 	$size: 200;
 	img {
-		height: $size;
-		width: $size;
 		align-self: center;
 		border-radius: 100%;
 		position: relative;
