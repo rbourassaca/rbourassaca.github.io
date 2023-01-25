@@ -54,5 +54,6 @@
 		top: 0;
 		right: var.$spacingPagePaddingX;
 		padding: 1rem;
+		z-index: 100;
 	}
 </style>
