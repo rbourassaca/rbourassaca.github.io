@@ -1,4 +1,4 @@
-import type { projectType } from '$lib/types/project';
+import type { tagType, projectType } from '$lib/types/project';
 import { getSlugFromPath } from './getSlugFromPath';
 
 export const getProjects = (): projectType[] => {
@@ -14,6 +14,9 @@ export const getProjects = (): projectType[] => {
 			metadata: module.metadata
 		};
 	});
+	projects.forEach((project) => {
+		orderTags(project.metadata.tags);
+	});
 	return orderProjects(projects, true);
 };
 
@@ -24,13 +27,17 @@ export const getProject = (slug: string) => {
 };
 
 export const orderProjects = (projects: projectType[], recentFirst: boolean) => {
-	if (recentFirst) {
-		return projects.sort((a, b) => {
-			return b.metadata.dateCreated.getTime() - a.metadata.dateCreated.getTime();
-		});
-	} else {
-		return projects.sort((a, b) => {
-			return a.metadata.dateCreated.getTime() - b.metadata.dateCreated.getTime();
-		});
+	projects = projects.sort((a, b) => {
+		return b.metadata.dateCreated.getTime() - a.metadata.dateCreated.getTime();
+	});
+	if (!recentFirst) {
+		projects.reverse();
 	}
+	return projects;
+};
+
+export const orderTags = (tags: tagType[]) => {
+	return tags.sort((a, b) => {
+		return a.name.localeCompare(b.name);
+	});
 };
