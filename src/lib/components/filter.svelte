@@ -2,26 +2,26 @@
 	import Panel from '$lib/components/panel/panel.svelte';
 	import Button from '$lib/components/button.svelte';
 	import type { projectType } from '$lib/types/project';
-	import { orderProjects } from '$lib/functions/projects';
 	export let projectList: projectType[];
 	export let filteredProjects: projectType[];
 	let recentFirst: boolean = true;
 
 	const invert = (bool: boolean) => {
 		recentFirst = !bool;
-		filteredProjects = orderProjects(filteredProjects, recentFirst);
+		filteredProjects = filteredProjects.reverse();
 	};
 
 	const search = (string: string) => {
 		if (string.length > 0) {
-			filteredProjects = orderProjects(
-				projectList.filter((project) =>
-					project.metadata.title.toLowerCase().includes(string.toLowerCase())
-				),
-				recentFirst
+			filteredProjects = projectList.filter((project) =>
+				project.metadata.title.toLowerCase().includes(string.toLowerCase())
 			);
 		} else {
-			filteredProjects = orderProjects(projectList, recentFirst);
+			if (recentFirst) {
+				filteredProjects = projectList;
+			} else {
+				filteredProjects = projectList.reverse();
+			}
 		}
 	};
 

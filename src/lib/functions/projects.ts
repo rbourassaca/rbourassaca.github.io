@@ -17,7 +17,7 @@ export const getProjects = (): projectType[] => {
 	projects.forEach((project) => {
 		orderTags(project.metadata.tags);
 	});
-	return orderProjects(projects, true);
+	return orderProjects(projects);
 };
 
 export const getProject = (slug: string) => {
@@ -26,17 +26,14 @@ export const getProject = (slug: string) => {
 	});
 };
 
-export const orderProjects = (projects: projectType[], recentFirst: boolean) => {
+const orderProjects = (projects: projectType[]) => {
 	projects = projects.sort((a, b) => {
 		return b.metadata.dateCreated.getTime() - a.metadata.dateCreated.getTime();
 	});
-	if (!recentFirst) {
-		projects.reverse();
-	}
 	return projects;
 };
 
-export const orderTags = (tags: tagType[]) => {
+const orderTags = (tags: tagType[]) => {
 	return tags.sort((a, b) => {
 		return a.name.localeCompare(b.name);
 	});
