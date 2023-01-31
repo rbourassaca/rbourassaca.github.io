@@ -8,6 +8,7 @@
 		dateCreated: new Date('2022-01-19'),
 		dateUpdated: new Date('2022-01-19')
 	};
+	import Gallery from '$lib/components/gallery.svelte';
 </script>
 
 <p>
@@ -16,6 +17,14 @@
 	maecenas ultricies mi eget mauris. Adipiscing diam donec adipiscing tristique risus nec feugiat
 	in.
 </p>
+<Gallery
+	images={[
+		'https://via.placeholder.com/550',
+		'https://via.placeholder.com/650',
+		'https://via.placeholder.com/350',
+		'https://via.placeholder.com/550'
+	]}
+/>
 <p>
 	Est ullamcorper eget nulla facilisi etiam dignissim diam quis. Lobortis feugiat vivamus at augue
 	eget arcu dictum varius. Cras adipiscing enim eu turpis. Mattis aliquam faucibus purus in massa
