@@ -5,14 +5,16 @@
 </script>
 
 <span>
-	<h2>
+	<div>
 		{#if metadata.categories !== undefined}
 			{#each metadata.categories as category}
 				{@html category.icon}
 			{/each}
 		{/if}
-		&nbsp;{metadata.title}
-	</h2>
+		<h2>
+			{metadata.title}
+		</h2>
+	</div>
 	<span>
 		Créer le: {metadata.dateCreated.toLocaleDateString('fr-CA')}
 		{#if metadata.dateCreated.getTime() !== metadata.dateUpdated.getTime()}
@@ -32,19 +34,24 @@
 	@use '../styles/var.scss';
 
 	span {
-		h2 {
+		div:first-child {
 			display: flex;
-			align-items: center;
+			flex-wrap: nowrap;
 			:global {
 				svg {
-					height: 1.75rem;
+					width: 1.75rem;
+					min-width: 1.75rem;
+					margin-right: var.$spacingBetweenElementsSmall;
 				}
+			}
+			h2 {
+				align-items: center;
 			}
 		}
 		> span:first-of-type {
 			color: var(--color-text-light);
 		}
-		> div {
+		> div:last-child {
 			margin-top: var.$spacingBetweenElementsSmall;
 			margin-bottom: var.$spacingBetweenElementsSmall;
 			display: flex;
