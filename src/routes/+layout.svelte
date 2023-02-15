@@ -9,10 +9,12 @@
 	import BackToTop from '$lib/components/backToTop.svelte';
 
 	let title: string;
+	let description: string;
 </script>
 
 <svelte:head>
 	<title>{title}</title>
+	<meta name="description" content={description} />
 </svelte:head>
 
 <DarkModeToggle />
@@ -23,7 +25,7 @@
 	<BackToTop />
 	<div>
 		<Panel>
-			<Info bind:title />
+			<Info bind:title bind:description />
 		</Panel>
 		<Footer />
 	</div>
