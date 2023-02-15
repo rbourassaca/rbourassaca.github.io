@@ -14,5 +14,9 @@ export const categories: categoryType[] = [
 export const tags: tagType[] = [
 	{ name: 'HTML', colorHex: `#f97316` },
 	{ name: 'JavaScript', colorHex: '#eab308' },
-	{ name: 'CSS', colorHex: '#0ea5e9' }
+	{ name: 'CSS', colorHex: '#0ea5e9' },
+	{ name: 'Reaper', colorHex: '#64c22e' },
+	{ name: 'WordPress', colorHex: '#42a4d3' },
+	{ name: 'PHP', colorHex: '#7a86b8' },
+	{ name: 'Svelte', colorHex: '#ff3e00' }
 ];

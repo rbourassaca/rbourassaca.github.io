@@ -1,5 +1,5 @@
 <script lang="ts">
-	import src from '$lib/content/images/placeholder_200x200.png';
+	import src from '$lib/content/images/profile.jpg';
 </script>
 
 <img {src} alt="Profile" width="200px" height="200px" />
