@@ -1,7 +1,8 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import lightGallery from 'lightgallery';
-	import 'lightgallery/lightgallery.min.js';
+	import lgZoom from 'lightgallery/plugins/zoom';
+	import lgAutoPlay from 'lightgallery/plugins/autoplay';
 	import 'lightgallery/css/lightgallery-bundle.css';
 
 	export let images: string[];
@@ -10,10 +11,13 @@
 
 	onMount(() => {
 		lightGallery(gallery, {
+			plugins: [lgZoom, lgAutoPlay],
 			container: gallery,
-			showMaximizeIcon: false,
+			showMaximizeIcon: true,
 			closable: false,
-			download: false
+			download: false,
+			progressBar: false,
+			slideShowAutoplay: true
 		}).openGallery();
 	});
 </script>
