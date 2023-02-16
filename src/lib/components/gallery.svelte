@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import lightGallery from 'lightgallery';
-	import lgZoom from 'lightgallery/plugins/zoom';
-	import lgAutoPlay from 'lightgallery/plugins/autoplay';
+	import lgZoom from 'lightgallery/plugins/zoom/lg-zoom.umd';
+	import lgAutoPlay from 'lightgallery/plugins/autoplay/lg-autoplay.umd';
 	import 'lightgallery/css/lightgallery-bundle.css';
 
 	export let images: string[];
