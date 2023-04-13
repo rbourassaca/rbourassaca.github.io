@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-
 :global {
 	body {
-		font-family: 'Montserrat', sans-serif;
+		// https://github.com/system-fonts/modern-font-stacks#geometric-humanist
+		font-family: Avenir, 'Avenir Next LT Pro', Montserrat, Corbel, 'URW Gothic', source-sans-pro,
+			sans-serif;
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 		a:link,
