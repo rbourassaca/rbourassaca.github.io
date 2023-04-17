@@ -1,12 +1,20 @@
 <script lang="ts">
+	import { afterNavigate } from '$app/navigation';
+	import { base } from '$app/paths';
+
 	import type { projectType } from '$lib/types/project';
 	import PostHeader from '$lib/components/postHeader.svelte';
 	export let data: { project: projectType };
 	import Panel from '$lib/components/panel/panel.svelte';
 	import Button from '$lib/components/button.svelte';
+
+	let previousPage: string = base;
+	afterNavigate(({ from }) => {
+		previousPage = from?.url.pathname || previousPage;
+	});
 </script>
 
-<a href={`/#${data.project.slug}`}>
+<a href={previousPage === '/' ? 'javascript:history.back()' : '/'}>
 	<Button>
 		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
 			<path
