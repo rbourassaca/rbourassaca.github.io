@@ -3,7 +3,7 @@
 	import Panel from '$lib/components/panel/panel.svelte';
 	import PostHeader from '$lib/components/postHeader.svelte';
 	import Filter from '$lib/components/filter.svelte';
-	import { projects } from "../stores"
+	import { projects } from '../stores'
 
 	let projectList: projectType[];
 	projects.subscribe(value => {
