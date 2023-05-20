@@ -3,14 +3,18 @@
 	import Panel from '$lib/components/panel/panel.svelte';
 	import PostHeader from '$lib/components/postHeader.svelte';
 	import Filter from '$lib/components/filter.svelte';
-	export let data: { projects: projectType[] };
-	const projects = data.projects;
-	let filteredProjects = projects;
+	import { projects } from "../stores"
+
+	let projectList: projectType[];
+	projects.subscribe(value => {
+		projectList = value;
+	})
+	let filteredProjects = projectList;
 </script>
 
 <section>
-	<Filter projectList={projects} bind:filteredProjects />
-	{#if data.projects.length > 0}
+	<Filter projectList={projectList} bind:filteredProjects />
+	{#if projectList.length > 0}
 		{#each filteredProjects as project}
 			<Panel post={true} slug={project.slug}>
 				<PostHeader metadata={project.metadata} />
@@ -18,7 +22,9 @@
 			</Panel>
 		{/each}
 	{:else}
-		<p>Aucun projet à afficher.</p>
+		<Panel>
+			<p>Aucun projet à afficher.</p>
+		</Panel>
 	{/if}
 </section>
 
