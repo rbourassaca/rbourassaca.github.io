@@ -1,6 +1,6 @@
 <script lang="ts">
-	export let post: boolean = false;
-	export let slug: string = '';
+	export let post = false;
+	export let slug = '';
 	import PostControl from './postControl.svelte';
 </script>
 

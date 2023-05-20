@@ -4,7 +4,7 @@
 	import type { projectType } from '$lib/types/project';
 	export let projectList: projectType[];
 	export let filteredProjects: projectType[];
-	let recentFirst: boolean = true;
+	let recentFirst = true;
 
 	const invert = (bool: boolean) => {
 		recentFirst = !bool;

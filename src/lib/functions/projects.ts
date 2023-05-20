@@ -6,7 +6,7 @@ export const getProjects = (): projectType[] => {
 		eager: true
 	});
 	const projects_entries = Object.entries(glob_import);
-	let projects = projects_entries.map(([path, module]: any): projectType => {
+	const projects = projects_entries.map(([path, module]: any): projectType => {
 		return {
 			slug: getSlugFromPath(path),
 			path,
