@@ -6,14 +6,18 @@ type darkModeSetterFunction = (value: boolean) => void;
 	quand le mode sombre est activé ou désactivé par l'hote.
 */
 export const watchDarkMode = (darkModeSetter: darkModeSetterFunction) => {
-	window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-		if (e.matches) {
-			setDarkMode(false);
-		} else {
-			setDarkMode(true);
-		}
-		darkModeSetter(e.matches ? false : true);
-	});
+	window.matchMedia('(prefers-color-scheme: dark)').addEventListener(
+		'change',
+		(e) => {
+			if (e.matches) {
+				setDarkMode(false);
+			} else {
+				setDarkMode(true);
+			}
+			darkModeSetter(!e.matches);
+		},
+		{ passive: true }
+	);
 };
 
 /*
@@ -21,7 +25,7 @@ export const watchDarkMode = (darkModeSetter: darkModeSetterFunction) => {
 	la classe dark du body.
 */
 export const setDarkMode = (value: boolean) => {
-	if (value === false) {
+	if (!value) {
 		document.documentElement.classList.add('dark');
 	} else {
 		document.documentElement.classList.remove('dark');

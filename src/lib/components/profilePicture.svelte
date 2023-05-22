@@ -13,6 +13,6 @@
 		position: relative;
 		top: calc(-#{$size}px/2);
 		margin-bottom: calc(-#{$size}px/2);
-		border: 4px var(--color-background) solid;
+		border: 4px var(--color-background-alt) solid;
 	}
 </style>

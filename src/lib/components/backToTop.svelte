@@ -6,9 +6,9 @@
 
 	onMount(() => {
 		scrollPos = window.scrollY;
-		addEventListener('scroll', (e) => {
+		addEventListener('scroll', () => {
 			scrollPos = window.scrollY;
-		});
+		}, {passive: true});
 	});
 </script>
 
