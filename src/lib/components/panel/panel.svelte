@@ -22,9 +22,8 @@
 		padding: var.$spacingBetweenElementsSmall var.$spacingBetweenElements;
 		height: fit-content;
 		border-radius: var.$borderRadius;
-		box-shadow: 5px 5px 10px var(--color-panel-shadow1), -5px -5px 10px var(--color-panel-shadow2);
+		outline: 1px solid var(--color-border);
 		display: flex;
 		flex-direction: column;
-		background: var(--color-background);
 	}
 </style>

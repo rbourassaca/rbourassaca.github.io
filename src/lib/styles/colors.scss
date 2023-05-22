@@ -1,27 +1,30 @@
 @mixin light {
 	--color-background: #eaeaeb;
-	--color-background-alt: #d5d5d6;
-	--color-panel-shadow1: #d5d5d6;
-	--color-panel-shadow2: #f8f8fa;
+	--color-background-alt: #eaeaeb;
+	--color-background-1: #cfe0f6;
+	--color-background-2: #dce1ea;
 	--color-text: #424242;
 	--color-text-light: #838383;
 	--color-primary: #1e88e5;
 	--color-secondary: #2196f3;
+	--color-border: rgba(0,0,0,var(--border-opacity));
 }
 
 @mixin dark {
 	--color-background: #21252b;
 	--color-background-alt: #2a2f37;
-	--color-panel-shadow1: #191c20;
-	--color-panel-shadow2: #2a2f37;
+	--color-background-1: #21252b;
+	--color-background-2: #182d46;
 	--color-text: #e4e9ff;
 	--color-text-light: #686e79;
 	--color-primary: #1976d2;
 	--color-secondary: #1e88e5;
+	--color-border: rgba(255,255,255,var(--border-opacity))
 }
 
 :global {
 	:root {
+		--border-opacity: 0.2;
 		@include light;
 	}
 	:root.dark {
@@ -29,7 +32,9 @@
 	}
 
 	body {
-		background-color: var(--color-background);
+		background: linear-gradient(135deg, var(--color-background-1) 25%, var(--color-background-2) 125%) fixed;
+		background-size: 100% 200%;
+		animation: background 3s infinite alternate ease-in-out;
 		color: var(--color-text);
 		a:link,
 		a:visited,
@@ -47,6 +52,15 @@
 		}
 		svg {
 			fill: var(--color-text);
+		}
+	}
+
+	@keyframes background {
+		from {
+			background-position: 0 0;
+		}
+		to {
+			background-position: 0 100%;
 		}
 	}
 }
