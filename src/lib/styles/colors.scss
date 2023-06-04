@@ -32,7 +32,7 @@
 	}
 
 	body {
-		background: linear-gradient(135deg, var(--color-background-1) 25%, var(--color-background-2) 125%) fixed;
+		background: var(--color-background) linear-gradient(135deg, var(--color-background-1) 25%, var(--color-background-2) 125%) fixed;
 		background-size: 100% 200%;
 		animation: background 3s infinite alternate ease-in-out;
 		color: var(--color-text);
