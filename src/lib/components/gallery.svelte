@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import Image from '$lib/components/image.svelte';
 	import lightGallery from 'lightgallery';
 	import lgZoom from 'lightgallery/plugins/zoom/lg-zoom.umd';
 	import lgAutoPlay from 'lightgallery/plugins/autoplay/lg-autoplay.umd';
@@ -24,7 +25,7 @@
 
 <span bind:this={gallery}>
 	{#each images as image}
-		<img src={image} alt="" />
+		<Image src={image} alt="" />
 	{/each}
 </span>
 
@@ -34,10 +35,10 @@
 		width: 100%;
 		height: 400px;
 		margin: var.$spacingBetweenElementsSmall 0;
-		> img {
-			display: none;
-		}
 		:global {
+			> img {
+				display: none;
+			}
 			div.lg-container {
 				div,
 				span {
@@ -58,14 +59,14 @@
 					background-color: transparent;
 				}
 			}
-			div.lg-inline{
+			div.lg-inline {
 				div.lg-backdrop {
 					background-color: transparent;
 				}
 			}
-      div.lg-backdrop {
-        background-color: rgba(0,0,0,0.8);
-      }
+			div.lg-backdrop {
+				background-color: rgba(0, 0, 0, 0.8);
+			}
 		}
 	}
 </style>
