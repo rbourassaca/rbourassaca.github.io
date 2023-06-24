@@ -1,30 +1,31 @@
 @mixin light {
 	--color-background: #cfe0f6;
-	--color-background-alt: #eaeaeb;
+	--color-background-alt: rgba(234, 234, 235, var(--opacity-background-alt));
 	--color-background-1: #cfe1fa;
 	--color-background-2: #e0e6ef;
 	--color-text: #424242;
 	--color-text-light: #838383;
 	--color-primary: #1e88e5;
 	--color-secondary: #2196f3;
-	--color-border: rgba(0,0,0,var(--border-opacity));
+	--color-border: rgba(0, 0, 0, var(--opacity-border));
 }
 
 @mixin dark {
 	--color-background: #21252b;
-	--color-background-alt: #2a2f37;
+	--color-background-alt: rgba(42, 47, 55, var(--opacity-background-alt));
 	--color-background-1: #21252b;
 	--color-background-2: #182d46;
 	--color-text: #e4e9ff;
 	--color-text-light: #686e79;
 	--color-primary: #1976d2;
 	--color-secondary: #1e88e5;
-	--color-border: rgba(255,255,255,var(--border-opacity))
+	--color-border: rgba(255, 255, 255, var(--opacity-border));
 }
 
 :global {
 	:root {
-		--border-opacity: 0.2;
+		--opacity-border: 0.2;
+		--opacity-background-alt: 0.7;
 		@include light;
 	}
 	:root.dark {
@@ -32,7 +33,8 @@
 	}
 
 	body {
-		background: var(--color-background) linear-gradient(135deg, var(--color-background-1) 25%, var(--color-background-2) 125%) fixed;
+		background: var(--color-background)
+			linear-gradient(135deg, var(--color-background-1) 25%, var(--color-background-2) 125%) fixed;
 		background-size: 100% 200%;
 		animation: background 3s infinite alternate ease-in-out;
 		color: var(--color-text);
