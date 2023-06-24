@@ -23,4 +23,9 @@
 	>.
 </p>
 
-<Gallery images={[src01, src02]} />
+<Gallery
+	images={[
+		{ src: src01, alt: "Page d'accueil du site internet de Productions Chaumont." },
+		{ src: src02, alt: "Page d'information du site internet de Productions Chaumont." }
+	]}
+/>
