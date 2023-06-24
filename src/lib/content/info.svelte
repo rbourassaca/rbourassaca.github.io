@@ -42,6 +42,7 @@
 		gap: 0.25rem;
 		li {
 			list-style: none;
+			width: fit-content;
 			a {
 				display: flex;
 				gap: 0.5rem;
