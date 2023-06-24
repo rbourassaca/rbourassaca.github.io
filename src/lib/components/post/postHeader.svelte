@@ -31,7 +31,7 @@
 </span>
 
 <style lang="scss">
-	@use '../styles/var.scss';
+	@use '../../styles/var.scss';
 
 	span {
 		div:first-child {

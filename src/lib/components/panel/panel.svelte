@@ -1,7 +1,7 @@
 <script lang="ts">
 	export let post = false;
 	export let slug = '';
-	import PostControl from './postControl.svelte';
+	import PostControl from '../post/postControl.svelte';
 </script>
 
 {#if post}

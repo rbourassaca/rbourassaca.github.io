@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { projectType } from '$lib/types/project';
 	import Panel from '$lib/components/panel/panel.svelte';
-	import PostHeader from '$lib/components/postHeader.svelte';
+	import PostHeader from '$lib/components/post/postHeader.svelte';
 	import Filter from '$lib/components/filter.svelte';
 	import { projects } from '../stores';
 

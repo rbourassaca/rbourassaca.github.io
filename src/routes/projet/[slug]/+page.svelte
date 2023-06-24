@@ -3,7 +3,7 @@
 	import { base } from '$app/paths';
 
 	import type { projectType } from '$lib/types/project';
-	import PostHeader from '$lib/components/postHeader.svelte';
+	import PostHeader from '$lib/components/post/postHeader.svelte';
 	export let data: { project: projectType };
 	import Panel from '$lib/components/panel/panel.svelte';
 	import Button from '$lib/components/button.svelte';
