@@ -11,7 +11,7 @@
 		categories: [categories[0]],
 		tags: [tags[0], tags[1], tags[2], tags[4], tags[5]],
 		dateCreated: new Date('2022-04-10'),
-		dateUpdated: new Date('2022-04-10')
+		dateUpdated: undefined
 	};
 </script>
 

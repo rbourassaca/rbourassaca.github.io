@@ -10,7 +10,7 @@
 		categories: [categories[1]],
 		tags: [tags[3]],
 		dateCreated: new Date('2022-12-10'),
-		dateUpdated: new Date('2022-12-10')
+		dateUpdated: undefined
 	};
 </script>
 

@@ -17,7 +17,7 @@
 	</div>
 	<span>
 		Créer le: {metadata.dateCreated.toLocaleDateString('fr-CA')}
-		{#if metadata.dateCreated.getTime() !== metadata.dateUpdated.getTime()}
+		{#if metadata.dateUpdated !== undefined}
 			- Mis à jour le {metadata.dateUpdated.toLocaleDateString('fr-CA')}
 		{/if}
 	</span>

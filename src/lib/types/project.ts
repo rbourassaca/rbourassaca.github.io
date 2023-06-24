@@ -10,7 +10,7 @@ export type metadataType = {
 	categories: categoryType[];
 	tags: tagType[];
 	dateCreated: Date;
-	dateUpdated: Date;
+	dateUpdated: Date | undefined;
 };
 
 export type categoryType = { name: string; icon: string };
