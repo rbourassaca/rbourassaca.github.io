@@ -33,7 +33,7 @@
 	}
 
 	body {
-		background: var(--color-background)
+		background: var(--color-background-1)
 			radial-gradient(at right bottom, var(--color-background-2), var(--color-background-1)) fixed;
 		background-size: 200% 200%;
 		animation: background 3s infinite alternate ease-in-out;
