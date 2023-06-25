@@ -1,7 +1,7 @@
 <script lang="ts">
-	import type { metadataType } from '$lib/types/project';
+	import type { projectMetadataType } from '$lib/types/project';
 
-	export let metadata: metadataType;
+	export let metadata: projectMetadataType;
 </script>
 
 <span>

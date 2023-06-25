@@ -2,10 +2,10 @@ export type projectType = {
 	slug: string;
 	path: string;
 	component: ConstructorOfATypedSvelteComponent;
-	metadata: metadataType;
+	metadata: projectMetadataType;
 };
 
-export type metadataType = {
+export type projectMetadataType = {
 	title: string;
 	categories: categoryType[];
 	tags: tagType[];

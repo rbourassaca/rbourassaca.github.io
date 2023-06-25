@@ -1,12 +1,12 @@
 <script lang="ts" context="module">
-	import type { metadataType } from '$lib/types/project';
+	import type { projectMetadataType } from '$lib/types/project';
 	import { categories, tags } from './_projectMetadata';
 
 	import Gallery from '$lib/components/gallery.svelte';
 	import src01 from '$lib/content/images/productions-chaumont_01.png';
 	import src02 from '$lib/content/images/productions-chaumont_02.png';
 
-	export const metadata: metadataType = {
+	export const metadata: projectMetadataType = {
 		title: 'Productions Chaumont',
 		categories: [categories[0]],
 		tags: [tags[0], tags[1], tags[2], tags[4], tags[5]],

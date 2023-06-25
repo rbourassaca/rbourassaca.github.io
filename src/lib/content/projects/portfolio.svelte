@@ -1,8 +1,8 @@
 <script lang="ts" context="module">
-	import type { metadataType } from '$lib/types/project';
+	import type { projectMetadataType } from '$lib/types/project';
 	import { categories, tags } from './_projectMetadata';
 
-	export const metadata: metadataType = {
+	export const metadata: projectMetadataType = {
 		title: 'Portfolio',
 		categories: [categories[0]],
 		tags: [tags[0], tags[1], tags[2], tags[6]],
