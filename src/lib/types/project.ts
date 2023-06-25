@@ -1,7 +1,7 @@
 export type projectType = {
 	slug: string;
 	path: string;
-	component: unknown;
+	component: ConstructorOfATypedSvelteComponent;
 	metadata: metadataType;
 };
 
