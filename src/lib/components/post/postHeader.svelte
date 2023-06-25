@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { projectMetadataType } from '$lib/types/project';
-
+	import Pill from '$lib/components/pill.svelte';
 	export let metadata: projectMetadataType;
 </script>
 
@@ -24,7 +24,7 @@
 	<div>
 		{#if metadata.tags !== undefined}
 			{#each metadata.tags as tag}
-				<span style={`background-color: ${tag.colorHex}`}>{tag.name}</span>
+				<Pill color={tag.colorHex} text={tag.name} />
 			{/each}
 		{/if}
 	</div>
@@ -58,12 +58,6 @@
 			flex-direction: row;
 			flex-wrap: wrap;
 			gap: var.$spacingBetweenElementsSmall;
-		}
-		div > span {
-			padding: var.$spacingBetweenElementsSmall;
-			border-radius: 1rem;
-			font-size: 0.75rem;
-			width: fit-content;
 		}
 	}
 </style>
