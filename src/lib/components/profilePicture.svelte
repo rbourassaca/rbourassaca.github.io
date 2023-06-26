@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Image from '$lib/components/image.svelte';
-	import picture from '$lib/content/images/profile.jpg?w=200';
+	import picture from '$lib/content/images/profile.jpg?w=200;300';
 </script>
 
 <div>
@@ -20,6 +20,8 @@
 				top: calc(-#{$size}px/2);
 				margin-bottom: calc(-#{$size}px/2);
 				img {
+					width: #{$size}px;
+					height: #{$size}px;
 					border-radius: 100%;
 					border: 4px var(--color-background-alt) solid;
 				}
