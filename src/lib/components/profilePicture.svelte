@@ -1,10 +1,10 @@
 <script lang="ts">
 	import Image from '$lib/components/image.svelte';
-	import src from '$lib/content/images/profile.jpg';
+	import picture from '$lib/content/images/profile.jpg?w=200';
 </script>
 
 <div>
-	<Image {src} alt="Raphael Bourassa" width="200" height="200" />
+	<Image src={picture} alt="Raphael Bourassa" />
 </div>
 
 <style lang="scss">
@@ -14,13 +14,15 @@
 		display: flex;
 		flex-direction: column;
 		:global {
-			img {
+			picture {
 				align-self: center;
-				border-radius: 100%;
 				position: relative;
 				top: calc(-#{$size}px/2);
 				margin-bottom: calc(-#{$size}px/2);
-				border: 4px var(--color-background-alt) solid;
+				img {
+					border-radius: 100%;
+					border: 4px var(--color-background-alt) solid;
+				}
 			}
 		}
 	}

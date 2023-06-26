@@ -1,9 +1,10 @@
 <script lang="ts">
+	import type { image } from '$lib/types/image';
 	import { onMount } from 'svelte';
-	import lightGallery from 'lightgallery';
 	import Image from '$lib/components/image.svelte';
+	import lightGallery from 'lightgallery';
 	import 'lightgallery/css/lightgallery-bundle.min.css';
-	export let images: { src: string; alt: string }[];
+	export let images: { src: image | string; srcThumb: image | string; alt: string }[];
 	let gallery: HTMLElement;
 	onMount(() => {
 		lightGallery(gallery);
@@ -12,9 +13,11 @@
 
 <div bind:this={gallery}>
 	{#each images as image}
-		<a href={image.src}>
-			<Image src={image.src} alt={image.alt} />
-		</a>
+		{#if typeof image.src !== 'string'}
+			<a href={image.src.img.src}>
+				<Image src={image.srcThumb} alt={image.alt} />
+			</a>
+		{/if}
 	{/each}
 </div>
 
@@ -34,6 +37,7 @@
 				img {
 					display: block;
 					width: 100%;
+					height: auto;
 					max-width: 500px;
 				}
 			}
