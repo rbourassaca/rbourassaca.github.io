@@ -15,4 +15,7 @@
 		width: fit-content;
 		font-size: 0.75rem;
 	}
+	span {
+		color: #000;
+	}
 </style>
