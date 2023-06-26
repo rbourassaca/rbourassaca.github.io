@@ -42,14 +42,14 @@
 	</script>
 </svelte:head>
 
-<span class="darkModeToggle">
-	<Toggle enabled={dark} action={setDarkMode} />
+<span>
+	<Toggle enabled={dark} action={setDarkMode} label="Mode sombre" />
 </span>
 
 <style lang="scss">
 	@use '../styles/var.scss';
 
-	span.darkModeToggle {
+	span {
 		position: absolute;
 		top: 0;
 		right: var.$spacingPagePaddingX;
