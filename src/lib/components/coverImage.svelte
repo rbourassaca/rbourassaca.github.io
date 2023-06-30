@@ -1,15 +1,42 @@
 <script lang="ts">
-	import src from '$lib/content/images/cristian-guanipa-DhnnfJnjb7I-unsplash.jpg';
+	import Image from '$lib/components/image.svelte';
+	import src from '$lib/content/images/cristian-guanipa-DhnnfJnjb7I-unsplash.jpg?w=300;600;900;1200;2400';
 </script>
 
-<img {src} alt="Entête, créer par Cristian Guanipa sur Unsplash." width="1200" height="300" />
+<div>
+	<Image {src} role="presentation" loading="eager" />
+</div>
 
 <style lang="scss">
+	$height: 300px;
+	$heightSmall: 200px;
 	@use '../styles/var';
-
-	img {
-		width: 100%;
-		object-fit: cover;
+	div {
+		display: flex;
+		align-items: center;
+		height: $heightSmall;
+		overflow: hidden;
 		border-radius: 0 0 var.$borderRadius var.$borderRadius;
+		@media (min-width: var.$sm) {
+			height: $height;
+			:global {
+				picture {
+					img {
+						min-height: $height;
+					}
+				}
+			}
+		}
+		:global {
+			picture {
+				width: 100%;
+				img {
+					object-fit: cover;
+					width: 100%;
+					height: 100%;
+					min-height: $heightSmall;
+				}
+			}
+		}
 	}
 </style>

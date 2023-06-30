@@ -39,7 +39,7 @@
 		padding: 0;
 		display: flex;
 		flex-direction: column;
-		gap: 0.25rem;
+		gap: 0.65rem;
 		li {
 			list-style: none;
 			width: fit-content;

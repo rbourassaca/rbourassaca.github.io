@@ -1,7 +1,7 @@
 <script lang="ts">
-	import type { metadataType } from '$lib/types/project';
-
-	export let metadata: metadataType;
+	import type { projectMetadataType } from '$lib/types/project';
+	import Pill from '$lib/components/pill.svelte';
+	export let metadata: projectMetadataType;
 </script>
 
 <span>
@@ -17,21 +17,21 @@
 	</div>
 	<span>
 		Créer le: {metadata.dateCreated.toLocaleDateString('fr-CA')}
-		{#if metadata.dateCreated.getTime() !== metadata.dateUpdated.getTime()}
+		{#if metadata.dateUpdated !== undefined}
 			- Mis à jour le {metadata.dateUpdated.toLocaleDateString('fr-CA')}
 		{/if}
 	</span>
 	<div>
 		{#if metadata.tags !== undefined}
 			{#each metadata.tags as tag}
-				<span style={`background-color: ${tag.colorHex}`}>{tag.name}</span>
+				<Pill color={tag.colorHex} text={tag.name} />
 			{/each}
 		{/if}
 	</div>
 </span>
 
 <style lang="scss">
-	@use '../styles/var.scss';
+	@use '../../styles/var.scss';
 
 	span {
 		div:first-child {
@@ -58,12 +58,6 @@
 			flex-direction: row;
 			flex-wrap: wrap;
 			gap: var.$spacingBetweenElementsSmall;
-		}
-		div > span {
-			padding: var.$spacingBetweenElementsSmall;
-			border-radius: 1rem;
-			font-size: 0.75rem;
-			width: fit-content;
 		}
 	}
 </style>

@@ -2,7 +2,7 @@
 	export let action: () => void = () => {};
 </script>
 
-<span on:click={action} on:keydown={action}>
+<span on:click={action} on:keydown={action} role="button" tabindex="0">
 	<slot />
 </span>
 

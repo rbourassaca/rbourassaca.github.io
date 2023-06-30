@@ -21,7 +21,7 @@
 	};
 </script>
 
-<div>
+<div class="actions">
 	{#if isPostPage}
 		<div>
 			<a {href}>
@@ -63,7 +63,7 @@
 
 <style lang="scss">
 	@use '../../styles/var.scss';
-	div:first-of-type {
+	div.actions {
 		display: grid;
 		@media (min-width: var.$sm) {
 			grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
