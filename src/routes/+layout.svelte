@@ -23,7 +23,7 @@
 <h1>{title}</h1>
 <section>
 	<BackToTop />
-	<div>
+	<div id="info">
 		<Panel>
 			<Info bind:title bind:description />
 		</Panel>
@@ -62,9 +62,14 @@
 
 	section {
 		display: grid;
+		align-items: start;
 		column-gap: var.$spacingBetweenElements;
 		@media (min-width: var.$lg) {
 			grid-template-columns: 400px 1fr;
+			div#info {
+				position: sticky;
+				top: var.$spacingBetweenElements;
+			}
 		}
 	}
 </style>
