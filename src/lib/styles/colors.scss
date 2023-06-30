@@ -1,8 +1,7 @@
 @mixin light {
-	--color-background: #cfe0f6;
 	--color-background-alt: rgba(234, 234, 235, var(--opacity-background-alt));
-	--color-background-1: #e0e6ef;
-	--color-background-2: #cfe1fa;
+	--color-background-1: #fafafa;
+	--color-background-2: #e2eeff;
 	--color-text: #424242;
 	--color-text-light: #838383;
 	--color-primary: #1e88e5;
@@ -11,7 +10,6 @@
 }
 
 @mixin dark {
-	--color-background: #21252b;
 	--color-background-alt: rgba(42, 47, 55, var(--opacity-background-alt));
 	--color-background-1: #21252b;
 	--color-background-2: #182d46;
@@ -24,6 +22,7 @@
 
 :global {
 	:root {
+		--color-background: var(--color-background-1);
 		--opacity-border: 0.2;
 		--opacity-background-alt: 0.7;
 		@include light;
