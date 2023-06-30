@@ -4,9 +4,9 @@
 
 	import Gallery from '$lib/components/gallery.svelte';
 	import src01 from '$lib/content/images/productions-chaumont_01.png';
-	import src01Thumb from '$lib/content/images/productions-chaumont_01.png?w=200;300;400;500';
+	import src01Thumb from '$lib/content/images/productions-chaumont_01.png?w=300;400;500;1000';
 	import src02 from '$lib/content/images/productions-chaumont_02.png';
-	import src02Thumb from '$lib/content/images/productions-chaumont_02.png?w=200;300;400;500';
+	import src02Thumb from '$lib/content/images/productions-chaumont_02.png?w=300;400;500;1000';
 
 	export const metadata: projectMetadataType = {
 		title: 'Productions Chaumont',
