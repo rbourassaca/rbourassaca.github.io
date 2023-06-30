@@ -9,13 +9,24 @@
 
 <style lang="scss">
 	$height: 300px;
+	$heightSmall: 200px;
 	@use '../styles/var';
 	div {
 		display: flex;
 		align-items: center;
-		height: $height;
+		height: $heightSmall;
 		overflow: hidden;
 		border-radius: 0 0 var.$borderRadius var.$borderRadius;
+		@media (min-width: var.$sm) {
+			height: $height;
+			:global {
+				picture {
+					img {
+						min-height: $height;
+					}
+				}
+			}
+		}
 		:global {
 			picture {
 				width: 100%;
@@ -23,7 +34,7 @@
 					object-fit: cover;
 					width: 100%;
 					height: 100%;
-					min-height: $height;
+					min-height: $heightSmall;
 				}
 			}
 		}
