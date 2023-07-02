@@ -1,8 +1,9 @@
 <script lang="ts">
 	export let action: () => void = () => {};
+	export let label: string | undefined = undefined;
 </script>
 
-<span on:click={action} on:keydown={action} role="button" tabindex="0">
+<span on:click={action} on:keydown={action} role="button" tabindex="0" aria-label={label}>
 	<slot />
 </span>
 
