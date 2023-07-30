@@ -1,6 +1,6 @@
 <script lang="ts">
 	import 'normalize.css';
-	import DarkModeToggle from '$lib/components/darkModeToggle.svelte';
+	import DarkModeToggle from '$lib/components/darkModeToggle/darkModeToggle.svelte';
 	import CoverImage from '$lib/components/coverImage.svelte';
 	import ProfilePicture from '$lib/components/profilePicture.svelte';
 	import Info from '$lib/content/info.svelte';
