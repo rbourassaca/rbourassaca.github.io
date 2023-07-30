@@ -1,4 +1,4 @@
-import type { categoryType, tagType } from '$lib/types/project';
+import type { categoryType } from '$lib/types/project';
 
 export const categories: categoryType[] = [
 	{
@@ -11,12 +11,13 @@ export const categories: categoryType[] = [
 	}
 ];
 
-export const tags: tagType[] = [
-	{ name: 'HTML', colorHex: `#f97316` },
-	{ name: 'JavaScript', colorHex: '#eab308' },
-	{ name: 'CSS', colorHex: '#0ea5e9' },
-	{ name: 'Reaper', colorHex: '#64c22e' },
-	{ name: 'WordPress', colorHex: '#42a4d3' },
-	{ name: 'PHP', colorHex: '#7a86b8' },
-	{ name: 'Svelte', colorHex: '#ff3e00' }
-];
+export const tags = {
+	html: { name: 'HTML', colorHex: `#f97316` },
+	js: { name: 'JavaScript', colorHex: '#eab308' },
+	ts: { name: 'TypeScript', colorHex: '#007bcd' },
+	css: { name: 'CSS', colorHex: '#0ea5e9' },
+	reaper: { name: 'Reaper', colorHex: '#64c22e' },
+	wp: { name: 'WordPress', colorHex: '#42a4d3' },
+	php: { name: 'PHP', colorHex: '#7a86b8' },
+	svelte: { name: 'Svelte', colorHex: '#ff3e00' }
+};

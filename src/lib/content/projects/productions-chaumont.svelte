@@ -11,7 +11,7 @@
 	export const metadata: projectMetadataType = {
 		title: 'Productions Chaumont',
 		categories: [categories[0]],
-		tags: [tags[0], tags[1], tags[2], tags[4], tags[5]],
+		tags: [tags.html, tags.css, tags.js, tags.php, tags.wp],
 		dateCreated: new Date('2022-04-10'),
 		dateUpdated: undefined
 	};
