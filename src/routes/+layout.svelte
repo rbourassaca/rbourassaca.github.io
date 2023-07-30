@@ -5,7 +5,7 @@
 	import ProfilePicture from '$lib/components/profilePicture.svelte';
 	import Info from '$lib/content/info.svelte';
 	import Footer from '$lib/components/footer.svelte';
-	import Panel from '$lib/components/panel/panel.svelte';
+	import Panel from '$lib/components/panel.svelte';
 	import BackToTop from '$lib/components/backToTop.svelte';
 
 	let title: string;

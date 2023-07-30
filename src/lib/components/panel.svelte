@@ -1,7 +1,7 @@
 <script lang="ts">
 	export let post = false;
 	export let slug = '';
-	import PostControl from '../post/postControl.svelte';
+	import PostControl from './post/postControl.svelte';
 </script>
 
 {#if post}
@@ -16,7 +16,7 @@
 {/if}
 
 <style lang="scss">
-	@use '../../styles/var.scss';
+	@use '../styles/var.scss';
 
 	article {
 		padding: var.$spacingBetweenElementsSmall var.$spacingBetweenElements;

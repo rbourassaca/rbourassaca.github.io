@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Panel from '$lib/components/panel/panel.svelte';
+	import Panel from '$lib/components/panel.svelte';
 	import Button from '$lib/components/button.svelte';
 	import type { projectType } from '$lib/types/project';
 	export let projectList: projectType[];

@@ -5,7 +5,7 @@
 	import type { projectType } from '$lib/types/project';
 	import PostHeader from '$lib/components/post/postHeader.svelte';
 	export let data: { project: projectType };
-	import Panel from '$lib/components/panel/panel.svelte';
+	import Panel from '$lib/components/panel.svelte';
 	import Button from '$lib/components/button.svelte';
 
 	let previousPage: string = base;
