@@ -8,7 +8,6 @@
 	const projects = data.projects;
 
 	let filteredProjects = projects;
-	let target;
 </script>
 
 <section>
