@@ -1,14 +1,12 @@
 <script lang="ts">
-	import type { projectType } from '$lib/types/project';
+	export let data;
+
 	import Panel from '$lib/components/panel.svelte';
 	import PostHeader from '$lib/components/post/postHeader.svelte';
 	import Filter from '$lib/components/filter/filter.svelte';
-	import { projectStore } from '../stores';
 
-	let projects: projectType[] = [];
-	projectStore.subscribe((value) => {
-		projects = value;
-	});
+	const projects = data.projects;
+
 	let filteredProjects = projects;
 </script>
 
