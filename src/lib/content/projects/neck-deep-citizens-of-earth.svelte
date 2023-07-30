@@ -7,7 +7,7 @@
 
 	export const metadata: projectMetadataType = {
 		title: 'Neck Deep - Citizens Of Earth (instrumentale)',
-		categories: [categories[1]],
+		categories: [categories.audio],
 		tags: [tags.reaper],
 		dateCreated: new Date('2022-12-10'),
 		dateUpdated: undefined

@@ -4,7 +4,7 @@
 
 	export const metadata: projectMetadataType = {
 		title: 'Portfolio',
-		categories: [categories[0]],
+		categories: [categories.web],
 		tags: [tags.html, tags.css, tags.js, tags.ts, tags.svelte],
 		dateCreated: new Date('2023-02-16'),
 		dateUpdated: undefined

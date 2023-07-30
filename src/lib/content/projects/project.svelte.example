@@ -4,7 +4,7 @@
 
 	export const metadata: metadataType = {
 		title: 'Example project',
-		categories: [categories[0]],
+		categories: [categories.web],
 		tags: [tags.html],
 		dateCreated: new Date('2022-01-19'),
 		dateUpdated: undefined

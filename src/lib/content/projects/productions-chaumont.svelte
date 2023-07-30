@@ -10,7 +10,7 @@
 
 	export const metadata: projectMetadataType = {
 		title: 'Productions Chaumont',
-		categories: [categories[0]],
+		categories: [categories.web],
 		tags: [tags.html, tags.css, tags.js, tags.php, tags.wp],
 		dateCreated: new Date('2022-04-10'),
 		dateUpdated: undefined
@@ -18,11 +18,18 @@
 </script>
 
 <p>
-	Création d'un thème et d'un plugin sur mesure pour le site internet de <a
+	Création du nouveau site web, d'un thème et d'un plugin sur mesure pour <a
 		href="https://productionschaumont.com"
 		target="_blank"
 		rel="noreferrer">Productions Chaumont</a
 	>.
+</p>
+<p>
+	PS: puisque le contenu du site web est géré par <a
+		href="https://productionschaumont.com"
+		target="_blank"
+		rel="noreferrer">Productions Chaumont</a
+	>, il est possible que des modifications aient été fait qui n'ont pas été réalisé par moi.
 </p>
 
 <Gallery
