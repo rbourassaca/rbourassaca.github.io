@@ -14,7 +14,7 @@ const config = {
 		sveltekit()
 	],
 	esbuild: {
-		drop: ['console', 'debugger']
+		drop: process.env.NODE_ENV !== 'development' ? ['console', 'debugger'] : ['debugger']
 	}
 };
 
