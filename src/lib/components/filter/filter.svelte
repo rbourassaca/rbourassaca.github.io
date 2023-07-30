@@ -2,7 +2,8 @@
 	import Panel from '$lib/components/panel.svelte';
 	import Button from '$lib/components/button.svelte';
 	import type { projectType } from '$lib/types/project';
-	export let projectList: projectType[];
+	import { search } from '$lib/components/filter/filter';
+	export let projects: projectType[];
 	export let filteredProjects: projectType[];
 	let recentFirst = true;
 
@@ -11,23 +12,9 @@
 		filteredProjects = filteredProjects.reverse();
 	};
 
-	const search = (string: string) => {
-		if (string.length > 0) {
-			filteredProjects = projectList.filter((project) =>
-				project.metadata.title.toLowerCase().includes(string.toLowerCase())
-			);
-		} else {
-			if (recentFirst) {
-				filteredProjects = projectList;
-			} else {
-				filteredProjects = projectList.reverse();
-			}
-		}
-	};
-
 	const handleInput = (e: any) => {
 		if (e.target !== null) {
-			search(e.target.value);
+			filteredProjects = search(e.target.value, projects, recentFirst);
 		}
 	};
 </script>
@@ -59,7 +46,7 @@
 </Panel>
 
 <style lang="scss">
-	@use '../styles/var.scss';
+	@use '../../styles/var.scss';
 
 	div {
 		display: grid;

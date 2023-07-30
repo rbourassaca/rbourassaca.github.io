@@ -2,19 +2,19 @@
 	import type { projectType } from '$lib/types/project';
 	import Panel from '$lib/components/panel.svelte';
 	import PostHeader from '$lib/components/post/postHeader.svelte';
-	import Filter from '$lib/components/filter.svelte';
-	import { projects } from '../stores';
+	import Filter from '$lib/components/filter/filter.svelte';
+	import { projectStore } from '../stores';
 
-	let projectList: projectType[] = [];
-	projects.subscribe((value) => {
-		projectList = value;
+	let projects: projectType[] = [];
+	projectStore.subscribe((value) => {
+		projects = value;
 	});
-	let filteredProjects = projectList;
+	let filteredProjects = projects;
 </script>
 
 <section>
-	<Filter {projectList} bind:filteredProjects />
-	{#if projectList.length > 0}
+	<Filter {projects} bind:filteredProjects />
+	{#if projects.length > 0}
 		{#each filteredProjects as project}
 			<Panel post={true} slug={project.slug}>
 				<PostHeader metadata={project.metadata} />
