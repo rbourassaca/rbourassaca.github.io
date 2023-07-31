@@ -30,6 +30,9 @@
 </p>
 
 <p>
-	De plus, le projet est gratuit à garder en ligne grâce à la génération d'une version statique du
-	site quand du contenu est ajouté ou modifier dans le répertoire git.
+	De plus, le projet est gratuit à garder en ligne grâce à <a
+		href="https://pages.cloudflare.com/"
+		target="_blank"
+		rel="noreferrer">Cloudflare Pages</a
+	>.
 </p>
