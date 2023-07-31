@@ -14,4 +14,4 @@ export type projectMetadataType = {
 };
 
 export type categoryType = { name: string; icon: string };
-export type tagType = { name: string; colorHex: `#${string}` };
+export type tagType = { name: string; colorHex: string };
