@@ -1,13 +1,13 @@
 <script lang="ts" context="module">
-	import type { metadataType } from '$lib/types/project';
+	import type { projectMetadataType } from '$lib/types/project';
 	import { categories, tags } from './_projectMetadata';
 
 	export const metadata: metadataType = {
 		title: 'Example project',
-		categories: [categories[0]],
-		tags: [tags[0], tags[1]],
+		categories: [categories.web],
+		tags: [tags.html],
 		dateCreated: new Date('2022-01-19'),
-		dateUpdated: new Date('2022-01-19')
+		dateUpdated: undefined
 	};
 </script>
 

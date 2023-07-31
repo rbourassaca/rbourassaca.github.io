@@ -7,8 +7,8 @@
 
 	export const metadata: projectMetadataType = {
 		title: 'Green Day - Brain Stew (instrumentale)',
-		categories: [categories[1]],
-		tags: [tags[3]],
+		categories: [categories.audio],
+		tags: [tags.reaper],
 		dateCreated: new Date('2022-12-10'),
 		dateUpdated: undefined
 	};
