@@ -1,9 +1,25 @@
 <script lang="ts">
 	export let action: () => void = () => {};
 	export let label: string | undefined = undefined;
+	export let disabled: boolean = false;
 </script>
 
-<span on:click={action} on:keydown={action} role="button" tabindex="0" aria-label={label}>
+<span
+	on:click={() => {
+		if (!disabled) {
+			action();
+		}
+	}}
+	on:keydown={() => {
+		if (!disabled) {
+			action();
+		}
+	}}
+	role="button"
+	tabindex="0"
+	aria-label={label}
+	class={disabled ? 'disabled' : ''}
+>
 	<slot />
 </span>
 
@@ -39,5 +55,20 @@
 	}
 	span:active {
 		background-color: var(--color-primary);
+	}
+	span.disabled {
+		color: var(--color-text-light);
+		:global {
+			svg {
+				fill: var(--color-text-light);
+			}
+		}
+	}
+	span.disabled:active {
+		color: var(--color-text-light);
+	}
+	span.disabled:hover {
+		color: var(--color-text-light);
+		background-color: transparent;
 	}
 </style>
