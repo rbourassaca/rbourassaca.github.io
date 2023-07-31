@@ -30,6 +30,17 @@ const orderProjects = (projects: projectType[]) => {
 	projects = projects.sort((a, b) => {
 		return b.metadata.dateCreated.getTime() - a.metadata.dateCreated.getTime();
 	});
+	projects = projects.sort((a, b) => {
+		if (a.metadata.dateUpdated !== undefined && b.metadata.dateUpdated === undefined) {
+			return b.metadata.dateCreated.getTime() - a.metadata.dateUpdated.getTime();
+		} else if (a.metadata.dateUpdated === undefined && b.metadata.dateUpdated !== undefined) {
+			return b.metadata.dateUpdated.getTime() - a.metadata.dateCreated.getTime();
+		} else if (a.metadata.dateUpdated !== undefined && b.metadata.dateUpdated !== undefined) {
+			return b.metadata.dateUpdated.getTime() - a.metadata.dateUpdated.getTime();
+		} else {
+			return b.metadata.dateCreated.getTime() - a.metadata.dateCreated.getTime();
+		}
+	});
 	return projects;
 };
 

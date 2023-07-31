@@ -6,7 +6,7 @@ const config = {
 	plugins: [
 		imagetools({
 			defaultDirectives: new URLSearchParams({
-				format: 'avif;webp',
+				format: 'avif;webp;jpg',
 				as: 'picture'
 			})
 		}),
@@ -14,7 +14,7 @@ const config = {
 		sveltekit()
 	],
 	esbuild: {
-		drop: ['console', 'debugger']
+		drop: process.env.NODE_ENV !== 'development' ? ['console', 'debugger'] : ['debugger']
 	}
 };
 

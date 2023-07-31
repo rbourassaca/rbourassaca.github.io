@@ -6,8 +6,8 @@
 		title: 'Portfolio',
 		categories: [categories.web],
 		tags: [tags.html, tags.css, tags.js, tags.ts, tags.svelte],
-		dateCreated: new Date('2023-02-16'),
-		dateUpdated: undefined
+		dateCreated: new Date('2018-10-01'),
+		dateUpdated: new Date('2023-07-31')
 	};
 </script>
 
