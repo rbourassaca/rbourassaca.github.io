@@ -6,7 +6,7 @@ const config = {
 	plugins: [
 		imagetools({
 			defaultDirectives: new URLSearchParams({
-				format: 'avif;webp',
+				format: 'avif;webp;jpg',
 				as: 'picture'
 			})
 		}),
