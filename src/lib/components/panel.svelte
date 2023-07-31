@@ -1,5 +1,6 @@
 <script lang="ts">
 	export let post = false;
+	export let isPostPage = false;
 	export let slug = '';
 	import PostControl from './post/postControl.svelte';
 </script>
@@ -7,7 +8,7 @@
 {#if post}
 	<article id={slug}>
 		<slot />
-		<PostControl {slug} />
+		<PostControl {slug} {isPostPage} />
 	</article>
 {:else}
 	<article>
