@@ -1,14 +1,9 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import Button from '../button.svelte';
 	export let slug: string;
 	let shared = false;
 	const href = '/projet/' + slug;
-	let isPostPage: boolean;
-
-	onMount(() => {
-		isPostPage = window.location.pathname != href;
-	});
+	export let isPostPage: boolean;
 
 	let copyUrl = () => {
 		if (!shared) {
@@ -22,7 +17,7 @@
 </script>
 
 <div class="actions">
-	{#if isPostPage}
+	{#if !isPostPage}
 		<div>
 			<a {href}>
 				<Button>

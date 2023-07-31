@@ -24,7 +24,7 @@
 		Revenir au profile
 	</Button>
 </a>
-<Panel post={true} slug={data.project.slug}>
+<Panel post={true} slug={data.project.slug} isPostPage={true}>
 	<PostHeader metadata={data.project.metadata} />
 	<svelte:component this={data.project.component} />
 </Panel>
