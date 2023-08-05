@@ -44,12 +44,14 @@
 			}
 		}
 	}
-	span:hover {
-		color: var(--color-text);
-		background-color: var(--color-secondary);
-		:global {
-			svg {
-				fill: var(--color-text);
+	@media (hover: hover) {
+		span:hover {
+			color: var(--color-text);
+			background-color: var(--color-secondary);
+			:global {
+				svg {
+					fill: var(--color-text);
+				}
 			}
 		}
 	}
@@ -67,8 +69,10 @@
 	span.disabled:active {
 		color: var(--color-text-light);
 	}
-	span.disabled:hover {
-		color: var(--color-text-light);
-		background-color: transparent;
+	@media (hover: hover) {
+		span.disabled:hover {
+			color: var(--color-text-light);
+			background-color: transparent;
+		}
 	}
 </style>
