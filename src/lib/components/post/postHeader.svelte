@@ -16,10 +16,11 @@
 		</h2>
 	</div>
 	<span>
-		Créer le: {metadata.dateCreated.toLocaleDateString('fr-CA')}
 		{#if metadata.dateUpdated !== undefined}
-			- Mis à jour le {metadata.dateUpdated.toLocaleDateString('fr-CA')}
+			Mis à jour le: {metadata.dateUpdated.toLocaleDateString('fr-CA')}
+			<br />
 		{/if}
+		Créer le: {metadata.dateCreated.toLocaleDateString('fr-CA')}
 	</span>
 	<div>
 		{#if metadata.tags !== undefined}
