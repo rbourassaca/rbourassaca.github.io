@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Image from '$lib/components/image.svelte';
-	import src from '$lib/content/images/cristian-guanipa-DhnnfJnjb7I-unsplash.jpg?w=300;600;900;1200;2400';
+	import src from '$lib/content/images/cristian-guanipa-DhnnfJnjb7I-unsplash.jpg';
 </script>
 
 <div>
