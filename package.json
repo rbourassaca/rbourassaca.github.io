@@ -28,7 +28,7 @@
 		"svelte-preprocess": "^5.0.0",
 		"tslib": "^2.4.1",
 		"typescript": "^5.0.0",
-		"vite-imagetools": "^5.0.4"
+		"vite-imagetools": "^6.0.0"
 	},
 	"type": "module",
 	"dependencies": {
