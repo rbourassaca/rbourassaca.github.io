@@ -14,7 +14,7 @@
 {:else}
 	<picture>
 		{#each Object.entries(src.sources) as [format, images]}
-			<source srcset={images.map((i) => `${i.src} ${i.w}w`).join(', ')} type={'image/' + format} />
+			<source srcset={String(images)} type={'image/' + format} />
 		{/each}
 
 		<img src={src.img.src} {alt} width={src.img.w} height={src.img.h} {loading} {decoding} {role} />
