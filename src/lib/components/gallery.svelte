@@ -4,7 +4,7 @@
 	import Image from '$lib/components/image.svelte';
 	import lightGallery from 'lightgallery';
 	import 'lightgallery/css/lightgallery-bundle.min.css';
-	export let images: { src: image | string; srcThumb: image | string; alt: string }[];
+	export let images: { src: image | string; alt: string }[];
 	let gallery: HTMLElement;
 	onMount(() => {
 		lightGallery(gallery);
@@ -15,7 +15,7 @@
 	{#each images as image}
 		{#if typeof image.src !== 'string'}
 			<a href={image.src.img.src}>
-				<Image src={image.srcThumb} alt={image.alt} />
+				<Image src={image.src} alt={image.alt} />
 			</a>
 		{/if}
 	{/each}

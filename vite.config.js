@@ -7,7 +7,9 @@ const config = {
 		imagetools({
 			defaultDirectives: new URLSearchParams({
 				format: 'avif;webp;jpg',
-				as: 'picture'
+				as: 'picture',
+				withoutEnlargement: '',
+				w: '200;400;800;1200;1800;2400'
 			})
 		}),
 
