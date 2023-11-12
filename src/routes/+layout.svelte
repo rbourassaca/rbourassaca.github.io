@@ -29,9 +29,8 @@
 		</Panel>
 		<Footer />
 	</div>
-	<div>
-		<slot />
-	</div>
+
+	<slot />
 </section>
 
 <style lang="scss">
@@ -61,13 +60,21 @@
 	}
 
 	section {
-		display: grid;
+		display: flex;
+		flex-direction: column;
+		gap: var.$spacingBetweenElements;
 		align-items: start;
-		column-gap: var.$spacingBetweenElements;
+		div#info {
+			display: flex;
+			flex-direction: column;
+			gap: var.$spacingBetweenElements;
+		}
 		@media (min-width: var.$lg) {
-			grid-template-columns: 400px 1fr;
+			flex-direction: row;
 			div#info {
 				position: sticky;
+				width: 400px;
+				flex-shrink: 0;
 				top: var.$spacingBetweenElements;
 			}
 		}
