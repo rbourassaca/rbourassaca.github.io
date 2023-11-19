@@ -10,6 +10,5 @@
 	@use '../styles/var';
 	footer {
 		color: var(--color-text-light);
-		padding: 1.5rem 0;
 	}
 </style>
