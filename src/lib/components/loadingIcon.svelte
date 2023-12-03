@@ -1,20 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
-	<path
-		d="M304 48a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zm0 416a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM48 304a48 48 0 1 0 0-96 48 48 0 1 0 0 96zm464-48a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM142.9 437A48 48 0 1 0 75 369.1 48 48 0 1 0 142.9 437zm0-294.2A48 48 0 1 0 75 75a48 48 0 1 0 67.9 67.9zM369.1 437A48 48 0 1 0 437 369.1 48 48 0 1 0 369.1 437z"
-	/>
-</svg>
-
-<style lang="scss">
-	svg {
-		animation: rotate 1s linear infinite;
-	}
-
-	@keyframes rotate {
-		0% {
-			transform: rotate(0);
-		}
-		100% {
-			transform: rotate(360deg);
-		}
-	}
-</style>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+	><path
+		fill="currentColor"
+		d="M12 2A10 10 0 1 0 22 12A10 10 0 0 0 12 2Zm0 18a8 8 0 1 1 8-8A8 8 0 0 1 12 20Z"
+		opacity=".5"
+	/><path fill="currentColor" d="M20 12h2A10 10 0 0 0 12 2V4A8 8 0 0 1 20 12Z"
+		><animateTransform
+			attributeName="transform"
+			dur="1s"
+			from="0 12 12"
+			repeatCount="indefinite"
+			to="360 12 12"
+			type="rotate"
+		/></path
+	></svg
+>
