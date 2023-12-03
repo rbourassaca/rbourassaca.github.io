@@ -1,13 +1,20 @@
 <script lang="ts">
 	import type { image } from '$lib/types/image';
-	import { onMount } from 'svelte';
+	import { onDestroy, onMount } from 'svelte';
 	import Image from '$lib/components/image.svelte';
 	import lightGallery from 'lightgallery';
 	import 'lightgallery/css/lightgallery-bundle.min.css';
+	import type { LightGallery } from 'lightgallery/lightgallery';
 	export let images: { src: image | string; alt: string }[];
 	let gallery: HTMLElement;
+	let lightGalleryItem: LightGallery;
 	onMount(() => {
-		lightGallery(gallery);
+		lightGalleryItem = lightGallery(gallery);
+	});
+	onDestroy(() => {
+		if (typeof lightGalleryItem !== 'undefined') {
+			lightGalleryItem.destroy();
+		}
 	});
 </script>
 
