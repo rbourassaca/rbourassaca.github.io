@@ -36,6 +36,7 @@
 <style lang="scss">
 	@use '../lib/styles/var';
 	section {
+		width: 100%;
 		display: grid;
 		row-gap: var.$spacingBetweenElements;
 		p {
