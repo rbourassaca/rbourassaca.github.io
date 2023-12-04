@@ -14,5 +14,8 @@
 	};
 </script>
 
-<p>Version instrumentale de la chanson Citizens of Earth de Neck Deep.</p>
+<p>
+	Enregistrement, édition et mixage d'une version instrumentale de la chanson Citizens of Earth de
+	Neck Deep.
+</p>
 <Audio {src} />
