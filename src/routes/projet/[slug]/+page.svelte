@@ -41,6 +41,7 @@
 	}
 
 	section {
+		width: 100%;
 		order: -1;
 	}
 
