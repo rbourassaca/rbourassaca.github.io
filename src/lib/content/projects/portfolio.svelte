@@ -7,7 +7,7 @@
 		categories: [categories.web],
 		tags: [tags.html, tags.css, tags.js, tags.ts, tags.svelte],
 		dateCreated: new Date('2018-10-01'),
-		dateUpdated: new Date('2023-08-06')
+		dateUpdated: new Date('2023-12-03')
 	};
 </script>
 
