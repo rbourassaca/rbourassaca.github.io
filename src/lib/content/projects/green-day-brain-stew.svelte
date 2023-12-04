@@ -14,5 +14,8 @@
 	};
 </script>
 
-<p>Version instrumentale de la chanson Brain Stew de Green Day.</p>
+<p>
+	Enregistrement, édition et mixage d'une version instrumentale de la chanson Brain Stew de Green
+	Day.
+</p>
 <Audio {src} />
