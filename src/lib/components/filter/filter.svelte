@@ -1,10 +1,12 @@
 <script lang="ts">
 	import Panel from '$lib/components/panel.svelte';
 	import Button from '$lib/components/button.svelte';
+	import Pill from '../pill.svelte';
 	import type { projectType } from '$lib/types/project';
 	import { search } from '$lib/components/filter/filter';
 	export let projects: projectType[];
 	export let filteredProjects: projectType[];
+	import { categories, tags } from '$lib/content/projects/_projectMetadata';
 	let recentFirst = true;
 
 	const invert = (bool: boolean) => {
@@ -20,7 +22,7 @@
 </script>
 
 <Panel>
-	<div>
+	<div class="recherche">
 		<input type="text" placeholder="Recherche..." on:input={(e) => handleInput(e)} />
 		<Button
 			action={() => {
@@ -43,16 +45,30 @@
 			{/if}
 		</Button>
 	</div>
+	<div class="categories">
+		{#each Object.entries(categories).sort() as category}
+			<Pill icon={category[1].icon} text={category[1].name} />
+		{/each}
+	</div>
+	<div class="tags">
+		{#each Object.entries(tags).sort() as tag}
+			<Pill text={tag[1].name} color={tag[1].colorHex} />
+		{/each}
+	</div>
 </Panel>
 
 <style lang="scss">
 	@use '../../styles/var.scss';
 
-	div {
-		display: grid;
-		grid-template-columns: 1fr auto;
-		gap: calc(var.$spacingBetweenElements / 2);
-		margin: var.$spacingBetweenElementsSmall * 2 0;
+	div:not(:last-child) {
+		padding-bottom: calc(var.$spacingBetweenElementsSmall * 2);
+	}
+
+	div.recherche {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: var.$spacingBetweenElementsSmall;
 		input[type='text'] {
 			padding: 0.5rem;
 			border-radius: var.$borderRadius;
@@ -62,9 +78,30 @@
 			color: var(--text-color);
 		}
 		:global {
+			article {
+				gap: 1rem;
+			}
 			svg {
 				height: 1.25rem;
 				width: 1.25rem;
+			}
+		}
+	}
+
+	div.categories,
+	div.tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var.$spacingBetweenElementsSmall;
+		justify-content: center;
+	}
+
+	@media (min-width: var.$xs) {
+		div.recherche {
+			display: flex;
+			flex-direction: row;
+			input[type='text'] {
+				width: 100%;
 			}
 		}
 	}
