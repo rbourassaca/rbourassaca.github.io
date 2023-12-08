@@ -38,15 +38,19 @@
 		div:first-child {
 			display: flex;
 			flex-wrap: nowrap;
+			align-items: center;
+			margin-bottom: 1rem;
 			:global {
 				svg {
 					width: 1.75rem;
 					min-width: 1.75rem;
+					height: fit-content;
 					margin-right: var.$spacingBetweenElementsSmall;
 				}
 			}
 			h2 {
 				align-items: center;
+				margin-bottom: 0;
 			}
 		}
 		> span:first-of-type {

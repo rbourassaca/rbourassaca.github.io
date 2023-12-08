@@ -40,6 +40,7 @@
 		display: flex;
 		flex-direction: column;
 		gap: 0.65rem;
+		margin-bottom: 0;
 		li {
 			list-style: none;
 			width: fit-content;
