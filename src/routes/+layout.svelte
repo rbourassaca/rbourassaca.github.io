@@ -63,7 +63,6 @@
 		display: flex;
 		flex-direction: column;
 		gap: var.$spacingBetweenElements;
-		align-items: start;
 		div#info {
 			display: flex;
 			flex-direction: column;

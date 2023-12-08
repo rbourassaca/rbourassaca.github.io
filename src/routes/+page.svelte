@@ -37,7 +37,8 @@
 	@use '../lib/styles/var';
 	section {
 		width: 100%;
-		display: grid;
+		display: flex;
+		flex-direction: column;
 		row-gap: var.$spacingBetweenElements;
 		p {
 			display: flex;
