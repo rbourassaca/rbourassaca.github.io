@@ -4,7 +4,7 @@
 	export let icon: string | undefined = undefined;
 </script>
 
-<div style={`border-color: ${color}`}>
+<div style={`outline-color: ${color};`}>
 	{#if icon !== undefined}
 		{@html icon}
 	{/if}
@@ -20,7 +20,7 @@
 		border-radius: 1rem;
 		width: fit-content;
 		font-size: 0.75rem;
-		border: 1px solid;
+		outline: 1px solid;
 		:global {
 			svg {
 				width: 1rem;
