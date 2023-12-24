@@ -6,9 +6,13 @@
 
 	onMount(() => {
 		scrollPos = window.scrollY;
-		addEventListener('scroll', () => {
-			scrollPos = window.scrollY;
-		}, {passive: true});
+		addEventListener(
+			'scroll',
+			() => {
+				scrollPos = window.scrollY;
+			},
+			{ passive: true }
+		);
 	});
 </script>
 
@@ -34,6 +38,7 @@
 		position: fixed;
 		bottom: 2rem;
 		transition: var.$transition;
+		z-index: 100;
 		@media (max-width: var.$lg) {
 			display: none;
 		}
