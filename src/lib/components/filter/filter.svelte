@@ -1,36 +1,53 @@
 <script lang="ts">
+	import { projectsFiltersStore } from '../../../stores';
 	import Panel from '$lib/components/panel.svelte';
 	import Button from '$lib/components/button.svelte';
 	import Pill from '../pill.svelte';
-	import type { projectType } from '$lib/types/project';
-	import { search } from '$lib/components/filter/filter';
-	export let projects: projectType[];
-	export let filteredProjects: projectType[];
 	import { categories, tags } from '$lib/content/projects/_projectMetadata';
-	let recentFirst = true;
 
-	const invert = (bool: boolean) => {
-		recentFirst = !bool;
-		filteredProjects = filteredProjects.reverse();
+	const handleInvertFilter = () => {
+		$projectsFiltersStore.reverse = !$projectsFiltersStore.reverse;
 	};
 
-	const handleInput = (e: any) => {
-		if (e.target !== null) {
-			filteredProjects = search(e.target.value, projects, recentFirst);
+	const handleTextFilter = (e: any) => {
+		$projectsFiltersStore.text = e.target.value;
+	};
+
+	const handleCategoriesFilter = (category: string) => {
+		if ($projectsFiltersStore.categories.includes(category)) {
+			$projectsFiltersStore.categories.splice($projectsFiltersStore.categories.indexOf(category));
+		} else {
+			$projectsFiltersStore.categories.splice(0, $projectsFiltersStore.categories.length);
+			$projectsFiltersStore.categories.push(category);
 		}
+		$projectsFiltersStore = $projectsFiltersStore;
+	};
+
+	const handleTagsFilter = (tag: string) => {
+		if ($projectsFiltersStore.tags.find((filteredTag) => filteredTag === tag)) {
+			$projectsFiltersStore.tags.splice($projectsFiltersStore.tags.indexOf(tag), 1);
+		} else {
+			$projectsFiltersStore.tags.push(tag);
+		}
+		$projectsFiltersStore = $projectsFiltersStore;
 	};
 </script>
 
 <Panel>
 	<div class="recherche">
-		<input type="text" placeholder="Recherche..." on:input={(e) => handleInput(e)} />
+		<input
+			type="text"
+			placeholder="Recherche..."
+			on:input={(e) => handleTextFilter(e)}
+			value={$projectsFiltersStore.text}
+		/>
 		<Button
 			action={() => {
-				invert(recentFirst);
+				handleInvertFilter();
 			}}
 			label="Inverser les projets."
 		>
-			{#if recentFirst}
+			{#if $projectsFiltersStore.reverse}
 				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
 					<path
 						d="M151.6 469.6C145.5 476.2 137 480 128 480s-17.5-3.8-23.6-10.4l-88-96c-11.9-13-11.1-33.3 2-45.2s33.3-11.1 45.2 2L96 365.7V64c0-17.7 14.3-32 32-32s32 14.3 32 32V365.7l32.4-35.4c11.9-13 32.2-13.9 45.2-2s13.9 32.2 2 45.2l-88 96zM320 480c-17.7 0-32-14.3-32-32s14.3-32 32-32h32c17.7 0 32 14.3 32 32s-14.3 32-32 32H320zm0-128c-17.7 0-32-14.3-32-32s14.3-32 32-32h96c17.7 0 32 14.3 32 32s-14.3 32-32 32H320zm0-128c-17.7 0-32-14.3-32-32s14.3-32 32-32H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H320zm0-128c-17.7 0-32-14.3-32-32s14.3-32 32-32H544c17.7 0 32 14.3 32 32s-14.3 32-32 32H320z"
@@ -47,12 +64,38 @@
 	</div>
 	<div class="categories">
 		{#each Object.entries(categories).sort() as category}
-			<Pill icon={category[1].icon} text={category[1].name} />
+			<button
+				on:click={() => {
+					handleCategoriesFilter(category[1].name);
+				}}
+			>
+				<Pill
+					icon={category[1].icon}
+					text={category[1].name}
+					style={$projectsFiltersStore.categories.length > 0 &&
+					!$projectsFiltersStore.categories.includes(category[1].name)
+						? 'opacity: 0.2;'
+						: undefined}
+				/>
+			</button>
 		{/each}
 	</div>
 	<div class="tags">
 		{#each Object.entries(tags).sort() as tag}
-			<Pill text={tag[1].name} color={tag[1].colorHex} />
+			<button
+				on:click={() => {
+					handleTagsFilter(tag[1].name);
+				}}
+			>
+				<Pill
+					text={tag[1].name}
+					color={tag[1].colorHex}
+					style={$projectsFiltersStore.tags.length > 0 &&
+					!$projectsFiltersStore.tags.includes(tag[1].name)
+						? 'opacity: 0.2;'
+						: undefined}
+				/>
+			</button>
 		{/each}
 	</div>
 </Panel>
@@ -94,6 +137,15 @@
 		flex-wrap: wrap;
 		gap: var.$spacingBetweenElementsSmall;
 		justify-content: center;
+	}
+
+	button {
+		all: unset;
+		:global {
+			div {
+				cursor: pointer;
+			}
+		}
 	}
 
 	@media (min-width: var.$xs) {
