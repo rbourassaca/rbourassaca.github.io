@@ -144,6 +144,7 @@
 		:global {
 			div {
 				cursor: pointer;
+				transition: var.$transition;
 			}
 		}
 	}
