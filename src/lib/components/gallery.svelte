@@ -32,8 +32,8 @@
 	@use '../styles/var.scss';
 	div {
 		margin: var.$spacingBetweenElementsSmall 0;
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		display: flex;
+		flex-direction: column;
 		justify-items: center;
 		align-items: center;
 		gap: 1rem;
@@ -71,6 +71,12 @@
 				background-color: rgba(0, 0, 0, 0.9);
 				backdrop-filter: blur(5px);
 			}
+		}
+	}
+	@media (min-width: var.$xs) {
+		div {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 		}
 	}
 </style>

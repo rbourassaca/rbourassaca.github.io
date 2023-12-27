@@ -1,17 +1,21 @@
 <script lang="ts">
-	export let data;
+	import type { projectType } from '$lib/types/project.js';
 
+	import { projectsFiltersStore } from '../stores.js';
+	import { filterProjects } from '$lib/functions/filterProjects.js';
 	import Panel from '$lib/components/panel.svelte';
 	import PostHeader from '$lib/components/post/postHeader.svelte';
 	import Filter from '$lib/components/filter/filter.svelte';
 
-	const projects = data.projects;
+	let filteredProjects: projectType[] = [];
 
-	let filteredProjects = projects;
+	projectsFiltersStore.subscribe((value) => {
+		filteredProjects = filterProjects(value);
+	});
 </script>
 
 <section>
-	<Filter {projects} bind:filteredProjects />
+	<Filter />
 	{#if filteredProjects.length > 0}
 		{#each filteredProjects as project}
 			<Panel post={true} slug={project.slug}>
@@ -37,7 +41,8 @@
 	@use '../lib/styles/var';
 	section {
 		width: 100%;
-		display: grid;
+		display: flex;
+		flex-direction: column;
 		row-gap: var.$spacingBetweenElements;
 		p {
 			display: flex;

@@ -9,5 +9,5 @@ export const load = (({ params }) => {
 			project
 		};
 	}
-	throw error(404, "La page demandé n'existe pas.");
+	error(404, "La page demandé n'existe pas.");
 }) satisfies PageLoad;

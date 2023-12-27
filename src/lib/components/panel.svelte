@@ -20,11 +20,10 @@
 	@use '../styles/var.scss';
 
 	article {
-		padding: var.$spacingBetweenElementsSmall var.$spacingBetweenElements;
+		padding: var.$spacingBetweenElements;
 		height: fit-content;
 		border-radius: var.$borderRadius;
 		outline: 1px solid var(--color-border);
-		display: flex;
 		flex-direction: column;
 	}
 </style>
