@@ -16,7 +16,7 @@
 
 <p>
 	Utilitaire simple permettant la gestion des plugins audio d'<a href="https://www.uaudio.com/" target="_blank">Universal Audio</a> disponible sur
-	<a href="https://github.com/rbourassaca/uad_plugin_manager">GitHub</a>.
+	<a href="https://github.com/rbourassaca/uad_plugin_manager" target="_blank">GitHub</a>.
 </p>
 <Gallery
 	images={[
