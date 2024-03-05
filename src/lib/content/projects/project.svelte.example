@@ -2,7 +2,7 @@
 	import type { projectMetadataType } from '$lib/types/project';
 	import { categories, tags } from './_projectMetadata';
 
-	export const metadata: metadataType = {
+	export const metadata: projectMetadataType = {
 		title: 'Example project',
 		categories: [categories.web],
 		tags: [tags.html],
