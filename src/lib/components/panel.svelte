@@ -12,7 +12,7 @@
 	</article>
 {:else}
 	<article>
-		<slot />
+			<slot />
 	</article>
 {/if}
 
@@ -20,10 +20,13 @@
 	@use '../styles/var.scss';
 
 	article {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
 		padding: var.$spacingBetweenElements;
 		height: fit-content;
 		border-radius: var.$borderRadius;
 		outline: 1px solid var(--color-border);
-		flex-direction: column;
+		box-shadow: 0 0 5px var(--color-border);
 	}
 </style>
