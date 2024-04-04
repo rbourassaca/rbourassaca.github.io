@@ -23,7 +23,7 @@
 :global {
 	:root {
 		--color-background: var(--color-background-1);
-		--opacity-border: 0.2;
+		--opacity-border: 0.1;
 		--opacity-background-alt: 0.7;
 		@include light;
 	}
@@ -32,11 +32,7 @@
 	}
 
 	body {
-		background: var(--color-background-1)
-			radial-gradient(at right bottom, var(--color-background-2), var(--color-background-1) 50%)
-			fixed;
-		background-size: 200% 200%;
-		animation: background 3s infinite alternate ease-in-out;
+		background-color: var(--color-background-1);
 		color: var(--color-text);
 		a:link,
 		a:visited,
@@ -55,14 +51,5 @@
 		svg {
 			fill: var(--color-text);
 		}
-	}
-}
-
-@keyframes background {
-	from {
-		background-position: 0 0;
-	}
-	to {
-		background-position: 100% 100%;
 	}
 }
