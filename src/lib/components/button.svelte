@@ -36,6 +36,7 @@
 		width: fit-content;
 		cursor: pointer;
 		border-radius: var.$borderRadius;
+    transition: var.$transition;
 		:global {
 			svg {
 				height: 1rem;
