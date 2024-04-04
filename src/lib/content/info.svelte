@@ -9,7 +9,6 @@
 	Je suis passionné par le <strong>web</strong>, l’<strong>audio</strong> et tout ce qui a rapport avec
 	la technologie. Voici un ensemble de projets que j’ai réalisé.
 </p>
-<h2>Liens:</h2>
 <ul>
 	<li>
 		<a href="https://github.com/rbourassaca" target="_blank" rel="noreferrer">
