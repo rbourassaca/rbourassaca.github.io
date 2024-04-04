@@ -37,6 +37,7 @@
 		cursor: pointer;
 		border-radius: var.$borderRadius;
     transition: var.$transition;
+    outline: 0 solid var(--color-border);
 		:global {
 			svg {
 				height: 1rem;
@@ -46,14 +47,8 @@
 		}
 	}
 	@media (hover: hover) {
-		span:hover {
-			color: var(--color-text);
-			background-color: var(--color-primary);
-			:global {
-				svg {
-					fill: var(--color-text);
-				}
-			}
+		span:not(.disabled):hover {
+			outline: 2px solid var(--color-primary);
 		}
 	}
 	span:active {
@@ -61,6 +56,7 @@
 	}
 	span.disabled {
 		color: var(--color-text-light);
+    cursor: auto;
 		:global {
 			svg {
 				fill: var(--color-text-light);
