@@ -3,8 +3,7 @@
 	--color-background: #fafafa;
 	--color-text: #424242;
 	--color-text-light: #838383;
-	--color-primary: #1e88e5;
-	--color-secondary: #2196f3;
+	--color-primary: #2196f3;
 	--color-border: rgba(0, 0, 0, var(--opacity-border));
 }
 
@@ -13,8 +12,7 @@
 	--color-background: #21252b;
 	--color-text: #e4e9ff;
 	--color-text-light: #686e79;
-	--color-primary: #1976d2;
-	--color-secondary: #1e88e5;
+	--color-primary: #1e88e5;
 	--color-border: rgba(255, 255, 255, var(--opacity-border));
 }
 
@@ -23,6 +21,7 @@
 		--color-background: var(--color-background);
 		--opacity-border: 0.1;
 		--opacity-background-alt: 0.7;
+		--hover-brightness: brightness(0.9);
 		@include light;
 	}
 	:root.dark {
@@ -35,15 +34,15 @@
 		a:link,
 		a:visited,
 		a:active {
-			color: var(--color-secondary);
-			svg {
-				fill: var(--color-secondary);
-			}
-		}
-		a:hover {
 			color: var(--color-primary);
 			svg {
 				fill: var(--color-primary);
+			}
+		}
+		a:hover {
+			filter: var(--hover-brightness);
+			svg {
+				filter: var(--hover-brightness);
 			}
 		}
 		svg {

@@ -28,7 +28,7 @@
 
 	span {
 		user-select: none;
-		color: var(--color-secondary);
+		color: var(--color-primary);
 		display: flex;
 		align-items: center;
 		column-gap: var.$spacingBetweenElementsSmall;
@@ -40,14 +40,14 @@
 			svg {
 				height: 1rem;
 				width: 1rem;
-				fill: var(--color-secondary);
+				fill: var(--color-primary);
 			}
 		}
 	}
 	@media (hover: hover) {
 		span:hover {
 			color: var(--color-text);
-			background-color: var(--color-secondary);
+			background-color: var(--color-primary);
 			:global {
 				svg {
 					fill: var(--color-text);
@@ -56,7 +56,7 @@
 		}
 	}
 	span:active {
-		background-color: var(--color-primary);
+    filter: var(--hover-brightness);
 	}
 	span.disabled {
 		color: var(--color-text-light);
