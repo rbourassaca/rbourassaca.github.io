@@ -28,7 +28,7 @@
 
 	span {
 		user-select: none;
-		color: var(--color-secondary);
+		color: var(--color-primary);
 		display: flex;
 		align-items: center;
 		column-gap: var.$spacingBetweenElementsSmall;
@@ -36,30 +36,27 @@
 		width: fit-content;
 		cursor: pointer;
 		border-radius: var.$borderRadius;
+    transition: var.$transition;
+    outline: 0 solid var(--color-border);
 		:global {
 			svg {
 				height: 1rem;
 				width: 1rem;
-				fill: var(--color-secondary);
+				fill: var(--color-primary);
 			}
 		}
 	}
 	@media (hover: hover) {
-		span:hover {
-			color: var(--color-text);
-			background-color: var(--color-secondary);
-			:global {
-				svg {
-					fill: var(--color-text);
-				}
-			}
+		span:not(.disabled):hover {
+			outline: 2px solid var(--color-primary);
 		}
 	}
 	span:active {
-		background-color: var(--color-primary);
+    filter: var(--hover-brightness);
 	}
 	span.disabled {
 		color: var(--color-text-light);
+    cursor: auto;
 		:global {
 			svg {
 				fill: var(--color-text-light);

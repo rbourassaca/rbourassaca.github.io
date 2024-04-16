@@ -23,6 +23,7 @@
 		width: fit-content;
 		font-size: 0.75rem;
 		outline: 2px solid;
+		user-select: none;
 		:global {
 			svg {
 				width: 1rem;

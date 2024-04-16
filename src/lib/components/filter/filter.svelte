@@ -103,10 +103,6 @@
 <style lang="scss">
 	@use '../../styles/var.scss';
 
-	div:not(:last-child) {
-		padding-bottom: calc(var.$spacingBetweenElementsSmall * 2);
-	}
-
 	div.recherche {
 		display: flex;
 		flex-direction: column;

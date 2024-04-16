@@ -24,7 +24,7 @@
 	$sizeY: calc($sizeX / 2) + $padding;
 	$colorOn: var(--colorOn, var(--color-background));
 	$colorOff: var(--colorOff, var(--color-background));
-	$colorDot: var(--colorDot, var(--color-secondary));
+	$colorDot: var(--colorDot, var(--color-primary));
 
 	// Le toggle
 	label {

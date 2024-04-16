@@ -1,3 +1,5 @@
+@use "./var.scss";
+
 :global {
 	body {
 		font-family: system-ui, sans-serif;
@@ -7,6 +9,7 @@
 		a:visited,
 		a:hover,
 		a:active {
+			transition: var.$transition;
 			text-decoration: none;
 		}
 		h1,
@@ -17,8 +20,16 @@
 		h6 {
 			margin: 0 0 1rem;
 		}
+		h1:not(:first-child),
+		h2:not(:first-child),
+		h3:not(:first-child),
+		h4:not(:first-child),
+		h5:not(:first-child),
+		h6:not(:first-child) {
+			margin: 1rem 0;
+		}
 		p {
-			margin: 0.5rem 0;
+			margin: 0;
 		}
 	}
 }

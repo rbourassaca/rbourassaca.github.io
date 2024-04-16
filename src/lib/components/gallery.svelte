@@ -38,6 +38,7 @@
 		align-items: center;
 		gap: 1rem;
 		a {
+			transition: var.$transition;
 			position: relative;
 			max-width: 500px;
 			:global {
@@ -49,18 +50,9 @@
 				}
 			}
 		}
-		a::after {
-			content: '';
-			position: absolute;
-			top: 0;
-			left: 0;
-			height: 100%;
-			width: 100%;
-			transition: var.$transition;
-		}
 	}
-	a:hover::after {
-		box-shadow: 0 0 25px black inset;
+	a:hover{
+		transform: scale(1.01);
 	}
 	:global {
 		div.lg-container {
