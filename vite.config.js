@@ -1,18 +1,10 @@
 import { sveltekit } from '@sveltejs/kit/vite';
-import { imagetools } from 'vite-imagetools';
+import { enhancedImages } from '@sveltejs/enhanced-img';
 
 /** @type {import('vite').UserConfig} */
 const config = {
 	plugins: [
-		imagetools({
-			defaultDirectives: new URLSearchParams({
-				format: 'avif;webp;jpg',
-				as: 'picture',
-				withoutEnlargement: '',
-				w: '200;400;800;1200;1800;2400'
-			})
-		}),
-
+		enhancedImages(),
 		sveltekit()
 	],
 	esbuild: {

@@ -1,13 +1,18 @@
 <script lang="ts">
-	import type { image } from '$lib/types/image';
 	import { onDestroy, onMount } from 'svelte';
-	import Image from '$lib/components/image.svelte';
+
 	import lightGallery from 'lightgallery';
 	import 'lightgallery/css/lightgallery-bundle.min.css';
 	import type { LightGallery } from 'lightgallery/lightgallery';
-	export let images: { src: image | string; alt: string }[];
+
+	export let images: {
+		src: any;
+		alt: string;
+	}[];
+
 	let gallery: HTMLElement;
 	let lightGalleryItem: LightGallery;
+
 	onMount(() => {
 		lightGalleryItem = lightGallery(gallery);
 	});
@@ -20,11 +25,13 @@
 
 <div bind:this={gallery}>
 	{#each images as image}
-		{#if typeof image.src !== 'string'}
-			<a href={image.src.img.src}>
-				<Image src={image.src} alt={image.alt} />
-			</a>
-		{/if}
+		<a href={image.src.img.src}>
+			<enhanced:img
+				src={image.src}
+				alt={image.alt}
+				sizes="(min-width:1080px) 640px, (min-width:768px) 400px, (min-width: 480px) 320px"
+			/>
+		</a>
 	{/each}
 </div>
 
@@ -51,7 +58,7 @@
 			}
 		}
 	}
-	a:hover{
+	a:hover {
 		transform: scale(1.01);
 	}
 	:global {
