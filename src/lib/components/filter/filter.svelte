@@ -137,12 +137,17 @@
 
 	button {
 		all: unset;
+		transition: var.$transition;
 		:global {
 			div {
 				cursor: pointer;
 				transition: var.$transition;
 			}
 		}
+	}
+	button:hover {
+		filter: var(--hover-brightness);
+		transform: scale(1.05);
 	}
 
 	@media (min-width: var.$xs) {

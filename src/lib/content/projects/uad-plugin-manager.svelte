@@ -2,8 +2,8 @@
 	import type { projectMetadataType } from '$lib/types/project';
 	import { categories, tags } from './_projectMetadata';
 
-	import Gallery from "$lib/components/gallery.svelte"
-	import src01 from "$lib/content/images/uad-plugin-manager.png"
+	import Gallery from '$lib/components/gallery.svelte';
+	import src01 from '$lib/content/images/uad-plugin-manager.png?enhanced';
 
 	export const metadata: projectMetadataType = {
 		title: 'UAD Plugin Manager',
@@ -15,11 +15,11 @@
 </script>
 
 <p>
-	Utilitaire simple permettant la gestion des plugins audio d'<a href="https://www.uaudio.com/" target="_blank">Universal Audio</a> disponible sur
+	Utilitaire simple permettant la gestion des plugins audio d'<a
+		href="https://www.uaudio.com/"
+		target="_blank">Universal Audio</a
+	>
+	disponible sur
 	<a href="https://github.com/rbourassaca/uad_plugin_manager" target="_blank">GitHub</a>.
 </p>
-<Gallery
-	images={[
-		{src: src01, alt: "Application UAD Plugin Manager dans Windows Terminal."}
-	]}
-/>
+<Gallery images={[{ src: src01, alt: 'Application UAD Plugin Manager dans Windows Terminal.' }]} />

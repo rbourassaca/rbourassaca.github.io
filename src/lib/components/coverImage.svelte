@@ -1,10 +1,12 @@
 <script lang="ts">
-	import Image from '$lib/components/image.svelte';
-	import src from '$lib/content/images/cristian-guanipa-DhnnfJnjb7I-unsplash.jpg';
+	import src from '$lib/content/images/cristian-guanipa-DhnnfJnjb7I-unsplash.jpg?enhanced';
 </script>
 
 <div>
-	<Image {src} role="presentation" loading="eager" />
+	<enhanced:img {src} alt="Pédalier sur un sol d'une scène."
+								sizes="(min-width:1920px) 1280px, (min-width:1080px) 640px, (min-width:768px) 400px"
+								fetchpriority="high" loading="eager"
+	/>
 </div>
 
 <style lang="scss">

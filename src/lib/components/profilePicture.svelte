@@ -1,10 +1,9 @@
 <script lang="ts">
-	import Image from '$lib/components/image.svelte';
-	import picture from '$lib/content/images/profile.jpg';
+	import src from '$lib/content/images/profile.jpg?enhanced';
 </script>
 
 <div>
-	<Image src={picture} alt="Raphael Bourassa" />
+	<enhanced:img  {src} alt="Raphael Bourassa"/>
 </div>
 
 <style lang="scss">
