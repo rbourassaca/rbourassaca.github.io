@@ -1,9 +1,9 @@
 <script lang="ts">
-	import src from '$lib/content/images/profile.jpg?enhanced';
+	import src from '$lib/content/images/profile.jpg?enhanced&w=200;400';
 </script>
 
 <div>
-	<enhanced:img  {src} alt="Raphael Bourassa"/>
+	<enhanced:img {src} alt="Raphael Bourassa" />
 </div>
 
 <style lang="scss">

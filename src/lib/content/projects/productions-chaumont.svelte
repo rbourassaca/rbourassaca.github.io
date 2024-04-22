@@ -3,8 +3,8 @@
 	import { categories, tags } from './_projectMetadata';
 
 	import Gallery from '$lib/components/gallery.svelte';
-	import src01 from '$lib/content/images/productions-chaumont_01.png?enhanced';
-	import src02 from '$lib/content/images/productions-chaumont_02.png?enhanced';
+	import src01 from '$lib/content/images/productions-chaumont_01.png?enhanced&w=200;400;800;1200';
+	import src02 from '$lib/content/images/productions-chaumont_02.png?enhanced&w=200;400;800;1200';
 
 	export const metadata: projectMetadataType = {
 		title: 'Productions Chaumont',
