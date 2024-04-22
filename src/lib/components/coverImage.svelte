@@ -1,12 +1,9 @@
 <script lang="ts">
-	import src from '$lib/content/images/cristian-guanipa-DhnnfJnjb7I-unsplash.jpg?enhanced';
+	import src from '$lib/content/images/cristian-guanipa-DhnnfJnjb7I-unsplash.jpg?enhanced&w=200;400;800;1200;1800;2400';
 </script>
 
 <div>
-	<enhanced:img {src} alt="Pédalier sur un sol d'une scène."
-								sizes="(min-width:1920px) 1280px, (min-width:1080px) 640px, (min-width:768px) 400px"
-								fetchpriority="high" loading="eager"
-	/>
+	<enhanced:img {src} alt="Pédalier sur un sol d'une scène." fetchpriority="high" loading="eager" />
 </div>
 
 <style lang="scss">

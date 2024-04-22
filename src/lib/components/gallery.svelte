@@ -26,11 +26,7 @@
 <div bind:this={gallery}>
 	{#each images as image}
 		<a href={image.src.img.src}>
-			<enhanced:img
-				src={image.src}
-				alt={image.alt}
-				sizes="(min-width:1080px) 640px, (min-width:768px) 400px, (min-width: 480px) 320px"
-			/>
+			<enhanced:img src={image.src} alt={image.alt} />
 		</a>
 	{/each}
 </div>
