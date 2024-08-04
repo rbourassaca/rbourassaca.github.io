@@ -11,7 +11,7 @@
 		categories: [categories.web],
 		tags: [tags.html, tags.css, tags.js, tags.php, tags.wp],
 		dateCreated: new Date('2022-04-10'),
-		dateUpdated: new Date('2023-09-17')
+		dateUpdated: new Date('2024-08-04')
 	};
 </script>
 
@@ -27,7 +27,7 @@
 		href="https://productionschaumont.com"
 		target="_blank"
 		rel="noreferrer">Productions Chaumont</a
-	>, il est possible que des modifications aient été fait qui n'ont pas été réalisé par moi.
+	>, il est possible que des modifications aient été fait par quelqu'un d'autre.
 </p>
 
 <Gallery
