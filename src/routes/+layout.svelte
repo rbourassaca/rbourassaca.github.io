@@ -7,6 +7,7 @@
 	import Footer from '$lib/components/footer.svelte';
 	import Panel from '$lib/components/panel.svelte';
 	import BackToTop from '$lib/components/backToTop.svelte';
+	import Toast from '$lib/components/toast.svelte';
 
 	let title: string;
 	let description: string;
@@ -17,6 +18,7 @@
 	<meta name="description" content={description} />
 </svelte:head>
 
+<Toast />
 <DarkModeToggle />
 <CoverImage />
 <ProfilePicture />

@@ -1,17 +1,12 @@
 <script lang="ts">
+	import { createToast } from '$lib/functions/toast';
 	import Button from '../button.svelte';
 	export let slug: string;
-	let shared = false;
 	export let isPostPage: boolean;
 
 	let copyUrl = () => {
-		if (!shared) {
-			navigator.clipboard.writeText(window.location.origin + '/projet/' + slug);
-			shared = true;
-			window.setTimeout(() => {
-				shared = false;
-			}, 2000);
-		}
+		navigator.clipboard.writeText(window.location.origin + '/projet/' + slug);
+		createToast('Le lien à été copié!');
 	};
 </script>
 
@@ -36,21 +31,12 @@
 				copyUrl();
 			}}
 		>
-			{#if shared}
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-					<path
-						d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"
-					/>
-				</svg>
-				Le lien à été copier!
-			{:else}
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-					<path
-						d="M224 0c-35.3 0-64 28.7-64 64V288c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64H224zM64 160c-35.3 0-64 28.7-64 64V448c0 35.3 28.7 64 64 64H288c35.3 0 64-28.7 64-64V384H288v64H64V224h64V160H64z"
-					/>
-				</svg>
-				Copier le lien
-			{/if}
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+				<path
+					d="M224 0c-35.3 0-64 28.7-64 64V288c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64H224zM64 160c-35.3 0-64 28.7-64 64V448c0 35.3 28.7 64 64 64H288c35.3 0 64-28.7 64-64V384H288v64H64V224h64V160H64z"
+				/>
+			</svg>
+			Copier le lien
 		</Button>
 	</div>
 </div>
