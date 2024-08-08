@@ -4,10 +4,10 @@
 </script>
 
 {#if $toastsStore.length > 0}
-	<span transition:fade={{ duration: 300 }} />
-	<section transition:fade={{ duration: 300 }}>
+	<span transition:fade={{ duration: 150 }} />
+	<section transition:fade={{ duration: 150 }}>
 		{#each $toastsStore as toast}
-			<div transition:slide={{ duration: 300 }}>
+			<div transition:slide={{ duration: 150 }}>
 				<p>{toast.text}</p>
 			</div>
 		{/each}
@@ -28,7 +28,7 @@
 		flex-direction: column-reverse;
 		gap: var.$spacingBetweenElements;
 		align-items: center;
-		box-shadow: 0px 0px 120px 60px #000;
+		box-shadow: 0px 0px 200px 100px #000;
 	}
 	section {
 		z-index: 115;
