@@ -35,19 +35,19 @@
 		position: fixed;
 		display: flex;
 		flex-direction: column;
-		gap: 1rem;
 		bottom: 2rem;
 		left: 50%;
 		transform: translateX(-50%);
-	}
-	div {
-		background-color: var(--color-background);
-		border-radius: var.$borderRadius;
-		padding: 1rem 2rem;
-		border: 1px var(--color-primary) solid;
-		box-shadow: 0 0 5px var(--color-primary);
-		p {
-			text-align: center;
+		div {
+			background-color: var(--color-background);
+			border-radius: var.$borderRadius;
+			padding: 1rem 2rem;
+			margin-bottom: 1rem;
+			border: 1px var(--color-primary) solid;
+			box-shadow: 0 0 5px var(--color-primary);
+			p {
+				text-align: center;
+			}
 		}
 	}
 </style>
