@@ -10,7 +10,7 @@
 		categories: [categories.programming],
 		tags: [tags.go],
 		dateCreated: new Date('2024-03-04'),
-		dateUpdated: undefined
+		dateUpdated: new Date('2024-05-30')
 	};
 </script>
 
