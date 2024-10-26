@@ -11,7 +11,7 @@
 		categories: [categories.web],
 		tags: [tags.html, tags.css, tags.js, tags.php, tags.wp],
 		dateCreated: new Date('2022-04-10'),
-		dateUpdated: new Date('2024-08-04')
+		dateUpdated: new Date('2024-10-16')
 	};
 </script>
 
