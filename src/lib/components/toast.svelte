@@ -4,7 +4,7 @@
 </script>
 
 {#if $toastsStore.length > 0}
-	<span transition:fade={{ duration: 150 }} />
+	<span transition:fade={{ duration: 150 }}></span>
 	<section transition:fade={{ duration: 150 }}>
 		{#each $toastsStore as toast}
 			<div transition:slide={{ duration: 150 }}>

@@ -3,7 +3,7 @@
 	import { setDarkMode, watchDarkMode } from '$lib/components/darkModeToggle/darkModeToggle';
 	import Toggle from '$lib/components/toggle.svelte';
 	// Variable utilisé pour le toggle
-	let dark: boolean;
+	let dark: boolean = $state(true);
 	/*
 	Utilisation du cycle de vie onMount afin d'évité une erreur si 
 	le code est éxécuté sur le serveur.

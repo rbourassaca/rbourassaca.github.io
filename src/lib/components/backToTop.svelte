@@ -2,7 +2,7 @@
 	import { onMount } from 'svelte';
 	import Button from '$lib/components/button.svelte';
 
-	let scrollPos: number;
+	let scrollPos: number = $state(0);
 
 	onMount(() => {
 		scrollPos = window.scrollY;

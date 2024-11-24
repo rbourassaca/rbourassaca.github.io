@@ -1,16 +1,26 @@
 <script lang="ts">
-	export let action: () => void = () => {};
-	export let label: string | undefined = undefined;
-	export let disabled: boolean = false;
+	interface Props {
+		action?: () => void;
+		label?: string | undefined;
+		disabled?: boolean;
+		children?: import('svelte').Snippet;
+	}
+
+	let {
+		action = () => {},
+		label = undefined,
+		disabled = false,
+		children
+	}: Props = $props();
 </script>
 
 <span
-	on:click={() => {
+	onclick={() => {
 		if (!disabled) {
 			action();
 		}
 	}}
-	on:keydown={() => {
+	onkeydown={() => {
 		if (!disabled) {
 			action();
 		}
@@ -20,7 +30,7 @@
 	aria-label={label}
 	class={disabled ? 'disabled' : ''}
 >
-	<slot />
+	{@render children?.()}
 </span>
 
 <style lang="scss">

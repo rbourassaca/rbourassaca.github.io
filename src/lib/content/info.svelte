@@ -1,9 +1,3 @@
-<script lang="ts">
-	export const title: string = 'Raphael Bourassa';
-	export const description: string =
-		'Je suis passionné par le web, l’audio et tout ce qui a rapport avec la technologie. Voici un ensemble de projets que j’ai réalisé.';
-</script>
-
 <h2>Information</h2>
 <p>
 	Je suis passionné par le <strong>web</strong>, l’<strong>audio</strong> et tout ce qui a rapport avec

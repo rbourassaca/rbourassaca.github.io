@@ -5,12 +5,16 @@
 	import 'lightgallery/css/lightgallery-bundle.min.css';
 	import type { LightGallery } from 'lightgallery/lightgallery';
 
-	export let images: {
+	interface Props {
+		images: {
 		src: any;
 		alt: string;
 	}[];
+	}
 
-	let gallery: HTMLElement;
+	let { images }: Props = $props();
+
+	let gallery: HTMLElement = $state();
 	let lightGalleryItem: LightGallery;
 
 	onMount(() => {

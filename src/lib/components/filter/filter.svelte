@@ -38,7 +38,7 @@
 		<input
 			type="text"
 			placeholder="Recherche..."
-			on:input={(e) => handleTextFilter(e)}
+			oninput={(e) => handleTextFilter(e)}
 			value={$projectsFiltersStore.text}
 		/>
 		<Button
@@ -65,7 +65,7 @@
 	<div class="categories">
 		{#each Object.entries(categories).sort() as category}
 			<button
-				on:click={() => {
+				onclick={() => {
 					handleCategoriesFilter(category[1].name);
 				}}
 			>
@@ -83,7 +83,7 @@
 	<div class="tags">
 		{#each Object.entries(tags).sort() as tag}
 			<button
-				on:click={() => {
+				onclick={() => {
 					handleTagsFilter(tag[1].name);
 				}}
 			>

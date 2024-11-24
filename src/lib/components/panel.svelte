@@ -1,18 +1,28 @@
 <script lang="ts">
-	export let post = false;
-	export let isPostPage = false;
-	export let slug = '';
 	import PostControl from './post/postControl.svelte';
+	interface Props {
+		post?: boolean;
+		isPostPage?: boolean;
+		slug?: string;
+		children?: import('svelte').Snippet;
+	}
+
+	let {
+		post = false,
+		isPostPage = false,
+		slug = '',
+		children
+	}: Props = $props();
 </script>
 
 {#if post}
 	<article id={slug}>
-		<slot />
+		{@render children?.()}
 		<PostControl {slug} {isPostPage} />
 	</article>
 {:else}
 	<article>
-			<slot />
+			{@render children?.()}
 	</article>
 {/if}
 
