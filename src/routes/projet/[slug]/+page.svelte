@@ -4,11 +4,15 @@
 
 	import type { projectType } from '$lib/types/project';
 	import PostHeader from '$lib/components/post/postHeader.svelte';
-	export let data: { project: projectType };
 	import Panel from '$lib/components/panel.svelte';
 	import Button from '$lib/components/button.svelte';
+	interface Props {
+		data: { project: projectType };
+	}
 
-	let previousPage: string = base;
+	let { data }: Props = $props();
+
+	let previousPage: string = $state(base);
 	afterNavigate(({ from }) => {
 		previousPage = from?.url.pathname || previousPage;
 	});
@@ -27,7 +31,7 @@
 	</a>
 	<Panel post={true} slug={data.project.slug} isPostPage={true}>
 		<PostHeader metadata={data.project.metadata} />
-		<svelte:component this={data.project.component} />
+		<data.project.component />
 	</Panel>
 </section>
 

@@ -1,8 +1,17 @@
 <script lang="ts">
-	export let text: string;
-	export let color: string = 'var(--color-border)';
-	export let icon: string | undefined = undefined;
-	export let style: string | undefined = undefined;
+	interface Props {
+		text: string;
+		color?: string;
+		icon?: string | undefined;
+		style?: string | undefined;
+	}
+
+	let {
+		text,
+		color = 'var(--color-border)',
+		icon = undefined,
+		style = undefined
+	}: Props = $props();
 </script>
 
 <div style={`outline-color: ${color}; ${style}`}>

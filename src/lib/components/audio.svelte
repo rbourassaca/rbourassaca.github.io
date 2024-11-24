@@ -3,13 +3,17 @@
 	import Button from '$lib/components/button.svelte';
 	import LoadingIcon from '$lib/components/loadingIcon.svelte';
 	import { onMount } from 'svelte';
-	export let src: string;
+	interface Props {
+		src: string;
+	}
+
+	let { src }: Props = $props();
 
 	let wavesurfer: WaveSurfer;
-	let wavesurferTarget: HTMLElement;
-	let wavesurferIsPlaying: boolean;
+	let wavesurferTarget: HTMLElement = $state();
+	let wavesurferIsPlaying: boolean = $state();
 	let wavesurferIsReady: boolean = false;
-	let wavesurferIsLoading: boolean = false;
+	let wavesurferIsLoading: boolean = $state(false);
 	let wavesurferColor: string;
 
 	onMount(() => {
@@ -63,7 +67,7 @@
 	};
 </script>
 
-<div on:click={wavesurferInit} on:keyup={wavesurferInit} role="button" tabindex="0">
+<div onclick={wavesurferInit} onkeyup={wavesurferInit} role="button" tabindex="0">
 	{#if wavesurferIsLoading}
 		<Button disabled={true}>
 			<LoadingIcon />

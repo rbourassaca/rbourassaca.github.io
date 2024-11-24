@@ -1,4 +1,4 @@
-<script lang="ts" context="module">
+<script lang="ts" module>
 	import type { projectMetadataType } from '$lib/types/project';
 	import { categories, tags } from './_projectMetadata';
 

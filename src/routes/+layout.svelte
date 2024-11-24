@@ -8,9 +8,15 @@
 	import Panel from '$lib/components/panel.svelte';
 	import BackToTop from '$lib/components/backToTop.svelte';
 	import Toast from '$lib/components/toast.svelte';
+	interface Props {
+		children?: import('svelte').Snippet;
+	}
 
-	let title: string;
-	let description: string;
+	let { children }: Props = $props();
+
+	let title: string = 'Raphael Bourassa';
+	let description: string =
+		'Je suis passionné par le web, l’audio et tout ce qui a rapport avec la technologie. Voici un ensemble de projets que j’ai réalisé.';
 </script>
 
 <svelte:head>
@@ -27,12 +33,12 @@
 	<BackToTop />
 	<div id="info">
 		<Panel>
-			<Info bind:title bind:description />
+			<Info />
 		</Panel>
 		<Footer />
 	</div>
 
-	<slot />
+	{@render children?.()}
 </section>
 
 <style lang="scss">

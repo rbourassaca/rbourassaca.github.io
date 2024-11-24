@@ -1,7 +1,11 @@
 <script lang="ts">
 	import type { projectMetadataType } from '$lib/types/project';
 	import Pill from '$lib/components/pill.svelte';
-	export let metadata: projectMetadataType;
+	interface Props {
+		metadata: projectMetadataType;
+	}
+
+	let { metadata }: Props = $props();
 </script>
 
 <div>

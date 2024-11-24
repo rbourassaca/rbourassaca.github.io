@@ -1,15 +1,20 @@
 <script lang="ts">
-	export let enabled: boolean;
-	export let action: (value: boolean) => void;
-	export let label: string | undefined = undefined;
+	interface Props {
+		enabled: boolean;
+		action: (value: boolean) => void;
+		label: string | undefined;
+	}
+
+	let { enabled, action, label }: Props = $props();
+
 	const performAction = (e: Event) => {
 		action((<HTMLInputElement>e.target).checked);
 	};
 </script>
 
 <label>
-	<input type="checkbox" checked={enabled} on:change={performAction} aria-label={label} />
-	<span />
+	<input type="checkbox" checked={enabled} onchange={performAction} aria-label={label} />
+	<span> </span>
 </label>
 
 <style lang="scss">

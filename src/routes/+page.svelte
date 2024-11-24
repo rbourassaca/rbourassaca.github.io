@@ -7,7 +7,7 @@
 	import PostHeader from '$lib/components/post/postHeader.svelte';
 	import Filter from '$lib/components/filter/filter.svelte';
 
-	let filteredProjects: projectType[] = [];
+	let filteredProjects: projectType[] = $state([]);
 
 	projectsFiltersStore.subscribe((value) => {
 		filteredProjects = filterProjects(value);
@@ -20,7 +20,7 @@
 		{#each filteredProjects as project}
 			<Panel post={true} slug={project.slug}>
 				<PostHeader metadata={project.metadata} />
-				<svelte:component this={project.component} />
+				<project.component />
 			</Panel>
 		{/each}
 	{:else}

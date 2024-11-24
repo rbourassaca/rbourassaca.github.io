@@ -1,8 +1,12 @@
 <script lang="ts">
 	import { createToast } from '$lib/functions/toast';
 	import Button from '../button.svelte';
-	export let slug: string;
-	export let isPostPage: boolean;
+	interface Props {
+		slug: string;
+		isPostPage: boolean;
+	}
+
+	let { slug, isPostPage }: Props = $props();
 
 	let copyUrl = () => {
 		navigator.clipboard.writeText(window.location.origin + '/projet/' + slug);
