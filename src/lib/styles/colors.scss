@@ -39,7 +39,7 @@
 				fill: var(--color-primary);
 			}
 		}
-		a:hover {
+		a:hover:not(.button) {
 			filter: var(--hover-brightness);
 			svg {
 				filter: var(--hover-brightness);

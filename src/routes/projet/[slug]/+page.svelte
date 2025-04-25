@@ -19,7 +19,7 @@
 </script>
 
 <section>
-	<a href={previousPage === '/' ? 'javascript:history.back()' : '/'}>
+	<a href={previousPage === '/' ? 'javascript:history.back()' : '/'} class="button">
 		<Button>
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
 				<path
