@@ -48,6 +48,7 @@
 <style lang="scss">
 	@use '../../styles/var.scss';
 	div.actions {
+		border-top: 1px solid var(--color-border);
 		margin-bottom: -#{var.$spacingBetweenElements};
 		padding: var.$spacingBetweenElementsSmall;
 		display: grid;
