@@ -46,8 +46,8 @@
 		width: fit-content;
 		cursor: pointer;
 		border-radius: var.$borderRadius;
-    transition: var.$transition;
-    outline: 0 solid var(--color-border);
+    	transition: var.$transition;
+    	outline: 0 solid var(--color-border);
 		:global {
 			svg {
 				height: 1rem;
