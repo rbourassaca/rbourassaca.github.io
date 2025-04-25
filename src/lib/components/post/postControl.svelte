@@ -17,7 +17,7 @@
 <div class="actions">
 	{#if !isPostPage}
 		<div>
-			<a href={'/projet/' + slug}>
+			<a href={'/projet/' + slug} class="button">
 				<Button>
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
 						<path
