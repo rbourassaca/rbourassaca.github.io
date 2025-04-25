@@ -41,7 +41,7 @@
 	a {
 		display: flex;
 		width: fit-content;
-		margin-bottom: var.$spacingBetweenElementsSmall;
+		margin-bottom: var.$spacingBetweenElements/2;
 	}
 
 	section {
