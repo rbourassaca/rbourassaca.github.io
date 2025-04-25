@@ -41,7 +41,7 @@
 	@use '../../styles/var.scss';
 
 	div:first-child {
-		margin-bottom: var.$spacingBetweenElements/2;
+		margin-bottom: calc(var.$spacingBetweenElements/2);
 		div:first-child {
 			display: flex;
 			align-items: center;
