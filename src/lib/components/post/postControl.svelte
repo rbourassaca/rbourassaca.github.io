@@ -52,6 +52,7 @@
 		margin-bottom: -#{var.$spacingBetweenElements};
 		padding: var.$spacingBetweenElementsSmall;
 		display: grid;
+		row-gap: var.$spacingBetweenElementsSmall;
 		@media (min-width: var.$sm) {
 			grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
 		}
