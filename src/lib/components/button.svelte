@@ -46,8 +46,8 @@
 		width: fit-content;
 		cursor: pointer;
 		border-radius: var.$borderRadius;
-    transition: var.$transition;
-    outline: 0 solid var(--color-border);
+    	transition: var.$transition;
+    	outline: 0 solid var(--color-border);
 		:global {
 			svg {
 				height: 1rem;
@@ -58,7 +58,8 @@
 	}
 	@media (hover: hover) {
 		span:not(.disabled):hover {
-			outline: 2px solid var(--color-primary);
+			outline: 1px solid var(--color-border);
+			background: var(--color-background-alt);
 		}
 	}
 	span:active {
