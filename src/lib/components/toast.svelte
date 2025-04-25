@@ -43,8 +43,7 @@
 			border-radius: var.$borderRadius;
 			padding: 1rem 2rem;
 			margin-bottom: 1rem;
-			border: 1px var(--color-primary) solid;
-			box-shadow: 0 0 5px var(--color-primary);
+			border: 1px var(--color-border) solid;
 			p {
 				text-align: center;
 			}
