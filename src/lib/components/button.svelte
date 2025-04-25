@@ -58,7 +58,8 @@
 	}
 	@media (hover: hover) {
 		span:not(.disabled):hover {
-			outline: 2px solid var(--color-primary);
+			outline: 1px solid var(--color-border);
+			background: var(--color-background-alt);
 		}
 	}
 	span:active {
