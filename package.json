@@ -13,7 +13,7 @@
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-cloudflare": "^7.0.0",
-		"@sveltejs/enhanced-img": "^0.4.0",
+		"@sveltejs/enhanced-img": "^0.6.0",
 		"@sveltejs/kit": "^2.5.27",
 		"@sveltejs/vite-plugin-svelte": "^5.0.0",
 		"@typescript-eslint/eslint-plugin": "^8.0.0",
@@ -33,7 +33,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"lightgallery": "^2.7.1",
+		"lightgallery": "^2.8.0",
 		"wavesurfer.js": "^7.1.1"
 	}
 }
