@@ -1,4 +1,4 @@
-@use "./var.scss";
+@use './var.scss';
 
 :global {
 	body {
@@ -10,7 +10,14 @@
 		a:hover,
 		a:active {
 			transition: var.$transition;
-			text-decoration: none;
+		}
+		div > {
+			a:link,
+			a:visited,
+			a:hover,
+			a:active {
+				text-decoration: none;
+			}
 		}
 		h1,
 		h2,
