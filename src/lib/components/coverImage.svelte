@@ -1,5 +1,5 @@
 <script lang="ts">
-	import src from '$lib/content/images/cristian-guanipa-DhnnfJnjb7I-unsplash.jpg?enhanced&w=200;400;800;1200;1800;2400';
+	import src from '$lib/content/images/cristian-guanipa-DhnnfJnjb7I-unsplash.jpg?enhanced&w=200;400;800;1200;1400';
 </script>
 
 <div>
