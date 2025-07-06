@@ -7,9 +7,9 @@
 
 	interface Props {
 		images: {
-		src: any;
-		alt: string;
-	}[];
+			src: any;
+			alt: string;
+		}[];
 	}
 
 	let { images }: Props = $props();
@@ -30,7 +30,7 @@
 <div bind:this={gallery}>
 	{#each images as image}
 		<a href={image.src.img.src}>
-			<enhanced:img src={image.src} alt={image.alt} />
+			<enhanced:img src={image.src} alt={image.alt} loading="lazy" />
 		</a>
 	{/each}
 </div>
