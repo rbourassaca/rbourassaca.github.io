@@ -74,13 +74,5 @@
 		> span.dates {
 			color: var(--color-text-light);
 		}
-		> div:last-child {
-			margin-top: var.$spacingBetweenElementsSmall;
-			margin-bottom: var.$spacingBetweenElementsSmall;
-			display: flex;
-			flex-direction: row;
-			flex-wrap: wrap;
-			gap: var.$spacingBetweenElementsSmall;
-		}
 	}
 </style>
