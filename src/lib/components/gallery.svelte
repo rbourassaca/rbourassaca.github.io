@@ -18,7 +18,9 @@
 	let lightGalleryItem: LightGallery;
 
 	onMount(() => {
-		lightGalleryItem = lightGallery(gallery);
+		lightGalleryItem = lightGallery(gallery, {
+			download: false
+		});
 	});
 	onDestroy(() => {
 		if (typeof lightGalleryItem !== 'undefined') {
