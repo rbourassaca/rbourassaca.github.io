@@ -31,7 +31,7 @@
 
 <div bind:this={gallery}>
 	{#each images as image}
-		<a href={image.src.img.src}>
+		<a href={image.src.img.src} aria-label={image.alt}>
 			<enhanced:img src={image.src} alt={image.alt} loading="lazy" />
 		</a>
 	{/each}
@@ -56,12 +56,19 @@
 					width: 100%;
 					height: auto;
 					max-width: 500px;
+					border-radius: var.$borderRadius;
+					box-shadow: 0px 0px 0px #000;
 				}
 			}
 		}
 	}
 	a:hover {
 		transform: scale(1.01);
+		:global {
+			img {
+				box-shadow: 0px 0px 5px #00000065;
+			}
+		}
 	}
 	:global {
 		div.lg-container {
