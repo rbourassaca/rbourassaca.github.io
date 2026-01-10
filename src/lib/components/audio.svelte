@@ -10,8 +10,8 @@
 	let { src }: Props = $props();
 
 	let wavesurfer: WaveSurfer;
-	let wavesurferTarget: HTMLElement = $state();
-	let wavesurferIsPlaying: boolean = $state();
+	let wavesurferTarget: HTMLElement;
+	let wavesurferIsPlaying: boolean = $state(false);
 	let wavesurferIsReady: boolean = false;
 	let wavesurferIsLoading: boolean = $state(false);
 	let wavesurferColor: string;

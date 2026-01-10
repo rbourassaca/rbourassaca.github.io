@@ -14,7 +14,7 @@
 
 	let { images }: Props = $props();
 
-	let gallery: HTMLElement = $state();
+	let gallery: HTMLElement;
 	let lightGalleryItem: LightGallery;
 
 	onMount(() => {
