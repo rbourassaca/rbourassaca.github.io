@@ -3,8 +3,10 @@
 	import { categories, tags } from './_projectMetadata';
 
 	import Audio from '$lib/components/audio.svelte';
+	import Gallery from '$lib/components/gallery.svelte';
 
-	import src from '$lib/content/audio/fallen_leaves.opus';
+	import srcAudio from '$lib/content/audio/fallen_leaves.opus';
+	import srcImage from '$lib/content/images/fallen_leaves.jpg?enhanced&w=200;400;800;1200';
 
 	export const metadata: projectMetadataType = {
 		title: 'Billy Talent - Fallen Leaves',
@@ -25,4 +27,5 @@
 	<a href="https://music.apple.com/ca/song/fallen-leaves/1887177029" target="_blank">Apple Music</a
 	>.
 </p>
-<Audio {src} />
+<Gallery images={[{ src: srcImage, alt: 'Cover Art' }]} />
+<Audio src={srcAudio} />

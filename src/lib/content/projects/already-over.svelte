@@ -3,8 +3,10 @@
 	import { categories, tags } from './_projectMetadata';
 
 	import Audio from '$lib/components/audio.svelte';
+	import Gallery from '$lib/components/gallery.svelte';
 
-	import src from '$lib/content/audio/already_over.opus';
+	import srcAudio from '$lib/content/audio/already_over.opus';
+	import srcImage from '$lib/content/images/already_over.jpg?enhanced&w=200;400;800;1200';
 
 	export const metadata: projectMetadataType = {
 		title: 'Mike Shinoda - Already Over',
@@ -24,4 +26,5 @@
 	et
 	<a href="https://music.apple.com/us/song/already-over/1733135629" target="_blank">Apple Music</a>.
 </p>
-<Audio {src} />
+<Gallery images={[{ src: srcImage, alt: 'Cover Art' }]} />
+<Audio src={srcAudio} />
