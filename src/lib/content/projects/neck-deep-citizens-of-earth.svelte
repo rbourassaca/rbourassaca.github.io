@@ -3,7 +3,7 @@
 	import { categories, tags } from './_projectMetadata';
 
 	import Audio from '$lib/components/audio.svelte';
-	import src from '$lib/content/audio/neck_deep_-_citizens_of_earth.mp3';
+	import src from '$lib/content/audio/neck_deep_-_citizens_of_earth.opus';
 
 	export const metadata: projectMetadataType = {
 		title: 'Neck Deep - Citizens Of Earth (instrumentale)',

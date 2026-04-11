@@ -3,7 +3,7 @@
 	import { categories, tags } from './_projectMetadata';
 
 	import Audio from '$lib/components/audio.svelte';
-	import src from '$lib/content/audio/green_day_-_brain_stew.mp3';
+	import src from '$lib/content/audio/green_day_-_brain_stew.opus';
 
 	export const metadata: projectMetadataType = {
 		title: 'Green Day - Brain Stew (instrumentale)',

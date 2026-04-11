@@ -3,7 +3,7 @@
 	import { categories, tags } from './_projectMetadata';
 
 	import Audio from '$lib/components/audio.svelte';
-	import src from '$lib/content/audio/architects_-_animals.mp3';
+	import src from '$lib/content/audio/architects_-_animals.opus';
 
 	export const metadata: projectMetadataType = {
 		title: 'Architects - Animals (instrumentale)',
