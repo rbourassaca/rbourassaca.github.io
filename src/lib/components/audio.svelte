@@ -2,7 +2,6 @@
 	import WaveSurfer from 'wavesurfer.js';
 	import Button from '$lib/components/button.svelte';
 	import LoadingIcon from '$lib/components/loadingIcon.svelte';
-	import { onMount } from 'svelte';
 	interface Props {
 		src: string;
 	}
@@ -12,17 +11,13 @@
 	let wavesurfer: WaveSurfer;
 	let wavesurferTarget: HTMLElement;
 	let wavesurferIsPlaying: boolean = $state(false);
-	let wavesurferIsReady: boolean = false;
 	let wavesurferIsLoading: boolean = $state(false);
 	let wavesurferColor: string;
 
-	onMount(() => {
+	const wavesurferInit = () => {
 		wavesurferColor = getComputedStyle(document.documentElement).getPropertyValue(
 			'--color-text-light'
 		);
-	});
-
-	const wavesurferInit = () => {
 		if (wavesurfer === undefined) {
 			wavesurferIsLoading = true;
 			wavesurfer = WaveSurfer.create({
@@ -30,17 +25,14 @@
 				url: src,
 				height: 40,
 				barWidth: 2,
+				cursorWidth: 2,
 				barGap: 2,
-				barHeight: 0.9,
+				barHeight: 0.6,
 				waveColor: wavesurferColor,
 				progressColor: wavesurferColor
 			});
 			wavesurfer.once('ready', () => {
-				wavesurferIsReady = true;
 				wavesurferIsLoading = false;
-				play();
-			});
-			wavesurfer.on('interaction', () => {
 				play();
 			});
 			wavesurfer.on('load', () => {
@@ -49,11 +41,14 @@
 			wavesurfer.on('ready', () => {
 				wavesurferIsLoading = false;
 			});
+			wavesurfer.on('finish', () => {
+				reset();
+			});
 		}
 	};
 
 	const play = () => {
-		if (!wavesurfer.isPlaying()) {
+		if (wavesurfer !== undefined && !wavesurfer.isPlaying()) {
 			wavesurfer.play();
 			wavesurferIsPlaying = true;
 		}
@@ -64,6 +59,12 @@
 			wavesurfer.pause();
 			wavesurferIsPlaying = false;
 		}
+	};
+
+	const reset = () => {
+		wavesurfer.pause();
+		wavesurferIsPlaying = false;
+		wavesurfer.seekTo(0);
 	};
 </script>
 
@@ -126,7 +127,6 @@
 				}
 				::part(cursor) {
 					background-color: var(--color-text);
-					width: 0.1rem;
 				}
 			}
 		}
