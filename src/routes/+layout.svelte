@@ -1,8 +1,6 @@
 <script lang="ts">
 	import 'normalize.css';
 	import DarkModeToggle from '$lib/components/darkModeToggle/darkModeToggle.svelte';
-	import CoverImage from '$lib/components/coverImage.svelte';
-	import ProfilePicture from '$lib/components/profilePicture.svelte';
 	import Info from '$lib/content/info.svelte';
 	import Footer from '$lib/components/footer.svelte';
 	import Panel from '$lib/components/panel.svelte';
@@ -26,9 +24,6 @@
 
 <Toast />
 <DarkModeToggle />
-<CoverImage />
-<ProfilePicture />
-<h1>{title}</h1>
 <section>
 	<BackToTop />
 	<div id="info">
@@ -61,11 +56,6 @@
 					var.$spacingPagePaddingX;
 			}
 		}
-	}
-
-	h1 {
-		text-align: center;
-		margin: 0.5rem 0 1.5rem;
 	}
 
 	section {
