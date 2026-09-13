@@ -54,6 +54,7 @@
 			background-color: $colorOff;
 			transition: var.$transition;
 			border-radius: calc(#{$sizeX} / 2 - #{$padding});
+			outline: 1px solid var(--color-border);
 		}
 		// Le point du toggle
 		span:before {

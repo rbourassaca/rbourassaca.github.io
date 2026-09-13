@@ -5,12 +5,12 @@
 	// Variable utilisé pour le toggle
 	let dark: boolean = $state(true);
 	/*
-	Utilisation du cycle de vie onMount afin d'évité une erreur si 
+	Utilisation du cycle de vie onMount afin d'évité une erreur si
 	le code est éxécuté sur le serveur.
 	*/
 	onMount(() => {
 		/*
-		Création d'un setter afin de changer la variable dark à partir 
+		Création d'un setter afin de changer la variable dark à partir
 		d'un event listener.
 		*/
 		let darkModeSetter = (value: boolean) => {
@@ -50,10 +50,8 @@
 	@use '../../styles/var.scss';
 
 	span {
-		position: absolute;
-		top: 0;
-		right: var.$spacingPagePaddingX;
-		padding: 1rem;
-		z-index: 100;
+		display: flex;
+		justify-content: flex-end;
+		padding: calc(var.$spacingBetweenElements / 2) 0;
 	}
 </style>
